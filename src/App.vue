@@ -1,39 +1,47 @@
-<template>
-  <div id="app">
-    <img alt="Avatar" src="./assets/logo.png" width="150">
-    <Home/>
-  </div>
-</template>
-
-<script>
-import Home from './components/Home.vue'
-
-export default {
-  name: 'app',
-  components: {
-    Home
-  }
-}
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 100px;
+<template>
+  <header>
+    <img alt="Avatar" class="logo" src="./assets/profile.jpeg" width="175" />
+
+    <div class="wrapper">
+      <HelloWorld msg="Stephen Wang" />
+    </div>
+  </header>
+
+  <main>
+    <TheWelcome />
+  </main>
+</template>
+
+<style scoped>
+header {
+  line-height: 1.5;
 }
-img {
-  border-radius: 50%;
-  pointer-events: none;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
 }
 </style>
