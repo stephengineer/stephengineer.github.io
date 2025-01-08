@@ -15,17 +15,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #heading>Github</template>
 
     Projects and codes are available on
-    <a href="https://github.com/stephengineer" target="_blank" rel="noopener">github</a>
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Linkedin</template>
-
-    My professional experience is available on
-    <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener">linkedin</a>
+    <a href="https://github.com/stephengineer" target="_blank" rel="noopener">Github</a>
   </WelcomeItem>
 
   <WelcomeItem>
@@ -35,7 +25,17 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #heading>Twitter</template>
 
     Latest news and short thoughts are available on
-    <a href="https://x.com/stephengineer" target="_blank" rel="noopener">Twitter</a>
+    <a href="https://x.com/stephengineers" target="_blank" rel="noopener">Twitter</a>
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <ToolingIcon />
+    </template>
+    <template #heading>Linkedin</template>
+
+    My professional experience is available on
+    <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener">Linkedin</a>
   </WelcomeItem>
 
   <WelcomeItem>
