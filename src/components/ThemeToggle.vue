@@ -48,37 +48,42 @@ onMounted(() => {
 <style scoped>
 .theme-toggle {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
+  top: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  color: white;
 }
 
 .theme-toggle:hover {
-  background: var(--color-background-soft);
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(180deg);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
 }
 
 .theme-toggle:active {
   transform: scale(0.95);
 }
 
+.theme-toggle svg {
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .theme-toggle {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 40px;
-    height: 40px;
+    top: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
   }
 }
 </style>

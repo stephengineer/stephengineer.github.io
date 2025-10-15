@@ -67,78 +67,131 @@
 
 <style scoped>
 .projects-section {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: var(--color-background-soft);
-  border-radius: 12px;
-  border: 1px solid var(--color-border);
+  padding: 4rem 0;
+  background: var(--color-background);
+  position: relative;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .projects-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--color-heading);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .project-card {
   background: var(--color-background);
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: 16px;
   border: 1px solid var(--color-border);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-header h3 {
   color: var(--color-heading);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin: 0;
+  flex: 1;
 }
 
 .project-links {
   display: flex;
   gap: 0.5rem;
+  margin-left: 1rem;
 }
 
 .project-link {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   color: var(--color-text);
   text-decoration: none;
   font-size: 0.9rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: var(--color-border-hover);
-  color: var(--color-heading);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
 
 .project-card p {
   color: var(--color-text);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
 }
 
 .project-tech {
@@ -148,28 +201,50 @@
 }
 
 .tech-tag {
-  background: var(--color-background-mute);
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
   color: var(--color-text);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
   font-size: 0.8rem;
-  border: 1px solid var(--color-border);
+  font-weight: 500;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
   .projects-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
+    padding: 3rem 0;
+  }
+  
+  .projects-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
   
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
   }
   
   .project-header {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .project-links {
+    margin-left: 0;
   }
 }
 </style>
