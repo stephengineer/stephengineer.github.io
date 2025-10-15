@@ -49,10 +49,6 @@ import ExperienceSection from './components/ExperienceSection.vue'
           <div class="hero-image">
             <div class="image-container">
               <img alt="Stephen Wang" class="profile-image" src="./assets/profile.jpeg" />
-              <div class="status-badge">
-                <div class="status-dot"></div>
-                <span>Available for collaboration</span>
-              </div>
             </div>
           </div>
         </div>
@@ -212,14 +208,22 @@ import ExperienceSection from './components/ExperienceSection.vue'
   .hero-content {
     gap: 1.5rem;
     grid-template-rows: auto auto;
+    justify-items: center;
+    text-align: center;
   }
   
   .hero-image {
     order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .hero-text {
     order: 2;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -380,11 +384,44 @@ import ExperienceSection from './components/ExperienceSection.vue'
 .hero-image {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+/* Additional mobile centering fixes */
+@media (max-width: 768px) {
+  .hero-content {
+    justify-items: center;
+  }
+  
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .image-container {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .profile-image {
@@ -413,40 +450,6 @@ import ExperienceSection from './components/ExperienceSection.vue'
 
 .profile-image:hover {
   transform: scale(1.05);
-}
-
-.status-badge {
-  position: absolute;
-  bottom: -0.5rem;
-  right: -0.5rem;
-  background: var(--color-background);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-  font-size: 0.875rem;
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-}
-
-@media (max-width: 480px) {
-  .status-badge {
-    position: static;
-    margin-top: 1rem;
-    align-self: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
-.status-dot {
-  width: 0.75rem;
-  height: 0.75rem;
-  background: #10B981;
-  border-radius: 50%;
 }
 
 /* Section Styles */
