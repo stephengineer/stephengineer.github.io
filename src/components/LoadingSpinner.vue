@@ -8,20 +8,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const loading = ref(true)
 
-onMounted(async () => {
-  // Simulate loading time with better performance
-  await nextTick()
-  
-  // Use requestAnimationFrame for smoother loading experience
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      loading.value = false
-    }, 800) // Reduced loading time for better UX
-  })
+onMounted(() => {
+  // Simulate loading time
+  setTimeout(() => {
+    loading.value = false
+  }, 1000)
 })
 </script>
 
