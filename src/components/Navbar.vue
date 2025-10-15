@@ -12,7 +12,6 @@
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#experience" class="nav-link">Experience</a>
           <a href="#contact" class="nav-link">Contact</a>
-          <ThemeToggle />
         </div>
         
         <!-- Mobile menu button -->
@@ -30,9 +29,6 @@
         <a href="#skills" @click="closeMobileMenu" class="mobile-nav-link">Skills</a>
         <a href="#experience" @click="closeMobileMenu" class="mobile-nav-link">Experience</a>
         <a href="#contact" @click="closeMobileMenu" class="mobile-nav-link">Contact</a>
-        <div class="mobile-theme-toggle">
-          <ThemeToggle />
-        </div>
       </div>
     </div>
   </nav>
@@ -40,7 +36,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import ThemeToggle from './ThemeToggle.vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -73,24 +68,15 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(29, 33, 41, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
-.dark .navbar {
-  background: rgba(29, 33, 41, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.dark .navbar-scrolled {
-  background: rgba(29, 33, 41, 0.95);
+  background: rgba(29, 33, 41, 0.98);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-content {
@@ -103,7 +89,7 @@ onUnmounted(() => {
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-heading);
+  color: white;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -121,12 +107,13 @@ onUnmounted(() => {
 
 .desktop-nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
 .nav-link {
   font-weight: 500;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -144,7 +131,7 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #165DFF;
+  color: #36CFC9;
 }
 
 .nav-link:hover::after {
@@ -155,7 +142,7 @@ onUnmounted(() => {
   display: none;
   background: none;
   border: none;
-  color: var(--color-text);
+  color: white;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.25rem;
@@ -163,7 +150,7 @@ onUnmounted(() => {
 }
 
 .mobile-menu-btn:hover {
-  background: var(--color-background-mute);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav {
@@ -171,8 +158,8 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 0;
-  border-top: 1px solid var(--color-border);
-  background: var(--color-background);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(29, 33, 41, 0.98);
   transform: translateY(-100%);
   opacity: 0;
   transition: all 0.3s ease;
@@ -186,24 +173,16 @@ onUnmounted(() => {
 .mobile-nav-link {
   padding: 0.75rem 0;
   font-weight: 500;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 0.25rem;
 }
 
 .mobile-nav-link:hover {
-  color: #165DFF;
-  background: var(--color-background-mute);
+  color: #36CFC9;
+  background: rgba(255, 255, 255, 0.1);
   padding-left: 0.5rem;
-}
-
-.mobile-theme-toggle {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0 0 0;
-  border-top: 1px solid var(--color-border);
-  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {

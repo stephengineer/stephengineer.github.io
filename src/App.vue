@@ -342,7 +342,7 @@ import ExperienceSection from './components/ExperienceSection.vue'
   position: absolute;
   bottom: -0.5rem;
   right: -0.5rem;
-  background: white;
+  background: var(--color-background);
   padding: 0.75rem;
   border-radius: 0.5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -351,7 +351,8 @@ import ExperienceSection from './components/ExperienceSection.vue'
   gap: 0.5rem;
   font-weight: 500;
   font-size: 0.875rem;
-  color: #1D2129;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 
 .status-dot {
