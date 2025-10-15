@@ -160,12 +160,24 @@ import ExperienceSection from './components/ExperienceSection.vue'
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
 /* Hero Section */
 .hero-section {
-  padding: 8rem 0 6rem;
+  padding: 6rem 0 4rem;
   background: var(--color-background);
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 8rem 0 6rem;
+  }
 }
 
 .hero-section::before {
@@ -183,7 +195,7 @@ import ExperienceSection from './components/ExperienceSection.vue'
 .hero-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -193,6 +205,12 @@ import ExperienceSection from './components/ExperienceSection.vue'
   .hero-content {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    gap: 1.5rem;
   }
 }
 
@@ -207,11 +225,18 @@ import ExperienceSection from './components/ExperienceSection.vue'
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: var(--color-heading);
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
 }
 
 .text-primary {
@@ -222,7 +247,7 @@ import ExperienceSection from './components/ExperienceSection.vue'
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
   margin-bottom: 2rem;
@@ -233,22 +258,40 @@ import ExperienceSection from './components/ExperienceSection.vue'
 
 @media (min-width: 768px) {
   .hero-description {
+    font-size: 1.125rem;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .hero-buttons {
+    gap: 1rem;
     justify-content: flex-start;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
 }
 
@@ -261,6 +304,15 @@ import ExperienceSection from './components/ExperienceSection.vue'
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);
+  text-align: center;
+  min-width: 140px;
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 .btn-primary:hover {
@@ -278,6 +330,15 @@ import ExperienceSection from './components/ExperienceSection.vue'
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  text-align: center;
+  min-width: 140px;
+}
+
+@media (max-width: 480px) {
+  .btn-secondary {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 .btn-secondary:hover {
@@ -318,8 +379,8 @@ import ExperienceSection from './components/ExperienceSection.vue'
 }
 
 .profile-image {
-  width: 16rem;
-  height: 16rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid white;
@@ -331,6 +392,13 @@ import ExperienceSection from './components/ExperienceSection.vue'
   .profile-image {
     width: 20rem;
     height: 20rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 10rem;
+    height: 10rem;
   }
 }
 
@@ -364,18 +432,36 @@ import ExperienceSection from './components/ExperienceSection.vue'
 
 /* Section Styles */
 .skills-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: var(--color-background-soft);
 }
 
+@media (min-width: 768px) {
+  .skills-section {
+    padding: 5rem 0;
+  }
+}
+
 .contact-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: var(--color-background);
 }
 
+@media (min-width: 768px) {
+  .contact-section {
+    padding: 5rem 0;
+  }
+}
+
 .experience-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: var(--color-background-mute);
+}
+
+@media (min-width: 768px) {
+  .experience-section {
+    padding: 5rem 0;
+  }
 }
 
 .section-header {
@@ -461,3 +547,4 @@ import ExperienceSection from './components/ExperienceSection.vue'
   font-size: 0.875rem;
 }
 </style>
+
