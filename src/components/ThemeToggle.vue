@@ -14,15 +14,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watchEffect } from 'vue'
 
 const isDark = ref(false)
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
+}
+
+// Use watchEffect for reactive theme management
+watchEffect(() => {
   document.documentElement.classList.toggle('dark', isDark.value)
   localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
-}
+})
 
 onMounted(() => {
   const savedTheme = localStorage.getItem('theme')
@@ -33,8 +37,6 @@ onMounted(() => {
   } else {
     isDark.value = prefersDark
   }
-  
-  document.documentElement.classList.toggle('dark', isDark.value)
 })
 </script>
 
