@@ -133,7 +133,7 @@ import ExperienceSection from './components/ExperienceSection.vue'
         </div>
         
         <div class="footer-bottom">
-          <p>&copy; 2024 Stephen Wang. All rights reserved.</p>
+          <p>&copy; 2025 Stephen Wang. All rights reserved.</p>
         </div>
       </div>
     </footer>
