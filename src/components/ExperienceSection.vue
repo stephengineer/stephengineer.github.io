@@ -6,17 +6,17 @@
         <div class="experience-timeline-line"></div>
         
         <div class="experience-content">
-          <div class="experience-date">
-            <span class="date-text">2023 - Present</span>
+          <div class="experience-left">
+            <span class="experience-date">2023 - Present</span>
+            <h3 class="experience-title">Research Scientist</h3>
+            <p class="experience-company">VisionFlow AI</p>
           </div>
           
           <div class="experience-dot">
             <div class="dot-inner"></div>
           </div>
           
-          <div class="experience-details">
-            <h3 class="experience-title">Research Scientist</h3>
-            <p class="experience-company">VisionFlow AI</p>
+          <div class="experience-right">
             <p class="experience-description">
               Leading research in generative AI, large language models, and multi-agent systems. 
               Focused on LLM post-training techniques including LoRA, PPO, and GRPO. 
@@ -31,17 +31,17 @@
         <div class="experience-timeline-line"></div>
         
         <div class="experience-content">
-          <div class="experience-date">
-            <span class="date-text">2021 - 2023</span>
+          <div class="experience-left">
+            <span class="experience-date">2021 - 2023</span>
+            <h3 class="experience-title">Machine Learning Engineer</h3>
+            <p class="experience-company">DeepLang AI</p>
           </div>
           
           <div class="experience-dot">
             <div class="dot-inner"></div>
           </div>
           
-          <div class="experience-details">
-            <h3 class="experience-title">Machine Learning Engineer</h3>
-            <p class="experience-company">DeepLang AI</p>
+          <div class="experience-right">
             <p class="experience-description">
               Developed and implemented generative models and applied AIGC solutions. 
               Worked on natural language processing projects and deep learning applications. 
@@ -56,17 +56,17 @@
         <div class="experience-timeline-line"></div>
         
         <div class="experience-content">
-          <div class="experience-date">
-            <span class="date-text">2019 - 2021</span>
+          <div class="experience-left">
+            <span class="experience-date">2019 - 2021</span>
+            <h3 class="experience-title">Adjunct Professor</h3>
+            <p class="experience-company">Computer Science Department</p>
           </div>
           
           <div class="experience-dot">
             <div class="dot-inner"></div>
           </div>
           
-          <div class="experience-details">
-            <h3 class="experience-title">Adjunct Professor</h3>
-            <p class="experience-company">Computer Science Department</p>
+          <div class="experience-right">
             <p class="experience-description">
               Taught courses in natural language processing and computer science. 
               Mentored graduate students in AI research projects. 
@@ -79,17 +79,17 @@
       <!-- Experience 4 -->
       <div class="experience-item">
         <div class="experience-content">
-          <div class="experience-date">
-            <span class="date-text">2017 - 2019</span>
+          <div class="experience-left">
+            <span class="experience-date">2017 - 2019</span>
+            <h3 class="experience-title">Research Assistant</h3>
+            <p class="experience-company">AI Research Lab</p>
           </div>
           
           <div class="experience-dot">
             <div class="dot-inner"></div>
           </div>
           
-          <div class="experience-details">
-            <h3 class="experience-title">Research Assistant</h3>
-            <p class="experience-company">AI Research Lab</p>
+          <div class="experience-right">
             <p class="experience-description">
               Conducted research in machine learning and artificial intelligence. 
               Developed algorithms for natural language understanding and generation. 
@@ -104,7 +104,7 @@
 
 <style scoped>
 .experience-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
@@ -120,11 +120,12 @@
 
 .experience-timeline-line {
   position: absolute;
-  left: 1rem;
+  left: 50%;
   top: 0;
   bottom: -3rem;
   width: 2px;
-  background: var(--color-border);
+  background: #E5E7EB;
+  transform: translateX(-50%);
 }
 
 .experience-item:last-child .experience-timeline-line {
@@ -134,38 +135,33 @@
 .experience-content {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
   position: relative;
 }
 
-.experience-date {
-  flex-shrink: 0;
-  width: 120px;
+.experience-left {
+  flex: 1;
+  padding-right: 2rem;
   text-align: right;
 }
 
-.date-text {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #165DFF;
-  background: rgba(22, 93, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  display: inline-block;
+.experience-right {
+  flex: 1;
+  padding-left: 2rem;
 }
 
 .experience-dot {
   position: absolute;
-  left: 0.75rem;
+  left: 50%;
   top: 0.5rem;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: #165DFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  transform: translateX(-50%);
 }
 
 .dot-inner {
@@ -175,9 +171,12 @@
   border-radius: 50%;
 }
 
-.experience-details {
-  flex: 1;
-  padding-left: 1rem;
+.experience-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #165DFF;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .experience-title {
@@ -190,14 +189,15 @@
 .experience-company {
   font-size: 1rem;
   font-weight: 500;
-  color: #165DFF;
-  margin-bottom: 0.75rem;
+  color: #6B7280;
+  margin-bottom: 0;
 }
 
 .experience-description {
   color: var(--color-text);
   line-height: 1.6;
   font-size: 0.95rem;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -206,22 +206,25 @@
     gap: 1rem;
   }
   
-  .experience-date {
-    width: auto;
+  .experience-left {
+    padding-right: 0;
     text-align: left;
+  }
+  
+  .experience-right {
+    padding-left: 0;
   }
   
   .experience-dot {
     position: static;
     align-self: flex-start;
-  }
-  
-  .experience-details {
-    padding-left: 0;
+    transform: none;
+    margin: 0 auto;
   }
   
   .experience-timeline-line {
-    left: 0.5rem;
+    left: 1rem;
+    transform: none;
   }
 }
 </style>
