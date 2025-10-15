@@ -1,6 +1,6 @@
 # Stephen Wang - Personal Website
 
-A modern, responsive personal website showcasing my work as a Machine Learning Engineer & AI Researcher. Built with Vue 3 and Vite for optimal performance and developer experience.
+A modern, responsive personal website showcasing my work as a Research Scientist & AI Engineer. Built with Vue 3 and Vite for optimal performance and developer experience.
 
 ## 🌟 Live Demo
 
@@ -9,13 +9,13 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 ## ✨ Features
 
 - **Modern Design**: Clean, professional layout with smooth animations
-- **Responsive**: Fully responsive design that works on all devices
+- **Mobile-First**: Fully responsive design optimized for all devices
 - **Fast Performance**: Built with Vite for lightning-fast loading
 - **SEO Optimized**: Meta tags and structured data for better search visibility
-- **Skills Showcase**: Interactive skill bars with animations
-- **Experience Timeline**: Professional experience with timeline layout
-- **Contact Form**: Integrated contact form with email functionality
-- **Dark Navigation**: Elegant dark navigation bar with glassmorphism effect
+- **Skills Showcase**: Interactive skill categories with clean design
+- **Experience Timeline**: Professional experience with mobile-optimized layout
+- **Contact Form**: Integrated contact form with validation
+- **Navigation**: Elegant navigation with mobile hamburger menu
 
 ## 🛠️ Tech Stack
 
@@ -39,7 +39,7 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 git clone https://github.com/stephengineer/stephengineer.github.io.git
 
 # Navigate to the project directory
-cd Personal-Website
+cd stephengineer.github.io
 
 # Install dependencies
 npm install
@@ -70,24 +70,27 @@ npm run preview:prod
 ## 📁 Project Structure
 
 ```
-Personal-Website/
+stephengineer.github.io/
 ├── src/
 │   ├── components/          # Vue components
-│   │   ├── Navbar.vue      # Navigation bar
+│   │   ├── Navbar.vue      # Navigation bar with mobile menu
 │   │   ├── SkillsSection.vue # Skills showcase
-│   │   ├── ExperienceSection.vue # Work experience
-│   │   ├── ContactForm.vue  # Contact form
-│   │   └── ...
+│   │   ├── ExperienceSection.vue # Work experience timeline
+│   │   └── ContactForm.vue  # Contact form
 │   ├── assets/             # Static assets
 │   │   ├── base.css        # Base styles and CSS variables
-│   │   └── main.css        # Global styles
+│   │   ├── main.css        # Global styles
+│   │   └── profile.jpeg    # Profile image
 │   ├── App.vue             # Main application component
 │   └── main.js             # Application entry point
 ├── .github/
-│   └── workflows/          # GitHub Actions
+│   └── workflows/          # GitHub Actions for deployment
 ├── public/                 # Public assets
-├── dist/                   # Build output
-└── docs/                   # Documentation
+│   └── favicon.ico         # Site favicon
+├── index.html              # Main HTML template
+├── package.json            # Dependencies and scripts
+├── vite.config.js          # Vite configuration
+└── README.md               # Project documentation
 ```
 
 ## 🎨 Design Features
@@ -110,12 +113,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 
 ### Manual Deployment
 
-```bash
-# Build and deploy
-npm run deploy
-```
-
-For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+The website is automatically deployed via GitHub Actions on every push to the `master` branch. No manual deployment is needed.
 
 ## 📱 Responsive Design
 
@@ -147,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Stephen Wang**
 - Research Scientist at VisionFlow AI
-- Machine Learning Engineer & AI Researcher
+- Specializing in Large Language Models & Multi-agent Systems
 - Email: zhongqi1112@gmail.com
 - LinkedIn: [stephengineer](https://www.linkedin.com/in/stephengineer/)
 - GitHub: [stephengineer](https://github.com/stephengineer)
