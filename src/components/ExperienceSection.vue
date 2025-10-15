@@ -180,23 +180,38 @@
 @media (max-width: 768px) {
   .experience-content {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
+    position: relative;
   }
   
   .experience-left {
     padding-right: 0;
     text-align: left;
-  }
-  
-  .experience-right {
-    padding-left: 0;
+    order: 1;
+    position: relative;
+    padding-left: 1.5rem;
   }
   
   .experience-dot {
-    position: static;
-    align-self: flex-start;
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    background: #165DFF;
+    border-radius: 50%;
     transform: none;
-    margin: 0 auto;
+    margin: 0;
+    order: 0;
+  }
+  
+  .dot-inner {
+    display: none;
+  }
+  
+  .experience-right {
+    padding-left: 1.5rem;
+    order: 2;
   }
   
   .experience-timeline-line {
@@ -205,6 +220,7 @@
   
   .experience-item {
     margin-bottom: 2rem;
+    padding-left: 0;
   }
 }
 </style>
