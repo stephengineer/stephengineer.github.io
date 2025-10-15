@@ -211,6 +211,15 @@ import ExperienceSection from './components/ExperienceSection.vue'
 @media (max-width: 480px) {
   .hero-content {
     gap: 1.5rem;
+    grid-template-rows: auto auto;
+  }
+  
+  .hero-image {
+    order: 1;
+  }
+  
+  .hero-text {
+    order: 2;
   }
 }
 

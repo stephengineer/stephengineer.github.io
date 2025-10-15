@@ -67,7 +67,7 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 9999;
   background: rgba(29, 33, 41, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -175,6 +175,7 @@ onUnmounted(() => {
   min-height: 44px;
   align-items: center;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-btn:hover {
@@ -199,7 +200,7 @@ onUnmounted(() => {
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9998;
 }
 
 .mobile-nav-open {
@@ -240,6 +241,22 @@ onUnmounted(() => {
   
   .mobile-nav {
     display: flex;
+  }
+}
+
+/* iPhone specific fixes */
+@media (max-width: 414px) {
+  .navbar-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .mobile-menu-btn {
+    min-width: 40px;
+    min-height: 40px;
   }
 }
 </style>
