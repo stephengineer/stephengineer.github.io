@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Wang - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid red;
+        }
+        .success {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stephen Wang</h1>
+        <p>Machine Learning Engineer & AI Researcher</p>
+        
+        <div class="status" id="status">
+            <h3>Loading...</h3>
+            <p>Checking application status...</p>
+        </div>
+        
+        <div class="status">
+            <h3>Contact Information</h3>
+            <p>Email: zhongqi1112@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/stephengineer/" style="color: white;">stephengineer</a></p>
+            <p>GitHub: <a href="https://github.com/stephengineer" style="color: white;">stephengineer</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Check if Vue app loaded
+        setTimeout(() => {
+            const status = document.getElementById('status');
+            const app = document.getElementById('app');
+            
+            if (app && app.children.length > 0) {
+                status.className = 'status success';
+                status.innerHTML = '<h3>✅ Application Loaded Successfully</h3><p>Vue application is running correctly.</p>';
+            } else {
+                status.className = 'status error';
+                status.innerHTML = '<h3>❌ Application Failed to Load</h3><p>Vue application did not mount properly. Check console for errors.</p>';
+            }
+        }, 2000);
+        
+        // Log any errors
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+            const status = document.getElementById('status');
+            status.className = 'status error';
+            status.innerHTML = `<h3>❌ JavaScript Error</h3><p>Error: ${e.message}</p><p>Check console for details.</p>`;
+        });
+    </script>
+</body>
+</html>
