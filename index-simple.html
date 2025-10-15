@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Wang - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0.8;
+        }
+        
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+        
+        .profile-info {
+            text-align: left;
+        }
+        
+        .profile-image {
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+        }
+        
+        .skills-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category h3 {
+            color: #36CFC9;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info" id="debug">
+        <div>✅ HTML Loaded</div>
+        <div>✅ CSS Loaded</div>
+        <div id="js-status">⏳ JS Loading...</div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Stephen Wang</h1>
+            <div class="subtitle">Research Scientist</div>
+            <div class="description">
+                Focusing on generative AI, large language models, and multi-agent systems. 
+                Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-info">
+                <h2>About Me</h2>
+                <p>I'm a Research Scientist at VisionFlow AI, specializing in cutting-edge AI technologies including:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Large Language Models (LLMs)</li>
+                    <li>Multi-agent Systems</li>
+                    <li>Generative AI</li>
+                    <li>Post-training Techniques (LoRA, PPO, GRPO)</li>
+                    <li>High-performance Deployment (vLLM, TensorRT, Triton)</li>
+                </ul>
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>Available for collaboration</span>
+                </div>
+            </div>
+            <div class="profile-image">
+                <img src="https://via.placeholder.com/200x200/165DFF/FFFFFF?text=SW" alt="Stephen Wang" class="profile-img">
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Large Language Models</span>
+                        <span class="skill-tag">Multi-agents</span>
+                        <span class="skill-tag">Natural Language Processing</span>
+                        <span class="skill-tag">Reinforcement Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Generative AI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">vLLM</span>
+                        <span class="skill-tag">TensorRT</span>
+                        <span class="skill-tag">Triton</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Research Areas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Post-training</span>
+                        <span class="skill-tag">LoRA</span>
+                        <span class="skill-tag">PPO</span>
+                        <span class="skill-tag">GRPO</span>
+                        <span class="skill-tag">Academic Writing</span>
+                        <span class="skill-tag">Research Publications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>Interested in collaborating on AI research or discussing opportunities?</p>
+            <div class="contact-links">
+                <a href="mailto:zhongqi1112@gmail.com" class="contact-link">
+                    📧 Email
+                </a>
+                <a href="https://www.linkedin.com/in/stephengineer/" class="contact-link" target="_blank">
+                    💼 LinkedIn
+                </a>
+                <a href="https://github.com/stephengineer" class="contact-link" target="_blank">
+                    💻 GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update debug info
+        document.getElementById('js-status').innerHTML = '✅ JS Loaded';
+        
+        // Log any errors
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+            document.getElementById('debug').innerHTML += '<div style="color: red;">❌ JS Error: ' + e.message + '</div>';
+        });
+        
+        // Test if we can access the Vue app
+        setTimeout(() => {
+            const vueApp = document.getElementById('app');
+            if (vueApp && vueApp.children.length > 0) {
+                document.getElementById('debug').innerHTML += '<div style="color: green;">✅ Vue App Detected</div>';
+            } else {
+                document.getElementById('debug').innerHTML += '<div style="color: orange;">⚠️ Vue App Not Found</div>';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

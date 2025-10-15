@@ -168,10 +168,28 @@
                 align-items: center;
             }
         }
+        
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
     <div id="app">
+        <div class="debug-info">
+            <div>✅ HTML Loaded</div>
+            <div>✅ CSS Loaded</div>
+            <div>✅ Vue CDN Loaded</div>
+        </div>
+
         <div class="container">
             <div class="hero">
                 <h1>{{ name }}</h1>
