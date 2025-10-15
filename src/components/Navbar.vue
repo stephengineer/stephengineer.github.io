@@ -8,14 +8,15 @@
         
         <!-- Desktop Navigation -->
         <div class="navbar-nav desktop-nav">
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a @click="scrollToSection('about')" class="nav-link">About</a>
+          <a @click="scrollToSection('skills')" class="nav-link">Skills</a>
+          <a @click="scrollToSection('experience')" class="nav-link">Experience</a>
+          <a @click="scrollToSection('contact')" class="nav-link">Contact</a>
         </div>
         
         <!-- Mobile menu button -->
         <button @click="toggleMobileMenu" class="mobile-menu-btn">
+          <span class="menu-text">Menu</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path v-if="!isMobileMenuOpen" d="M3 12h18M3 6h18M3 18h18"/>
             <path v-else d="M18 6L6 18M6 6l12 12"/>
@@ -25,10 +26,10 @@
       
       <!-- Mobile Navigation -->
       <div class="mobile-nav" :class="{ 'mobile-nav-open': isMobileMenuOpen }">
-        <a href="#about" @click="closeMobileMenu" class="mobile-nav-link">About</a>
-        <a href="#skills" @click="closeMobileMenu" class="mobile-nav-link">Skills</a>
-        <a href="#experience" @click="closeMobileMenu" class="mobile-nav-link">Experience</a>
-        <a href="#contact" @click="closeMobileMenu" class="mobile-nav-link">Contact</a>
+        <a @click="scrollToSection('about')" class="mobile-nav-link">About</a>
+        <a @click="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
+        <a @click="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
+        <a @click="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -45,6 +46,19 @@ const toggleMobileMenu = () => {
 }
 
 const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+}
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    const navbarHeight = 80 // 导航栏高度
+    const elementPosition = element.offsetTop - navbarHeight
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    })
+  }
   isMobileMenuOpen.value = false
 }
 
@@ -176,6 +190,12 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
+  gap: 0.5rem;
+}
+
+.menu-text {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .mobile-menu-btn:hover {

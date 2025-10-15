@@ -432,6 +432,16 @@ import ExperienceSection from './components/ExperienceSection.vue'
   border: 1px solid var(--color-border);
 }
 
+@media (max-width: 480px) {
+  .status-badge {
+    position: static;
+    margin-top: 1rem;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
 .status-dot {
   width: 0.75rem;
   height: 0.75rem;
