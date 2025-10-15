@@ -5,10 +5,9 @@
       <div class="skill-category">
         <h3>Machine Learning</h3>
         <div class="skill-tags">
+          <span class="skill-tag">Natural Language Processing</span>
+          <span class="skill-tag">Reinforcement Learning</span>
           <span class="skill-tag">Deep Learning</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">Generative Models</span>
-          <span class="skill-tag">Computer Vision</span>
         </div>
       </div>
       
@@ -17,17 +16,16 @@
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">vLLM</span>
+          <span class="skill-tag">C++</span>
         </div>
       </div>
       
       <div class="skill-category">
         <h3>Research</h3>
         <div class="skill-tags">
-          <span class="skill-tag">AIGC</span>
-          <span class="skill-tag">Academic Writing</span>
-          <span class="skill-tag">Mentoring</span>
+          <span class="skill-tag">Multi-agents</span>
+          <span class="skill-tag">Post-training</span>
           <span class="skill-tag">Teaching</span>
         </div>
       </div>

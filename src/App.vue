@@ -2,7 +2,6 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import SkillsSection from './components/SkillsSection.vue'
-import ProjectsSection from './components/ProjectsSection.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
@@ -30,7 +29,6 @@ import ThemeToggle from './components/ThemeToggle.vue'
     <main class="main-content">
       <TheWelcome />
       <SkillsSection />
-      <ProjectsSection />
     </main>
     
     <!-- Footer -->
