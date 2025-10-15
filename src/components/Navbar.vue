@@ -15,12 +15,12 @@
         </div>
         
         <!-- Mobile menu button -->
-        <button @click="toggleMobileMenu" class="mobile-menu-btn">
-          <span class="menu-text">Menu</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path v-if="!isMobileMenuOpen" d="M3 12h18M3 6h18M3 18h18"/>
-            <path v-else d="M18 6L6 18M6 6l12 12"/>
-          </svg>
+        <button @click="toggleMobileMenu" class="mobile-menu-btn" :class="{ 'active': isMobileMenuOpen }">
+          <span class="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
         </button>
       </div>
       
@@ -43,23 +43,39 @@ const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+  
+  // 防止背景滚动
+  if (isMobileMenuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
 }
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
+  document.body.style.overflow = ''
 }
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
   if (element) {
-    const navbarHeight = 80 // 导航栏高度
-    const elementPosition = element.offsetTop - navbarHeight
+    // 获取导航栏的实际高度
+    const navbar = document.querySelector('.navbar')
+    const navbarHeight = navbar ? navbar.offsetHeight : 80
+    
+    // 计算目标位置
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+    
+    // 平滑滚动到目标位置
     window.scrollTo({
       top: elementPosition,
       behavior: 'smooth'
     })
   }
-  isMobileMenuOpen.value = false
+  
+  // 关闭移动端菜单并恢复滚动
+  closeMobileMenu()
 }
 
 const handleScroll = () => {
@@ -68,10 +84,19 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  
+  // 点击外部区域关闭菜单
+  document.addEventListener('click', (e) => {
+    const navbar = document.querySelector('.navbar')
+    if (navbar && !navbar.contains(e.target) && isMobileMenuOpen.value) {
+      closeMobileMenu()
+    }
+  })
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  document.body.style.overflow = '' // 清理样式
 })
 </script>
 
@@ -180,22 +205,45 @@ onUnmounted(() => {
   display: none;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.25rem;
   transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  gap: 0.5rem;
+  position: relative;
 }
 
-.menu-text {
-  font-size: 0.875rem;
-  font-weight: 500;
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 16px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger animation */
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .mobile-menu-btn:hover {
@@ -209,10 +257,10 @@ onUnmounted(() => {
 .mobile-nav {
   display: none;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0;
+  padding: 0;
   background: rgba(29, 33, 41, 0.98);
+  backdrop-filter: blur(10px);
   transform: translateY(-100%);
   opacity: 0;
   transition: all 0.3s ease;
@@ -221,6 +269,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 9998;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-open {
@@ -229,25 +279,29 @@ onUnmounted(() => {
 }
 
 .mobile-nav-link {
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: all 0.3s ease;
-  border-radius: 0.25rem;
-  min-height: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
-  justify-content: center;
+  min-height: 44px;
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: none;
 }
 
 .mobile-nav-link:hover {
   color: #36CFC9;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 2rem;
 }
 
 .mobile-nav-link:active {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
