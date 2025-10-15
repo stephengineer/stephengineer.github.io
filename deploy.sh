@@ -17,8 +17,8 @@ if [ $? -eq 0 ]; then
     # Commit changes
     git commit -m "Deploy: $(date '+%Y-%m-%d %H:%M:%S')"
     
-    # Push to main branch
-    git push origin main
+    # Push to master branch
+    git push origin master
     
     echo "🎉 Deployment completed! Your site will be available at:"
     echo "https://yourusername.github.io/Personal-Website/"

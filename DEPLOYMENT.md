@@ -20,8 +20,8 @@ git add .
 # 提交更改
 git commit -m "Initial commit"
 
-# 推送到main分支
-git push -u origin main
+# 推送到master分支
+git push -u origin master
 ```
 
 ### 2. 启用GitHub Pages
@@ -34,7 +34,7 @@ git push -u origin main
 
 ### 3. 自动部署
 
-一旦你推送代码到main分支，GitHub Actions会自动：
+一旦你推送代码到master分支，GitHub Actions会自动：
 - 安装依赖
 - 构建项目
 - 部署到GitHub Pages
@@ -62,7 +62,7 @@ chmod +x deploy.sh
 ## 📝 注意事项
 
 1. **仓库名称**: 确保GitHub仓库名称为 `Personal-Website`
-2. **分支名称**: 使用 `main` 分支
+2. **分支名称**: 使用 `master` 分支
 3. **文件路径**: 确保所有资源路径正确
 4. **环境变量**: 生产环境会自动设置 `NODE_ENV=production`
 
