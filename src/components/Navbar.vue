@@ -196,6 +196,11 @@ onUnmounted(() => {
   transform: translateY(-100%);
   opacity: 0;
   transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
 .mobile-nav-open {

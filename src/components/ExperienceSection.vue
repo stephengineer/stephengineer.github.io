@@ -200,8 +200,11 @@
   }
   
   .experience-timeline-line {
-    left: 1rem;
-    transform: none;
+    display: none;
+  }
+  
+  .experience-item {
+    margin-bottom: 2rem;
   }
 }
 </style>
