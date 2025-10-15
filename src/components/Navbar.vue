@@ -8,14 +8,20 @@
         
         <!-- Desktop Navigation -->
         <div class="navbar-nav desktop-nav">
-          <a @click="scrollToSection('about')" class="nav-link">About</a>
-          <a @click="scrollToSection('skills')" class="nav-link">Skills</a>
-          <a @click="scrollToSection('experience')" class="nav-link">Experience</a>
-          <a @click="scrollToSection('contact')" class="nav-link">Contact</a>
+          <a @click.stop="scrollToSection('about')" class="nav-link">About</a>
+          <a @click.stop="scrollToSection('skills')" class="nav-link">Skills</a>
+          <a @click.stop="scrollToSection('experience')" class="nav-link">Experience</a>
+          <a @click.stop="scrollToSection('contact')" class="nav-link">Contact</a>
         </div>
         
         <!-- Mobile menu button -->
-        <button @click="toggleMobileMenu" class="mobile-menu-btn" :class="{ 'active': isMobileMenuOpen }">
+        <button 
+          @click.stop="toggleMobileMenu" 
+          @touchstart.stop="toggleMobileMenu"
+          class="mobile-menu-btn" 
+          :class="{ 'active': isMobileMenuOpen }"
+          type="button"
+        >
           <span class="hamburger">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -26,10 +32,10 @@
       
       <!-- Mobile Navigation -->
       <div class="mobile-nav" :class="{ 'mobile-nav-open': isMobileMenuOpen }">
-        <a @click="scrollToSection('about')" class="mobile-nav-link">About</a>
-        <a @click="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
-        <a @click="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
-        <a @click="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
+        <a @click.stop="scrollToSection('about')" class="mobile-nav-link">About</a>
+        <a @click.stop="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
+        <a @click.stop="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
+        <a @click.stop="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -41,8 +47,18 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
-const toggleMobileMenu = () => {
+const toggleMobileMenu = (event) => {
+  console.log('toggleMobileMenu called, event:', event)
+  console.log('current state:', isMobileMenuOpen.value)
+  
+  // 阻止默认行为和事件冒泡
+  if (event) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+  
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+  console.log('new state:', isMobileMenuOpen.value)
   
   // 防止背景滚动
   if (isMobileMenuOpen.value) {
@@ -88,6 +104,9 @@ onMounted(() => {
   // 点击外部区域关闭菜单
   document.addEventListener('click', (e) => {
     const navbar = document.querySelector('.navbar')
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn')
+    
+    // 如果点击的不是导航栏内的任何元素，且菜单是打开的，则关闭菜单
     if (navbar && !navbar.contains(e.target) && isMobileMenuOpen.value) {
       closeMobileMenu()
     }
@@ -214,6 +233,10 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 10000;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .hamburger {
@@ -329,8 +352,23 @@ onUnmounted(() => {
   }
   
   .mobile-menu-btn {
-    min-width: 40px;
-    min-height: 40px;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Mobile touch fixes */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .mobile-menu-btn:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
   }
 }
 </style>
