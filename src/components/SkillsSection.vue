@@ -1,32 +1,138 @@
 <template>
-  <div class="skills-section">
-    <h2>Skills & Expertise</h2>
+  <div class="skills-container">
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>Machine Learning</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Natural Language Processing</span>
-          <span class="skill-tag">Reinforcement Learning</span>
-          <span class="skill-tag">Deep Learning</span>
+        <h3 class="category-title">Machine Learning & AI</h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Large Language Models</span>
+              <span class="skill-percentage">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Natural Language Processing</span>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Reinforcement Learning</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Deep Learning</span>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
         </div>
       </div>
       
       <div class="skill-category">
-        <h3>Programming</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">vLLM</span>
-          <span class="skill-tag">C++</span>
+        <h3 class="category-title">Programming & Tools</h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Python</span>
+              <span class="skill-percentage">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">PyTorch</span>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">vLLM</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">C++</span>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
         </div>
       </div>
       
       <div class="skill-category">
-        <h3>Research</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Multi-agents</span>
-          <span class="skill-tag">Post-training</span>
-          <span class="skill-tag">Teaching</span>
+        <h3 class="category-title">Research & Development</h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Multi-agents</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Post-training</span>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Teaching</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Academic Writing</span>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,60 +140,27 @@
 </template>
 
 <style scoped>
-.skills-section {
-  padding: 4rem 0;
-  background: var(--color-background-soft);
-  position: relative;
-}
-
-.skills-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.skills-section h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--color-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-}
-
-.skills-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
 }
 
 .skill-category {
   background: var(--color-background);
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 2rem;
   border: 1px solid var(--color-border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -99,16 +172,16 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-.skill-category h3 {
-  margin-bottom: 1.5rem;
-  color: var(--color-heading);
-  font-size: 1.3rem;
+.category-title {
+  font-size: 1.25rem;
   font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 1.5rem;
   text-align: center;
   position: relative;
 }
 
-.skill-category h3::after {
+.category-title::after {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -116,67 +189,86 @@
   transform: translateX(-50%);
   width: 40px;
   height: 3px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
   border-radius: 2px;
 }
 
-.skill-tags {
+.skill-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.skill-tag {
-  background: var(--color-background-mute);
-  color: var(--color-text);
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
   font-weight: 500;
-  border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  color: var(--color-heading);
+  font-size: 0.875rem;
 }
 
-.skill-tag::before {
+.skill-percentage {
+  font-weight: 600;
+  color: #165DFF;
+  font-size: 0.875rem;
+}
+
+.skill-bar {
+  height: 8px;
+  background: var(--color-background-mute);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 1.5s ease;
+  position: relative;
+}
+
+.skill-progress::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-  transition: left 0.5s ease;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
 }
 
-.skill-tag:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-  border-color: transparent;
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-.skill-tag:hover::before {
-  left: 100%;
+/* Animation trigger when in viewport */
+.skill-progress.animate {
+  width: var(--target-width);
 }
 
 @media (max-width: 768px) {
-  .skills-section {
-    padding: 3rem 0;
-  }
-  
-  .skills-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
+    gap: 2rem;
   }
   
   .skill-category {

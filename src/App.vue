@@ -1,73 +1,173 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Navbar from './components/Navbar.vue'
 import SkillsSection from './components/SkillsSection.vue'
+import ContactForm from './components/ContactForm.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
 <template>
   <div class="app">
-    <ThemeToggle />
+    <!-- Navigation -->
+    <Navbar />
     
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="profile-section">
-          <div class="profile-image-container">
-            <img alt="Stephen Wang" class="profile-image" src="./assets/profile.jpeg" />
-            <div class="profile-badge">Researcher</div>
+    <section id="about" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              I'm <span class="text-primary">Stephen Wang</span>,<br>
+              Research Scientist
+            </h1>
+            <p class="hero-description">
+              Focusing on generative AI, large language models, and multi-agent systems. 
+              Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
+            </p>
+            <div class="hero-buttons">
+              <a href="#skills" class="btn-primary">View My Skills</a>
+              <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://x.com/stephengineers" target="_blank" rel="noopener" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-        
-        <div class="hero-text">
-          <HelloWorld msg="Stephen Wang" />
+          
+          <div class="hero-image">
+            <div class="image-container">
+              <img alt="Stephen Wang" class="profile-image" src="./assets/profile.jpeg" />
+              <div class="status-badge">
+                <div class="status-dot"></div>
+                <span>Available for collaboration</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <TheWelcome />
-      <SkillsSection />
-    </main>
-    
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My Technical Skills</h2>
+          <p class="section-description">
+            I specialize in AI research and development with expertise in large language models, 
+            multi-agent systems, and high-performance deployment.
+          </p>
+        </div>
+        
+        <SkillsSection />
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Interested in collaborating on AI research or discussing opportunities? 
+            Feel free to reach out!
+          </p>
+        </div>
+        
+        <ContactForm />
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2024 Stephen Wang. All rights reserved.</p>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3 class="footer-logo">Stephen<span class="text-primary">Wang</span></h3>
+            <p class="footer-tagline">Advancing AI research, one breakthrough at a time.</p>
+          </div>
+          
+          <div class="footer-social">
+            <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="footer-social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener" class="footer-social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/stephengineers" target="_blank" rel="noopener" class="footer-social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2024 Stephen Wang. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
+    
+    <ThemeToggle />
   </div>
 </template>
 
 <style scoped>
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-soft) 100%);
+  background: var(--color-background);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 /* Hero Section */
-.hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-soft) 100%);
+.hero-section {
+  padding: 8rem 0 6rem;
+  background: var(--color-background);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+.hero-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(22, 93, 255, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(54, 207, 201, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
@@ -76,94 +176,268 @@ import ThemeToggle from './components/ThemeToggle.vue'
   z-index: 1;
 }
 
-.profile-section {
-  display: flex;
-  justify-content: center;
-}
-
-.profile-image-container {
-  position: relative;
-  display: inline-block;
-}
-
-.profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--color-border);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.profile-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.profile-badge {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
 }
 
 .hero-text {
   text-align: center;
 }
 
-/* Main Content */
-.main-content {
-  max-width: 1200px;
+@media (min-width: 768px) {
+  .hero-text {
+    text-align: left;
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--color-heading);
+}
+
+.text-primary {
+  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: #165DFF;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: #0E4ACC;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-background);
+  color: #165DFF;
+  border: 1px solid #165DFF;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #165DFF;
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+
+.social-link {
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: #165DFF;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .profile-image {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.status-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #10B981;
+  border-radius: 50%;
+}
+
+/* Section Styles */
+.skills-section {
+  padding: 5rem 0;
+  background: var(--color-background-soft);
+}
+
+.contact-section {
+  padding: 5rem 0;
+  background: var(--color-background);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  max-width: 42rem;
   margin: 0 auto;
-  padding: 0 2rem 4rem;
+  line-height: 1.6;
 }
 
 /* Footer */
 .footer {
+  padding: 3rem 0;
   background: var(--color-background-mute);
-  text-align: center;
-  padding: 2rem;
   border-top: 1px solid var(--color-border);
-  color: var(--color-text);
-  font-size: 0.9rem;
 }
 
-/* Responsive Design */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
-  .hero {
-    padding: 6rem 2rem;
-  }
-  
-  .hero-content {
-    grid-template-columns: 1fr 2fr;
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
     text-align: left;
-  }
-  
-  .hero-text {
-    text-align: left;
-  }
-  
-  .profile-image {
-    width: 250px;
-    height: 250px;
   }
 }
 
-@media (min-width: 1024px) {
-  .hero {
-    padding: 8rem 2rem;
-  }
-  
-  .main-content {
-    padding: 0 2rem 6rem;
-  }
+.footer-brand {
+  flex: 1;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social-link {
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: #165DFF;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-text);
+  font-size: 0.875rem;
 }
 </style>
