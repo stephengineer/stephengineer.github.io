@@ -80,8 +80,13 @@ const scrollToSection = (sectionId) => {
     const navbar = document.querySelector('.navbar')
     const navbarHeight = navbar ? navbar.offsetHeight : 80
     
+    // 在移动端增加额外的偏移量
+    const isMobile = window.innerWidth <= 768
+    const extraOffset = isMobile ? 20 : 0
+    const totalOffset = navbarHeight + extraOffset
+    
     // 计算目标位置
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
     
     // 平滑滚动到目标位置
     window.scrollTo({

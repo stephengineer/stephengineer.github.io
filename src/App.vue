@@ -3,6 +3,29 @@ import Navbar from './components/Navbar.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactForm from './components/ContactForm.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    // 获取导航栏的实际高度
+    const navbar = document.querySelector('.navbar')
+    const navbarHeight = navbar ? navbar.offsetHeight : 80
+    
+    // 在移动端增加额外的偏移量
+    const isMobile = window.innerWidth <= 768
+    const extraOffset = isMobile ? 20 : 0
+    const totalOffset = navbarHeight + extraOffset
+    
+    // 计算目标位置
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
+    
+    // 平滑滚动到目标位置
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    })
+  }
+}
 </script>
 
 <template>
@@ -24,8 +47,8 @@ import ExperienceSection from './components/ExperienceSection.vue'
               Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
             </p>
             <div class="hero-buttons">
-              <a href="#skills" class="btn-primary">View My Skills</a>
-              <a href="#contact" class="btn-secondary">Get In Touch</a>
+              <button @click="scrollToSection('skills')" class="btn-primary">View My Skills</button>
+              <button @click="scrollToSection('contact')" class="btn-secondary">Get In Touch</button>
             </div>
             <div class="social-links">
               <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="social-link">
