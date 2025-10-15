@@ -11,7 +11,7 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 - **Modern Design**: Clean, professional layout with smooth animations
 - **Mobile-First**: Fully responsive design optimized for all devices
 - **Fast Performance**: Built with Vite for lightning-fast loading
-- **SEO Optimized**: Meta tags and structured data for better search visibility
+- **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, and structured data
 - **Skills Showcase**: Interactive skill categories with clean design
 - **Experience Timeline**: Professional experience with mobile-optimized layout
 - **Contact Form**: Integrated contact form with validation
@@ -115,7 +115,16 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 
 The website is automatically deployed via GitHub Actions on every push to the `master` branch. No manual deployment is needed.
 
-## 📱 Responsive Design
+## 📈 SEO Features
+
+- **Meta Tags**: Comprehensive title, description, keywords, and author tags
+- **Open Graph**: Facebook and social media sharing optimization
+- **Twitter Cards**: Enhanced Twitter sharing with large image cards
+- **Structured Data**: JSON-LD schema markup for better search understanding
+- **Sitemap**: XML sitemap for search engine crawling
+- **Robots.txt**: Search engine crawling instructions
+- **Canonical URLs**: Prevents duplicate content issues
+- **Mobile Optimization**: Mobile-first design with proper viewport settings
 
 The website is fully responsive and optimized for:
 - Desktop (1200px+)
