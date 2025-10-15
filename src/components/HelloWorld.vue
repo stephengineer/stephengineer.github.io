@@ -11,11 +11,12 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      I am a machine learning engineer at
-      <a href="https://deeplang.ai/" target="_blank" rel="noopener">DeepLang AI,</a> incubated by
-      <a href="https://nlp.csai.tsinghua.edu.cn/" target="_blank" rel="noopener">THUNLP</a>.
-      I focus on generative models and applied AIGC, with extensive experience in natural language processing and deep learning.
-      Former professor of computer science with a passion for advancing AI research and education.
+      I’m a Research Scientist at
+      <a href="https://talkit.ai/" target="_blank" rel="noopener">VisionFlow AI,</a>
+      focusing on generative AI, large language models, and multi-agent systems. 
+      My background spans LLM post-training (LoRA, PPO, GRPO), high-performance deployment (vLLM, TensorRT, Triton),
+      and NLP research and teaching as a former adjunct professor of NLP.
+      I’m passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
     </h3>
   </div>
 </template>

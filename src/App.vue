@@ -16,7 +16,7 @@ import ThemeToggle from './components/ThemeToggle.vue'
         <div class="profile-section">
           <div class="profile-image-container">
             <img alt="Stephen Wang" class="profile-image" src="./assets/profile.jpeg" />
-            <div class="profile-badge">AI Researcher</div>
+            <div class="profile-badge">Researcher</div>
           </div>
         </div>
         
