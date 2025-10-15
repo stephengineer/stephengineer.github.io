@@ -10,6 +10,7 @@
         <div class="navbar-nav desktop-nav">
           <a href="#about" class="nav-link">About</a>
           <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         
@@ -26,6 +27,7 @@
       <div class="mobile-nav" :class="{ 'mobile-nav-open': isMobileMenuOpen }">
         <a href="#about" @click="closeMobileMenu" class="mobile-nav-link">About</a>
         <a href="#skills" @click="closeMobileMenu" class="mobile-nav-link">Skills</a>
+        <a href="#experience" @click="closeMobileMenu" class="mobile-nav-link">Experience</a>
         <a href="#contact" @click="closeMobileMenu" class="mobile-nav-link">Contact</a>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactForm from './components/ContactForm.vue'
+import ExperienceSection from './components/ExperienceSection.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
@@ -71,6 +72,21 @@ import ThemeToggle from './components/ThemeToggle.vue'
         </div>
         
         <SkillsSection />
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-description">
+            My professional journey as an AI researcher and engineer, working with cutting-edge technologies 
+            and contributing to the advancement of artificial intelligence.
+          </p>
+        </div>
+        
+        <ExperienceSection />
       </div>
     </section>
 
@@ -338,6 +354,7 @@ import ThemeToggle from './components/ThemeToggle.vue'
   gap: 0.5rem;
   font-weight: 500;
   font-size: 0.875rem;
+  color: #1D2129;
 }
 
 .status-dot {
@@ -356,6 +373,11 @@ import ThemeToggle from './components/ThemeToggle.vue'
 .contact-section {
   padding: 5rem 0;
   background: var(--color-background);
+}
+
+.experience-section {
+  padding: 5rem 0;
+  background: var(--color-background-mute);
 }
 
 .section-header {

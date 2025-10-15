@@ -1,3 +1,20 @@
+<script setup>
+import { onMounted, ref } from 'vue'
+
+const skillBars = ref([])
+
+onMounted(() => {
+  // Animate skill bars when component is mounted
+  setTimeout(() => {
+    const progressBars = document.querySelectorAll('.skill-progress')
+    progressBars.forEach(bar => {
+      const width = bar.getAttribute('data-width')
+      bar.style.width = width
+    })
+  }, 500)
+})
+</script>
+
 <template>
   <div class="skills-container">
     <div class="skills-grid">
