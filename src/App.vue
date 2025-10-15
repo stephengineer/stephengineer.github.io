@@ -3,7 +3,6 @@ import Navbar from './components/Navbar.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactForm from './components/ContactForm.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
-import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
 <template>
@@ -138,8 +137,6 @@ import ThemeToggle from './components/ThemeToggle.vue'
         </div>
       </div>
     </footer>
-    
-    <ThemeToggle />
   </div>
 </template>
 

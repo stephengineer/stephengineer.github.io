@@ -12,6 +12,7 @@
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#experience" class="nav-link">Experience</a>
           <a href="#contact" class="nav-link">Contact</a>
+          <ThemeToggle />
         </div>
         
         <!-- Mobile menu button -->
@@ -29,6 +30,9 @@
         <a href="#skills" @click="closeMobileMenu" class="mobile-nav-link">Skills</a>
         <a href="#experience" @click="closeMobileMenu" class="mobile-nav-link">Experience</a>
         <a href="#contact" @click="closeMobileMenu" class="mobile-nav-link">Contact</a>
+        <div class="mobile-theme-toggle">
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   </nav>
@@ -36,6 +40,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import ThemeToggle from './ThemeToggle.vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -191,6 +196,14 @@ onUnmounted(() => {
   color: #165DFF;
   background: var(--color-background-mute);
   padding-left: 0.5rem;
+}
+
+.mobile-theme-toggle {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
