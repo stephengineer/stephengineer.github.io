@@ -54,7 +54,7 @@ if [ $? -eq 0 ]; then
     git push origin master
     
     echo "🎉 Deployment completed! Your site will be available at:"
-    echo "https://yourusername.github.io/Personal-Website/"
+    echo "https://stephengineer.github.io/Personal-Website/"
 else
     echo "❌ Build failed! Please check the errors above."
     echo "💡 Try running: npm install && npm run build"
