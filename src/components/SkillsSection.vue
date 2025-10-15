@@ -141,15 +141,7 @@ onMounted(() => {
             </div>
           </div>
           
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Academic Writing</span>
-              <span class="skill-percentage">80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
