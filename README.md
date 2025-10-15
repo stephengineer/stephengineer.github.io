@@ -4,7 +4,7 @@ A modern, responsive personal website showcasing my work as a Machine Learning E
 
 ## 🌟 Live Demo
 
-Visit the live website: [https://stephengineer.github.io/Personal-Website/](https://stephengineer.github.io/Personal-Website/)
+Visit the live website: [https://stephengineer.github.io/](https://stephengineer.github.io/)
 
 ## ✨ Features
 
@@ -36,7 +36,7 @@ Visit the live website: [https://stephengineer.github.io/Personal-Website/](http
 
 ```bash
 # Clone the repository
-git clone https://github.com/stephengineer/Personal-Website.git
+git clone https://github.com/stephengineer/stephengineer.github.io.git
 
 # Navigate to the project directory
 cd Personal-Website
