@@ -23,14 +23,26 @@ ls -la dist/
 
 ### 3. 常见问题及解决方案
 
-#### 问题1: Base路径错误
+#### 问题1: Terser依赖缺失
+**症状**: `[vite:terser] terser not found`
+
+**解决方案**: 
+```bash
+# 安装terser依赖
+npm install terser --save-dev
+
+# 或者修改vite.config.js使用esbuild
+# minify: 'esbuild' 替代 minify: 'terser'
+```
+
+#### 问题2: Base路径错误
 **症状**: 页面空白，控制台显示404错误
 
 **解决方案**: 
 - 确保vite.config.js中base路径正确
 - 当前配置: `base: '/Personal-Website/'`
 
-#### 问题2: JavaScript错误
+#### 问题3: JavaScript错误
 **症状**: 页面加载但Vue应用未启动
 
 **解决方案**:
@@ -41,7 +53,7 @@ npm install
 npm run build
 ```
 
-#### 问题3: 资源路径问题
+#### 问题4: 资源路径问题
 **症状**: CSS/JS文件404错误
 
 **解决方案**:
