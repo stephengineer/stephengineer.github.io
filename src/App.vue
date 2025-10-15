@@ -1,6 +1,9 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import SkillsSection from './components/SkillsSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
 <template>
@@ -14,7 +17,11 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <main>
     <TheWelcome />
+    <SkillsSection />
+    <ProjectsSection />
   </main>
+  
+  <ThemeToggle />
 </template>
 
 <style scoped>

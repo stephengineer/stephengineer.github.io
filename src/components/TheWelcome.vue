@@ -45,7 +45,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #heading>Contact</template>
 
     You can contact me by
-    <a href="" target="_blank" rel="noopener">zhongqi1112@gmail.com</a>
+    <a href="mailto:zhongqi1112@gmail.com" target="_blank" rel="noopener">zhongqi1112@gmail.com</a>
   </WelcomeItem>
 
 

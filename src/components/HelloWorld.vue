@@ -13,9 +13,9 @@ defineProps({
     <h3>
       I am a machine learning engineer at
       <a href="https://deeplang.ai/" target="_blank" rel="noopener">DeepLang AI,</a> incubated by
-      <a href="https://nlp.csai.tsinghua.edu.cn/" target="_blank" rel="noopener">(THUNLP)</a>
-      I focus on generative models and applied AIGC.
-      Former professor of computer science.
+      <a href="https://nlp.csai.tsinghua.edu.cn/" target="_blank" rel="noopener">THUNLP</a>.
+      I focus on generative models and applied AIGC, with extensive experience in natural language processing and deep learning.
+      Former professor of computer science with a passion for advancing AI research and education.
     </h3>
   </div>
 </template>
