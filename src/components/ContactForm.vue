@@ -68,7 +68,7 @@
             </div>
             <div class="contact-details">
               <h3 class="contact-title">Location</h3>
-              <p class="contact-text">Remote / Global</p>
+              <p class="contact-text">Palo Alto, California</p>
             </div>
           </div>
         </div>

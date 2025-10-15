@@ -32,9 +32,9 @@
         
         <div class="experience-content">
           <div class="experience-left">
-            <span class="experience-date">2021 - 2023</span>
+            <span class="experience-date">2016 - 2023</span>
             <h3 class="experience-title">Machine Learning Engineer</h3>
-            <p class="experience-company">DeepLang AI</p>
+            <p class="experience-company">Northrop Grumman</p>
           </div>
           
           <div class="experience-dot">
@@ -45,7 +45,7 @@
             <p class="experience-description">
               Developed and implemented generative models and applied AIGC solutions. 
               Worked on natural language processing projects and deep learning applications. 
-              Collaborated with THUNLP research team on cutting-edge AI research.
+              Collaborated with research team on cutting-edge AI research.
             </p>
           </div>
         </div>
@@ -57,9 +57,9 @@
         
         <div class="experience-content">
           <div class="experience-left">
-            <span class="experience-date">2019 - 2021</span>
+            <span class="experience-date">2021 - 2023</span>
             <h3 class="experience-title">Adjunct Professor</h3>
-            <p class="experience-company">Computer Science Department</p>
+            <p class="experience-company">Cal State Los Angeles</p>
           </div>
           
           <div class="experience-dot">
@@ -71,29 +71,6 @@
               Taught courses in natural language processing and computer science. 
               Mentored graduate students in AI research projects. 
               Published research papers in top-tier conferences and journals.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Experience 4 -->
-      <div class="experience-item">
-        <div class="experience-content">
-          <div class="experience-left">
-            <span class="experience-date">2017 - 2019</span>
-            <h3 class="experience-title">Research Assistant</h3>
-            <p class="experience-company">AI Research Lab</p>
-          </div>
-          
-          <div class="experience-dot">
-            <div class="dot-inner"></div>
-          </div>
-          
-          <div class="experience-right">
-            <p class="experience-description">
-              Conducted research in machine learning and artificial intelligence. 
-              Developed algorithms for natural language understanding and generation. 
-              Contributed to multiple research publications and conference presentations.
             </p>
           </div>
         </div>
