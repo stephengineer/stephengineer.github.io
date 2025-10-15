@@ -173,7 +173,6 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   min-width: 44px;
   min-height: 44px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -236,7 +235,7 @@ onUnmounted(() => {
   }
   
   .mobile-menu-btn {
-    display: block;
+    display: flex;
   }
   
   .mobile-nav {
