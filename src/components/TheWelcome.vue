@@ -115,18 +115,21 @@ import SupportIcon from './icons/IconSupport.vue'
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--color-background-mute);
+  color: var(--color-text);
   text-decoration: none;
   border-radius: 25px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  border: 1px solid var(--color-border);
 }
 
 .link-button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  border-color: transparent;
 }
 
 @media (max-width: 768px) {

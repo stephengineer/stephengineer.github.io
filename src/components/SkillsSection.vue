@@ -130,13 +130,13 @@
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+  background: var(--color-background-mute);
   color: var(--color-text);
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -158,6 +158,7 @@
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  border-color: transparent;
 }
 
 .skill-tag:hover::before {

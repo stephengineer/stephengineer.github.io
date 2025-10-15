@@ -175,8 +175,8 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  background: var(--color-background-mute);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
@@ -185,6 +185,7 @@
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  border-color: transparent;
 }
 
 .project-card p {
@@ -201,13 +202,13 @@
 }
 
 .tech-tag {
-  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+  background: var(--color-background-mute);
   color: var(--color-text);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
@@ -215,6 +216,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   transform: translateY(-1px);
+  border-color: transparent;
 }
 
 @media (max-width: 768px) {
