@@ -347,6 +347,20 @@ const scrollToSection = (sectionId) => {
     width: 100%;
     max-width: 200px;
   }
+  
+  .coffee-btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    white-space: nowrap;
+  }
+  
+  .coffee-btn svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
 }
 
 .btn-primary:hover {
