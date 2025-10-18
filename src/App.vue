@@ -47,8 +47,12 @@ const scrollToSection = (sectionId) => {
               Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
             </p>
             <div class="hero-buttons">
-              <button @click="scrollToSection('skills')" class="btn-primary">View My Skills</button>
-              <button @click="scrollToSection('contact')" class="btn-secondary">Get In Touch</button>
+              <a href="https://www.buymeacoffee.com/stephengineer" target="_blank" rel="noopener" class="btn-primary coffee-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                  <path d="M2 21h18v-2H2v2zm1-3h16l-1-14H4l-1 14zm2-2h12l.5-7H4.5L4 16zm8-9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                </svg>
+                Buy Me a Coffee
+              </a>
             </div>
             <div class="social-links">
               <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="social-link">
@@ -309,25 +313,19 @@ const scrollToSection = (sectionId) => {
 
 .hero-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .hero-buttons {
-    gap: 1rem;
-    justify-content: flex-start;
     margin-bottom: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -355,6 +353,26 @@ const scrollToSection = (sectionId) => {
   background: #0E4ACC;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
+}
+
+.coffee-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #165DFF 0%, #0E4ACC 100%);
+  box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.coffee-btn:hover {
+  background: linear-gradient(135deg, #0E4ACC 0%, #0A3BB8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
+}
+
+.coffee-btn svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .btn-secondary {
