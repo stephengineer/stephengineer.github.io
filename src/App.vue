@@ -326,6 +326,7 @@ const scrollToSection = (sectionId) => {
 @media (max-width: 480px) {
   .hero-buttons {
     margin-bottom: 1.5rem;
+    justify-content: center;
   }
 }
 
