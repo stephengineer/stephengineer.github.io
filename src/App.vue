@@ -313,7 +313,7 @@ const scrollToSection = (sectionId) => {
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 2rem;
 }
 
