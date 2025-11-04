@@ -34,7 +34,7 @@
           <div class="experience-left">
             <span class="experience-date">2016 - 2023</span>
             <h3 class="experience-title">Machine Learning Engineer</h3>
-            <p class="experience-company">Northrop Grumman</p>
+            <p class="experience-company">Northrop Grumman Corporation</p>
           </div>
           
           <div class="experience-dot">
@@ -59,7 +59,7 @@
           <div class="experience-left">
             <span class="experience-date">2021 - 2023</span>
             <h3 class="experience-title">Adjunct Professor</h3>
-            <p class="experience-company">Cal State Los Angeles</p>
+            <p class="experience-company">California State University, Los Angeles</p>
           </div>
           
           <div class="experience-dot">
