@@ -6,31 +6,33 @@
   <div class="skills-container">
     <div class="skills-grid">
       <div class="skill-category">
-        <h3 class="category-title">Machine Learning & AI</h3>
+        <h3 class="category-title">LLMs</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Large Language Models</span>
-          <span class="skill-tag">Natural Language Processing</span>
-          <span class="skill-tag">Reinforcement Learning</span>
-          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">PEFT</span>
+          <span class="skill-tag">RLHF</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">KV-Caching</span>
+          <span class="skill-tag">Flash Attention</span>
         </div>
       </div>
       
       <div class="skill-category">
-        <h3 class="category-title">Programming & Tools</h3>
+        <h3 class="category-title">Frameworks</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">PyTorch</span>
           <span class="skill-tag">vLLM</span>
-          <span class="skill-tag">C++</span>
+          <span class="skill-tag">TensorRT</span>
+          <span class="skill-tag">SGLang</span>
+          <span class="skill-tag">Megatron</span>
+          <span class="skill-tag">DeepSpeed</span>
         </div>
       </div>
       
       <div class="skill-category">
-        <h3 class="category-title">Research & Development</h3>
+        <h3 class="category-title">Research</h3>
         <div class="skill-tags">
           <span class="skill-tag">Multi-agents</span>
-          <span class="skill-tag">Post-training</span>
-          <span class="skill-tag">Teaching</span>
+          <span class="skill-tag">Attention mechanisms</span>
+          <span class="skill-tag">Model architectures</span>
         </div>
       </div>
     </div>
