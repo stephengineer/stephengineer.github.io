@@ -40,7 +40,7 @@ const scrollToSection = (sectionId) => {
           <div class="hero-text">
             <h1 class="hero-title">
               I'm <span class="text-primary">Stephen Wang</span>,<br>
-              Research Scientist
+              <span class="hero-subtitle">Machine Learning Engineer</span>
             </h1>
             <p class="hero-description">
               Focusing on generative AI, large language models, and multi-agent systems. 
@@ -276,6 +276,19 @@ const scrollToSection = (sectionId) => {
   .hero-title {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
     margin-bottom: 1rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 0.75em;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 480px) {
+  .hero-subtitle {
+    font-size: 0.7em;
   }
 }
 
