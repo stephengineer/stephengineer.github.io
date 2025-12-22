@@ -102,8 +102,8 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Work Experience</h2>
           <p class="section-description">
-            My professional journey as an AI researcher and engineer, working with cutting-edge technologies 
-            and contributing to the advancement of artificial intelligence.
+            My professional journey as an ML engineer and researcher, working with cutting-edge technologies 
+            and contributing to the advancement of AI.
           </p>
         </div>
         
@@ -117,7 +117,7 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
           <p class="section-description">
-            Interested in collaborating on AI research or discussing opportunities? 
+            Interested in collaborating on AI native applications or discussing opportunities? 
             Feel free to reach out!
           </p>
         </div>
@@ -155,7 +155,7 @@ const scrollToSection = (sectionId) => {
         </div>
         
         <div class="footer-bottom">
-          <p>&copy; 2025 Stephen Wang. All rights reserved.</p>
+          <p>&copy; 2026 Stephen Wang. All rights reserved.</p>
         </div>
       </div>
     </footer>
