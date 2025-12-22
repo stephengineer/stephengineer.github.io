@@ -43,8 +43,8 @@ const scrollToSection = (sectionId) => {
               <span class="hero-subtitle">Machine Learning Engineer</span>
             </h1>
             <p class="hero-description">
-              Focusing on generative AI, large language models, and multi-agent systems. 
-              Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact.
+              Focusing on post-training techniques for large language models, and multi-agent systems. 
+              Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact AI native applications.
             </p>
             <div class="hero-buttons">
               <a href="https://www.buymeacoffee.com/stephengineer" target="_blank" rel="noopener" class="btn-primary coffee-btn">
@@ -87,9 +87,8 @@ const scrollToSection = (sectionId) => {
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">My Technical Skills</h2>
-          <p class="section-description">
-            I specialize in AI research and development with expertise in large language models, 
-            multi-agent systems, and high-performance deployment.
+            <p class="section-description">
+            I specialize in PEFT and RL techniques for LLMs, and high-performance training with Megatron and inference with vLLM.
           </p>
         </div>
         
