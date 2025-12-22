@@ -1,18 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
-
-const skillBars = ref([])
-
-onMounted(() => {
-  // Animate skill bars when component is mounted
-  setTimeout(() => {
-    const progressBars = document.querySelectorAll('.skill-progress')
-    progressBars.forEach(bar => {
-      const width = bar.getAttribute('data-width')
-      bar.style.width = width
-    })
-  }, 500)
-})
+// No animation needed for the new design
 </script>
 
 <template>
@@ -20,128 +7,30 @@ onMounted(() => {
     <div class="skills-grid">
       <div class="skill-category">
         <h3 class="category-title">Machine Learning & AI</h3>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Large Language Models</span>
-              <span class="skill-percentage">95%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Natural Language Processing</span>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Reinforcement Learning</span>
-              <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Deep Learning</span>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Large Language Models</span>
+          <span class="skill-tag">Natural Language Processing</span>
+          <span class="skill-tag">Reinforcement Learning</span>
+          <span class="skill-tag">Deep Learning</span>
         </div>
       </div>
       
       <div class="skill-category">
         <h3 class="category-title">Programming & Tools</h3>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Python</span>
-              <span class="skill-percentage">95%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">PyTorch</span>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">vLLM</span>
-              <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">C++</span>
-              <span class="skill-percentage">80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
-            </div>
-          </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">vLLM</span>
+          <span class="skill-tag">C++</span>
         </div>
       </div>
       
       <div class="skill-category">
         <h3 class="category-title">Research & Development</h3>
-        <div class="skill-list">
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Multi-agents</span>
-              <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Post-training</span>
-              <span class="skill-percentage">90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Teaching</span>
-              <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
-            </div>
-          </div>
-          
-          
+        <div class="skill-tags">
+          <span class="skill-tag">Multi-agents</span>
+          <span class="skill-tag">Post-training</span>
+          <span class="skill-tag">Teaching</span>
         </div>
       </div>
     </div>
@@ -179,6 +68,7 @@ onMounted(() => {
 .skill-category:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(22, 93, 255, 0.3);
 }
 
 .category-title {
@@ -202,76 +92,60 @@ onMounted(() => {
   border-radius: 2px;
 }
 
-.skill-list {
+.skill-tags {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
   align-items: center;
 }
 
-.skill-name {
+@media (min-width: 768px) {
+  .skill-tags {
+    justify-content: flex-start;
+  }
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, rgba(22, 93, 255, 0.1) 0%, rgba(54, 207, 201, 0.1) 100%);
+  border: 1px solid rgba(22, 93, 255, 0.2);
+  border-radius: 2rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-heading);
-  font-size: 0.875rem;
-}
-
-.skill-percentage {
-  font-weight: 600;
-  color: #165DFF;
-  font-size: 0.875rem;
-}
-
-.skill-bar {
-  height: 8px;
-  background: var(--color-background-mute);
-  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
   overflow: hidden;
-  position: relative;
 }
 
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
-  border-radius: 4px;
-  width: 0%;
-  transition: width 1.5s ease;
-  position: relative;
-}
-
-.skill-progress::after {
+.skill-tag::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(22, 93, 255, 0.15) 0%, rgba(54, 207, 201, 0.15) 100%);
+  transition: left 0.3s ease;
 }
 
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.skill-tag:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 93, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(22, 93, 255, 0.2);
+  background: linear-gradient(135deg, rgba(22, 93, 255, 0.15) 0%, rgba(54, 207, 201, 0.15) 100%);
 }
 
-/* Animation trigger when in viewport */
-.skill-progress.animate {
-  width: var(--target-width);
+.skill-tag:hover::before {
+  left: 100%;
+}
+
+.skill-tag:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -282,6 +156,22 @@ onMounted(() => {
   
   .skill-category {
     padding: 1.5rem;
+  }
+  
+  .skill-tags {
+    gap: 0.625rem;
+  }
+  
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-tag {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.75rem;
   }
 }
 </style>
