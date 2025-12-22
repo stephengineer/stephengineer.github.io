@@ -13,8 +13,8 @@
           <h3 class="education-school">Georgia Institute of Technology</h3>
         </div>
         <div class="education-details">
-          <p class="education-degree">Master's degree, Computer Science</p>
-          <p class="education-specialization">Specialization in Machine Learning</p>
+          <p class="education-degree">Master's degree</p>
+          <p class="education-specialization">Computer Science, Specialization in Machine Learning</p>
         </div>
       </div>
       
