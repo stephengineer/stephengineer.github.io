@@ -27,7 +27,7 @@
               <path d="M6 12v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5"></path>
             </svg>
           </div>
-          <h3 class="education-school">UCLA</h3>
+          <h3 class="education-school">University of California, Los Angeles</h3>
         </div>
         <div class="education-details">
           <p class="education-degree">Bachelor's degree</p>
