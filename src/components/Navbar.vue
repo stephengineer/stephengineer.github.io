@@ -11,6 +11,7 @@
           <a @click.stop="scrollToSection('about')" class="nav-link">About</a>
           <a @click.stop="scrollToSection('skills')" class="nav-link">Skills</a>
           <a @click.stop="scrollToSection('experience')" class="nav-link">Experience</a>
+          <a @click.stop="scrollToSection('education')" class="nav-link">Education</a>
           <a @click.stop="scrollToSection('contact')" class="nav-link">Contact</a>
         </div>
         
@@ -35,6 +36,7 @@
         <a @click.stop="scrollToSection('about')" class="mobile-nav-link">About</a>
         <a @click.stop="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
         <a @click.stop="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
+        <a @click.stop="scrollToSection('education')" class="mobile-nav-link">Education</a>
         <a @click.stop="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>

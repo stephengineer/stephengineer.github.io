@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactForm from './components/ContactForm.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
+import EducationSection from './components/EducationSection.vue'
 
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
@@ -111,6 +112,21 @@ const scrollToSection = (sectionId) => {
       </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+          <p class="section-description">
+            My academic background in computer science and applied mathematics, 
+            providing a strong foundation for my work in AI and machine learning.
+          </p>
+        </div>
+        
+        <EducationSection />
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -155,7 +171,7 @@ const scrollToSection = (sectionId) => {
         </div>
         
         <div class="footer-bottom">
-          <p>&copy; 2026 Stephen Wang. All rights reserved.</p>
+          <p>&copy; 2016-2026 Stephen Wang. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -550,6 +566,17 @@ const scrollToSection = (sectionId) => {
 
 @media (min-width: 768px) {
   .experience-section {
+    padding: 5rem 0;
+  }
+}
+
+.education-section {
+  padding: 3rem 0;
+  background: var(--color-background-soft);
+}
+
+@media (min-width: 768px) {
+  .education-section {
     padding: 5rem 0;
   }
 }
