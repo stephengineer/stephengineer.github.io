@@ -18,9 +18,9 @@
           
           <div class="experience-right">
             <p class="experience-description">
-              Leading research in generative AI, large language models, and multi-agent systems. 
-              Focused on LLM post-training techniques including LoRA, PPO, and GRPO. 
-              Developing high-performance deployment solutions using vLLM, TensorRT, and Triton.
+              Leading research in LLMs and multi-agent systems. 
+              Focused on LLM post-training techniques including LoRA PPO, DPO, and GRPO.
+              Developing high-performance deployment solutions using vLLM, TensorRT, and Megatron.
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div class="experience-right">
             <p class="experience-description">
               Developed and implemented generative models and applied AIGC solutions. 
-              Worked on natural language processing projects and deep learning applications. 
+              Worked on NLP projects and deep learning applications with RNNs and LSTMs. 
               Collaborated with research team on cutting-edge AI research.
             </p>
           </div>
@@ -68,9 +68,8 @@
           
           <div class="experience-right">
             <p class="experience-description">
-              Taught courses in natural language processing and computer science. 
-              Mentored graduate students in AI research projects. 
-              Published research papers in top-tier conferences and journals.
+              Taught courses in NLP and AI courses.
+              Mentored graduate students in AI research projects.
             </p>
           </div>
         </div>
