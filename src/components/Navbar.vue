@@ -2,9 +2,9 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="container">
       <div class="navbar-content">
-        <a href="#about" class="navbar-brand">
+        <router-link to="/" @click="handleBrandClick" class="navbar-brand">
           Stephen<span class="text-primary">Wang</span>
-        </a>
+        </router-link>
         
         <!-- Desktop Navigation -->
         <div class="navbar-nav desktop-nav">
@@ -12,6 +12,7 @@
           <a @click.stop="scrollToSection('skills')" class="nav-link">Skills</a>
           <a @click.stop="scrollToSection('experience')" class="nav-link">Experience</a>
           <a @click.stop="scrollToSection('education')" class="nav-link">Education</a>
+          <a @click.stop="handlePodcastClick" class="nav-link">Podcasts</a>
           <a @click.stop="scrollToSection('contact')" class="nav-link">Contact</a>
         </div>
         
@@ -37,6 +38,7 @@
         <a @click.stop="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
         <a @click.stop="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
         <a @click.stop="scrollToSection('education')" class="mobile-nav-link">Education</a>
+        <a @click.stop="handlePodcastClick" class="mobile-nav-link">Podcasts</a>
         <a @click.stop="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>
@@ -45,7 +47,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
+const router = useRouter()
+const route = useRoute()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
@@ -76,29 +81,60 @@ const closeMobileMenu = () => {
 }
 
 const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    // 获取导航栏的实际高度
-    const navbar = document.querySelector('.navbar')
-    const navbarHeight = navbar ? navbar.offsetHeight : 80
-    
-    // 在移动端增加额外的偏移量
-    const isMobile = window.innerWidth <= 768
-    const extraOffset = isMobile ? 20 : 0
-    const totalOffset = navbarHeight + extraOffset
-    
-    // 计算目标位置
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
-    
-    // 平滑滚动到目标位置
-    window.scrollTo({
-      top: elementPosition,
-      behavior: 'smooth'
+  // 如果不在主页，先跳转到主页
+  if (route.path !== '/') {
+    router.push('/').then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const navbar = document.querySelector('.navbar')
+          const navbarHeight = navbar ? navbar.offsetHeight : 80
+          const isMobile = window.innerWidth <= 768
+          const extraOffset = isMobile ? 20 : 0
+          const totalOffset = navbarHeight + extraOffset
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
     })
+  } else {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const navbar = document.querySelector('.navbar')
+      const navbarHeight = navbar ? navbar.offsetHeight : 80
+      const isMobile = window.innerWidth <= 768
+      const extraOffset = isMobile ? 20 : 0
+      const totalOffset = navbarHeight + extraOffset
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      })
+    }
   }
   
   // 关闭移动端菜单并恢复滚动
   closeMobileMenu()
+}
+
+const handlePodcastClick = () => {
+  if (route.path === '/') {
+    scrollToSection('podcasts')
+  } else {
+    router.push('/podcasts')
+    closeMobileMenu()
+  }
+}
+
+const handleBrandClick = (e) => {
+  if (route.path !== '/') {
+    e.preventDefault()
+    router.push('/')
+    closeMobileMenu()
+  }
 }
 
 const handleScroll = () => {
@@ -169,6 +205,7 @@ onUnmounted(() => {
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 @media (min-width: 768px) {
