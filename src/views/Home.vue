@@ -1,6 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import SkillsSection from '../components/SkillsSection.vue'
+import ProjectsSection from '../components/ProjectsSection.vue'
 import ContactForm from '../components/ContactForm.vue'
 import ExperienceSection from '../components/ExperienceSection.vue'
 import EducationSection from '../components/EducationSection.vue'
@@ -88,12 +89,27 @@ useHead({
         <div class="section-header">
           <h2 class="section-title">Work Experience</h2>
           <p class="section-description">
-            My career has focused on turning machine learning research into reliable, real-world AI systems — 
-            combining deep technical rigor with practical deployment.
+            My career has focused on turning machine learning research into reliable, real-world AI
+            systems — combining deep technical rigor with practical deployment.
           </p>
         </div>
 
         <ExperienceSection />
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-description">
+            Technical projects demonstrating end-to-end capabilities in LLM training, RAG systems,
+            and multi-agent architectures.
+          </p>
+        </div>
+
+        <ProjectsSection />
       </div>
     </section>
 
@@ -547,7 +563,7 @@ useHead({
 
 .education-section {
   padding: 3rem 0;
-  background: var(--color-background-soft);
+  background: var(--color-background-mute);
 }
 
 @media (min-width: 768px) {
@@ -556,9 +572,20 @@ useHead({
   }
 }
 
+.projects-section {
+  padding: 3rem 0;
+  background: var(--color-background-soft);
+}
+
+@media (min-width: 768px) {
+  .projects-section {
+    padding: 5rem 0;
+  }
+}
+
 .podcasts-section {
   padding: 3rem 0;
-  background: var(--color-background-mute);
+  background: var(--color-background-soft);
 }
 
 @media (min-width: 768px) {
