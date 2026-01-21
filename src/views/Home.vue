@@ -71,7 +71,7 @@ useHead({
     <section id="skills" class="skills-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">My Technical Expertise</h2>
+          <h2 class="section-title">Technical Expertise</h2>
           <p class="section-description">
             I enjoy working at the intersection of research and deployment — turning foundation models into reliable, scalable intelligent systems.
           </p>
