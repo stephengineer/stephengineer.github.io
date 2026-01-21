@@ -30,10 +30,9 @@ useHead({
               <span class="hero-subtitle">ML Research Scientist</span>
             </h1>
             <p class="hero-description">
-              focused on building generative AI systems that move beyond generation into real-world reasoning and action.
-              My work centers on training and aligning language models, optimizing small and medium-sized models for efficiency, 
-              and designing agentic systems capable of planning, tool use, and long-horizon decision making. 
-              I enjoy working at the intersection of research and product—turning modeling advances into intelligent systems that scale to real users.
+              focused on generative models, post-training alignment, and agentic AI systems. 
+              I build and fine-tune language models, design efficient training pipelines, 
+              and turn research ideas into intelligent systems that operate reliably in the real world.
             </p>
             <div class="hero-buttons">
               <a
