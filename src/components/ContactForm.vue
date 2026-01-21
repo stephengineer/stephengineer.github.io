@@ -34,7 +34,7 @@
               v-model="form.message"
               rows="5"
               class="form-textarea"
-              placeholder="Tell me about your project or collaboration opportunity..."
+              placeholder="Feel free to share what you’re working on, or what you’d like to discuss."
               required
             ></textarea>
           </div>

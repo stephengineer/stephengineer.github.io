@@ -1,5 +1,26 @@
 export const projects = [
   {
+    id: 'document-understanding',
+    title: 'Document Understanding & Structured Summarization (LLM Post-Training)',
+    subtitle:
+      'Post-trained large language models for scalable document understanding, multi-label classification, and structured information extraction.',
+    contributions: [
+      'Led post-training of Qwen2.5 models (3B–32B) using full-parameter SFT combined with GRPO on a high-quality, 10K+ curated annotation dataset.',
+      'Reproduced the XDoc benchmark pipeline, enabling accurate multi-label document understanding across 45 categories and achieving +15% Macro-F1 improvement over baseline models.',
+      'Designed training pipelines following InstructGPT-style data distributions to generate tens of thousands of SFT samplesDesigned a scalable multi-task learning framework by extending tokenizer vocabularies, restructuring loss functions, and integrating customized focal loss, label smoothing, and dynamic masking strategies.Proposed causal inference–guided reasoning strategies combined with CoT to improve complex question solving',
+      'Introduced non-autoregressive generation techniques to significantly improve token generation efficiency and reduce inference latency.',
+      'Built end-to-end training and inference pipelines using Megatron-LM for distributed training and vLLM for high-throughput deployment, supporting 50K+ daily document labeling requests with low latency.',
+    ],
+    tags: [
+      'LLM post-training',
+      'Document intelligence',
+      'Multi-task learning',
+      'Alignment',
+      'Efficient inference',
+    ],
+    badge: 'Applied Research',
+  },
+  {
     id: 'interview-agent',
     title: 'Interview Agent — Domain-Aligned LLM Training System',
     subtitle:
@@ -19,23 +40,6 @@ export const projects = [
       'Efficient inference',
     ],
     badge: 'Flagship Project',
-  },
-  {
-    id: 'qa-agent',
-    title: 'Hybrid Retrieval-Augmented Question Answering System',
-    subtitle:
-      'Designed a scalable RAG system combining symbolic retrieval and learned ranking for high-precision question answering.',
-    contributions: [
-      'Built multi-path retrieval using Elasticsearch (title / subtitle / content indexing)',
-      'Integrated TF-IDF, dense embeddings, and SimCSE for candidate generation',
-      'Trained LightGBM ranking models using query–document–topic features',
-      'Designed weighted semantic ranking to balance relevance and response latency',
-    ],
-    tags: [
-      'Information retrieval',
-      'Representation learning',
-      'Hybrid retrieval systems',
-    ],
   },
   {
     id: 'multi-agent',

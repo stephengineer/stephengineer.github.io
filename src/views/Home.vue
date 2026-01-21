@@ -162,8 +162,8 @@ useHead({
         <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
           <p class="section-description">
-            Interested in collaborating on AI native applications or discussing opportunities? Feel
-            free to reach out!
+            Interested in collaborating on AI research, agentic systems, or applied ML?
+            I’m open to conversations around research collaboration, engineering roles, and AI product development.
           </p>
         </div>
 
