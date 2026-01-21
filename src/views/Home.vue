@@ -103,8 +103,8 @@ useHead({
         <div class="section-header">
           <h2 class="section-title">Education</h2>
           <p class="section-description">
-            My academic background in computer science and applied mathematics, providing a strong
-            foundation for my work in AI and machine learning.
+            Academic foundation in computer science and applied mathematics, 
+            supporting my work in generative models, training systems, and AI research.
           </p>
         </div>
 
