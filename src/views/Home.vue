@@ -27,12 +27,13 @@ useHead({
           <div class="hero-text">
             <h1 class="hero-title">
               I'm <span class="text-primary">Stephen Wang</span>,<br />
-              <span class="hero-subtitle">Machine Learning Engineer</span>
+              <span class="hero-subtitle">ML Research Scientist</span>
             </h1>
             <p class="hero-description">
-              Focusing on post-training techniques for large language models, and multi-agent
-              systems. Passionate about advancing intelligent systems that combine reasoning,
-              creativity, and real-world impact AI native applications.
+              focused on building generative AI systems that move beyond generation into real-world reasoning and action.
+              My work centers on training and aligning language models, optimizing small and medium-sized models for efficiency, 
+              and designing agentic systems capable of planning, tool use, and long-horizon decision making. 
+              I enjoy working at the intersection of research and product—turning modeling advances into intelligent systems that scale to real users.
             </p>
             <div class="hero-buttons">
               <a
