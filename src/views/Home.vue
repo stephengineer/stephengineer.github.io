@@ -3,6 +3,7 @@ import { useHead } from '@unhead/vue'
 import SkillsSection from '../components/SkillsSection.vue'
 import ProjectsSection from '../components/ProjectsSection.vue'
 import ResearchSection from '../components/ResearchSection.vue'
+import IdeasSection from '../components/IdeasSection.vue'
 import ContactForm from '../components/ContactForm.vue'
 import ExperienceSection from '../components/ExperienceSection.vue'
 import EducationSection from '../components/EducationSection.vue'
@@ -140,33 +141,18 @@ useHead({
       </div>
     </section>
 
-    <!-- Podcasts Section - Link Only -->
-    <section id="podcasts" class="podcasts-section">
+    <!-- Ideas Section -->
+    <section id="ideas" class="ideas-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Recommended Podcasts</h2>
+          <h2 class="section-title">Ideas I’m Exploring</h2>
           <p class="section-description">
-            A curated list of podcasts I find valuable for staying updated on product development,
-            AI research, and the latest trends in technology.
+            Articles, talks, and conversations that shape how I think about AI systems, alignment,
+            and real-world deployment.
           </p>
         </div>
 
-        <div class="podcast-link-container">
-          <router-link to="/podcasts" class="podcast-link-btn">
-            <span>View All Podcasts</span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M5 12h14"></path>
-              <path d="M12 5l7 7-7 7"></path>
-            </svg>
-          </router-link>
-        </div>
+        <IdeasSection />
       </div>
     </section>
 
@@ -628,13 +614,13 @@ useHead({
   }
 }
 
-.podcasts-section {
+.ideas-section {
   padding: 3rem 0;
   background: var(--color-background-mute);
 }
 
 @media (min-width: 768px) {
-  .podcasts-section {
+  .ideas-section {
     padding: 5rem 0;
   }
 }

@@ -14,7 +14,7 @@
           <a @click.stop="handleNavClick('projects')" class="nav-link">Projects</a>
           <a @click.stop="handleNavClick('research')" class="nav-link">Research</a>
           <a @click.stop="handleNavClick('education')" class="nav-link">Education</a>
-          <a @click.stop="handlePodcastClick" class="nav-link">Podcasts</a>
+          <a @click.stop="handleIdeasClick" class="nav-link">Ideas</a>
           <a @click.stop="handleNavClick('contact')" class="nav-link">Contact</a>
         </div>
 
@@ -42,7 +42,7 @@
         <a @click.stop="handleNavClick('projects')" class="mobile-nav-link">Projects</a>
         <a @click.stop="handleNavClick('research')" class="mobile-nav-link">Research</a>
         <a @click.stop="handleNavClick('education')" class="mobile-nav-link">Education</a>
-        <a @click.stop="handlePodcastClick" class="mobile-nav-link">Podcasts</a>
+        <a @click.stop="handleIdeasClick" class="mobile-nav-link">Ideas</a>
         <a @click.stop="handleNavClick('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>
@@ -71,12 +71,15 @@ const handleNavClick = (sectionId) => {
   closeMobileMenu()
 }
 
-const handlePodcastClick = () => {
+const handleIdeasClick = () => {
   if (route.path === '/') {
-    handleNavClick('podcasts')
+    handleNavClick('ideas')
   } else {
-    router.push('/podcasts')
-    closeMobileMenu()
+    router.push('/')
+    // Wait for navigation then scroll
+    setTimeout(() => {
+      handleNavClick('ideas')
+    }, 100)
   }
 }
 
