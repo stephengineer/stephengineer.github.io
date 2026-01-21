@@ -5,17 +5,17 @@ export const ideas = [
       {
         id: 'rlhf-not-enough',
         type: 'Paper',
-        title: 'RLHF Is Not Enough',
+        title: 'Is Preference Enough for RLHF?',
         takeaway:
           'Highlights why preference optimization alone doesn’t guarantee reasoning capabilities.',
-        url: 'https://arxiv.org/abs/2310.00000',
+        url: 'https://arxiv.org/abs/2505.06273v2',
       },
       {
         id: 'post-training',
         type: 'Article',
         title: 'Why Post-Training Matters More Than Pretraining',
         takeaway: 'Key insight: alignment quality increasingly dominates raw model scale.',
-        url: '#',
+        url: 'https://prajnaaiwisdom.medium.com/llm-pre-training-vs-post-training-why-the-second-half-matters-more-than-you-think-6a9941a00421',
       },
       {
         id: 'generative-agents',
@@ -31,10 +31,10 @@ export const ideas = [
     items: [
       {
         id: 'vllm',
-        type: 'System',
-        title: 'vLLM: Easy, Fast, and Cheap LLM Serving',
+        type: 'Blog',
+        title: 'vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention',
         takeaway: 'Strong example of how inference design unlocks model usability.',
-        url: 'https://vllm.ai',
+        url: 'https://blog.vllm.ai/2023/06/20/vllm.html',
       },
       {
         id: 'reliability',
@@ -42,7 +42,7 @@ export const ideas = [
         title: 'Designing AI Systems for Reliability',
         takeaway:
           'Great perspective on why latency, failure modes, and UX matter as much as accuracy.',
-        url: '#',
+        url: 'https://www.montecarlodata.com/blog-ai-reliability/',
       },
     ],
   },
@@ -52,24 +52,24 @@ export const ideas = [
       {
         id: 'dwarkesh-patel',
         type: 'Podcast',
-        title: 'Dwarkesh Podcast — AI Alignment & Scaling',
+        title: 'Dwarkesh Patel: The Scaling Era of AI is Here',
         takeaway:
           'Consistently strong discussions on tradeoffs between scale, safety, and usefulness.',
-        url: 'https://www.dwarkeshpatel.com/podcast',
+        url: 'https://www.youtube.com/watch?v=w54t0d2caxo',
       },
       {
         id: 'lennys-podcast',
         type: 'Podcast',
-        title: "Lenny's Podcast — Product & Growth",
+        title: "How to consistently go viral: Nikita Bier’s playbook for winning at consumer apps",
         takeaway: 'Deep dives into how product leaders operationalize technical innovations.',
-        url: 'https://www.lennysnewsletter.com/podcast',
+        url: 'https://www.youtube.com/watch?v=bhnfZhJWCWY',
       },
       {
         id: 'latent-space',
         type: 'Podcast',
-        title: 'Latent Space — AI Engineering',
+        title: 'Greg Brockman on OpenAI\'s Road to AGI',
         takeaway: 'Excellent technical depth on the emerging stack for AI engineers.',
-        url: 'https://www.latentspace.io/',
+        url: 'https://www.youtube.com/watch?v=35ZWesLrv5A',
       },
     ],
   },
