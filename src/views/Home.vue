@@ -184,7 +184,7 @@ useHead({
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2016-2026 Stephen Wang. All rights reserved.</p>
+          <p>&copy; 2026 Stephen Wang. All rights reserved.</p>
         </div>
       </div>
     </footer>
