@@ -630,7 +630,7 @@ useHead({
 
 .podcasts-section {
   padding: 3rem 0;
-  background: var(--color-background-soft);
+  background: var(--color-background-mute);
 }
 
 @media (min-width: 768px) {
