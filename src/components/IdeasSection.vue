@@ -1,5 +1,13 @@
 <script setup>
 import { ideas } from '../data/ideas'
+
+const getMeta = (item) => {
+  if (item.year) return item.year
+  if (item.company) return item.company
+  if (item.author) return item.author
+  if (item.medium) return item.medium
+  return null
+}
 </script>
 
 <template>
@@ -50,6 +58,18 @@ import { ideas } from '../data/ideas'
                   <line x1="8" y1="23" x2="16" y2="23"></line>
                 </svg>
                 <svg
+                  v-else-if="item.type === 'Blog' || item.type === 'Article'"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+                <svg
                   v-else
                   width="14"
                   height="14"
@@ -63,6 +83,10 @@ import { ideas } from '../data/ideas'
                   <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
                 {{ item.type }}
+              </span>
+              <span v-if="getMeta(item)" class="idea-meta">
+                <span class="meta-dot">•</span>
+                {{ getMeta(item) }}
               </span>
             </div>
             <h4 class="idea-title">{{ item.title }}</h4>
@@ -145,6 +169,23 @@ import { ideas } from '../data/ideas'
 
 .idea-header {
   margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.idea-meta {
+  font-size: 0.75rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-dot {
+  opacity: 0.5;
 }
 
 .idea-type {
