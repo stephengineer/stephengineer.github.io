@@ -2,6 +2,7 @@
 import { useHead } from '@unhead/vue'
 import SkillsSection from '../components/SkillsSection.vue'
 import ProjectsSection from '../components/ProjectsSection.vue'
+import ResearchSection from '../components/ResearchSection.vue'
 import ContactForm from '../components/ContactForm.vue'
 import ExperienceSection from '../components/ExperienceSection.vue'
 import EducationSection from '../components/EducationSection.vue'
@@ -110,6 +111,17 @@ useHead({
         </div>
 
         <ProjectsSection />
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Research Interests</h2>
+        </div>
+
+        <ResearchSection />
       </div>
     </section>
 
@@ -575,6 +587,39 @@ useHead({
 .projects-section {
   padding: 3rem 0;
   background: var(--color-background-soft);
+}
+
+@media (min-width: 768px) {
+  .projects-section {
+    padding: 5rem 0;
+  }
+}
+
+.research-section {
+  padding: 3rem 0;
+  background: var(--color-background-mute);
+}
+
+@media (min-width: 768px) {
+  .research-section {
+    padding: 5rem 0;
+  }
+}
+
+.education-section {
+  padding: 3rem 0;
+  background: var(--color-background-soft);
+}
+
+@media (min-width: 768px) {
+  .education-section {
+    padding: 5rem 0;
+  }
+}
+
+.podcasts-section {
+  padding: 3rem 0;
+  background: var(--color-background-mute);
 }
 
 @media (min-width: 768px) {

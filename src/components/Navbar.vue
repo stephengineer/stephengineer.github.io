@@ -12,6 +12,7 @@
           <a @click.stop="handleNavClick('skills')" class="nav-link">Skills</a>
           <a @click.stop="handleNavClick('experience')" class="nav-link">Experience</a>
           <a @click.stop="handleNavClick('projects')" class="nav-link">Projects</a>
+          <a @click.stop="handleNavClick('research')" class="nav-link">Research</a>
           <a @click.stop="handleNavClick('education')" class="nav-link">Education</a>
           <a @click.stop="handlePodcastClick" class="nav-link">Podcasts</a>
           <a @click.stop="handleNavClick('contact')" class="nav-link">Contact</a>
@@ -39,6 +40,7 @@
         <a @click.stop="handleNavClick('skills')" class="mobile-nav-link">Skills</a>
         <a @click.stop="handleNavClick('experience')" class="mobile-nav-link">Experience</a>
         <a @click.stop="handleNavClick('projects')" class="mobile-nav-link">Projects</a>
+        <a @click.stop="handleNavClick('research')" class="mobile-nav-link">Research</a>
         <a @click.stop="handleNavClick('education')" class="mobile-nav-link">Education</a>
         <a @click.stop="handlePodcastClick" class="mobile-nav-link">Podcasts</a>
         <a @click.stop="handleNavClick('contact')" class="mobile-nav-link">Contact</a>
