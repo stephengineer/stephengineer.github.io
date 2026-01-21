@@ -6,8 +6,6 @@ import { experiences } from '../data/experience'
   <div class="experience-container">
     <div class="experience-timeline">
       <div v-for="(exp, index) in experiences" :key="exp.id" class="experience-item">
-        <div v-if="index < experiences.length - 1" class="experience-timeline-line"></div>
-
         <div class="experience-content">
           <div class="experience-left">
             <span class="experience-date">{{ exp.date }}</span>
@@ -15,12 +13,14 @@ import { experiences } from '../data/experience'
             <p class="experience-company">{{ exp.company }}</p>
           </div>
 
-          <div class="experience-dot">
-            <div class="dot-inner"></div>
-          </div>
-
           <div class="experience-right">
-            <p class="experience-description">{{ exp.description }}</p>
+            <p v-if="exp.summary" class="experience-summary">{{ exp.summary }}</p>
+            <ul class="experience-achievements">
+              <li v-for="(item, i) in exp.achievements" :key="i" class="achievement-item">
+                <span class="bullet">•</span>
+                <span class="achievement-text">{{ item }}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -41,135 +41,105 @@ import { experiences } from '../data/experience'
 
 .experience-item {
   position: relative;
-  margin-bottom: 3rem;
-}
-
-.experience-timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: -3rem;
-  width: 2px;
-  background: #e5e7eb;
-  transform: translateX(-50%);
-}
-
-.experience-item:last-child .experience-timeline-line {
-  display: none;
+  margin-bottom: 4rem;
 }
 
 .experience-content {
   display: flex;
   align-items: flex-start;
   position: relative;
+  z-index: 1;
+  gap: 3rem;
 }
 
 .experience-left {
   flex: 1;
-  padding-right: 2rem;
   text-align: right;
+  padding-top: 0;
 }
 
 .experience-right {
-  flex: 1;
-  padding-left: 2rem;
-}
-
-.experience-dot {
-  position: absolute;
-  left: 50%;
-  top: 0.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: #165dff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  transform: translateX(-50%);
-}
-
-.dot-inner {
-  width: 0.5rem;
-  height: 0.5rem;
-  background: white;
-  border-radius: 50%;
+  flex: 1.5;
+  padding-top: 0;
 }
 
 .experience-date {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #165dff;
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .experience-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-heading);
   margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
 .experience-company {
   font-size: 1rem;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--color-text);
+  opacity: 0.8;
   margin-bottom: 0;
 }
 
-.experience-description {
-  color: var(--color-text);
+.experience-summary {
+  color: var(--color-heading);
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  opacity: 0.9;
+  border-left: 3px solid var(--color-primary-alpha-30);
+  padding-left: 1rem;
+}
+
+.experience-achievements {
+  list-style: none;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bullet {
+  color: var(--color-primary);
+  font-weight: bold;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
   .experience-content {
     flex-direction: column;
-    gap: 0.75rem;
-    position: relative;
+    gap: 1rem;
+    padding-left: 0;
   }
 
   .experience-left {
-    padding-right: 0;
     text-align: left;
-    order: 1;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
-  .experience-dot {
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-    width: 0.75rem;
-    height: 0.75rem;
-    background: #165dff;
-    border-radius: 50%;
-    transform: none;
-    margin: 0;
-    order: 0;
-  }
-
-  .dot-inner {
-    display: none;
+    width: 100%;
   }
 
   .experience-right {
-    padding-left: 1.5rem;
-    order: 2;
-  }
-
-  .experience-timeline-line {
-    display: none;
+    width: 100%;
   }
 
   .experience-item {
-    margin-bottom: 2rem;
-    padding-left: 0;
+    margin-bottom: 3rem;
   }
 }
 </style>

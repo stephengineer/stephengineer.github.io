@@ -73,7 +73,8 @@ useHead({
         <div class="section-header">
           <h2 class="section-title">Technical Expertise</h2>
           <p class="section-description">
-            I enjoy working at the intersection of research and deployment — turning foundation models into reliable, scalable intelligent systems.
+            I enjoy working at the intersection of research and deployment — 
+            turning foundation models into reliable, scalable intelligent systems.
           </p>
         </div>
 
@@ -87,8 +88,8 @@ useHead({
         <div class="section-header">
           <h2 class="section-title">Work Experience</h2>
           <p class="section-description">
-            My professional journey as an ML engineer and researcher, working with cutting-edge
-            technologies and contributing to the advancement of AI.
+            My career has focused on turning machine learning research into reliable, real-world AI systems — 
+            combining deep technical rigor with practical deployment.
           </p>
         </div>
 
