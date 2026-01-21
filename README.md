@@ -8,29 +8,30 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 
 ## ✨ Features
 
-- **Modern Design**: Clean, professional layout with smooth animations
+- **Modern Design**: Clean, professional layout with smooth animations and glassmorphism
 - **Mobile-First**: Fully responsive design optimized for all devices
-- **Fast Performance**: Built with Vite for lightning-fast loading
-- **SEO Optimized**: Comprehensive meta tags, Open Graph, Twitter Cards, and structured data
+- **Fast Performance**: Built with Vite and optimized with code splitting and compression
+- **SEO Optimized**: Dynamic meta tags managed with `@unhead/vue`, Open Graph, and structured data
 - **Skills Showcase**: Interactive skill categories with clean design
 - **Experience Timeline**: Professional experience with mobile-optimized layout
-- **Contact Form**: Integrated contact form with validation
-- **Navigation**: Elegant navigation with mobile hamburger menu
+- **Contact Form**: Integrated contact form with validation and user feedback
+- **Dark Mode Ready**: CSS variable-based theming architecture
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: Vue 3.5.13 with Composition API
-- **Build Tool**: Vite 6.0.1
-- **Styling**: CSS3 with CSS Variables
+- **Build Tool**: Vite 6.4.1
+- **Styling**: CSS3 with CSS Variables & Scoped Styles
+- **SEO**: @unhead/vue
+- **Linting**: ESLint + Prettier
 - **Deployment**: GitHub Pages with GitHub Actions
-- **Version Control**: Git
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18+
+- npm
 
 ### Installation
 
@@ -60,95 +61,51 @@ npm run build
 # Preview production build
 npm run preview
 
-# Build for production with environment
-npm run build:prod
+# Lint and fix files
+npm run lint
 
-# Preview production build locally
-npm run preview:prod
+# Format files
+npm run format
 ```
 
 ## 📁 Project Structure
 
 ```
-stephengineer.github.io/
-├── src/
-│   ├── components/          # Vue components
-│   │   ├── Navbar.vue      # Navigation bar with mobile menu
-│   │   ├── SkillsSection.vue # Skills showcase
-│   │   ├── ExperienceSection.vue # Work experience timeline
-│   │   └── ContactForm.vue  # Contact form
-│   ├── assets/             # Static assets
-│   │   ├── base.css        # Base styles and CSS variables
-│   │   ├── main.css        # Global styles
-│   │   └── profile.jpeg    # Profile image
-│   ├── App.vue             # Main application component
-│   └── main.js             # Application entry point
-├── .github/
-│   └── workflows/          # GitHub Actions for deployment
-├── public/                 # Public assets
-│   └── favicon.ico         # Site favicon
-├── index.html              # Main HTML template
-├── package.json            # Dependencies and scripts
-├── vite.config.js          # Vite configuration
-└── README.md               # Project documentation
+src/
+├── assets/             # Static assets (CSS, images)
+│   ├── base.css        # Design tokens (colors, spacing)
+│   └── main.css        # Global styles
+├── components/         # Reusable Vue components
+│   ├── BaseCard.vue    # Standard card component
+│   ├── SectionHeader.vue # Standard section title
+│   └── ...
+├── composables/        # Shared logic (Vue Composables)
+│   ├── useMobileMenu.js
+│   └── useScrollToSection.js
+├── data/               # Static content data
+│   ├── experience.js
+│   ├── skills.js
+│   └── ...
+├── router/             # Vue Router config
+├── views/              # Page components
+│   ├── Home.vue
+│   └── Podcasts.vue
+├── App.vue             # Root component
+└── main.js             # Entry point
 ```
 
-## 🎨 Design Features
+## 🎨 Design System
 
-### Color Scheme
-- **Primary**: #165DFF (Blue)
-- **Secondary**: #36CFC9 (Cyan)
-- **Background**: Light theme with CSS variables
-- **Navigation**: Dark theme with glassmorphism
+The project uses a CSS variable-based design system defined in `src/assets/base.css`:
 
-### Components
-- **Hero Section**: Gradient backgrounds with profile image
-- **Skills**: Animated progress bars with categories
-- **Experience**: Timeline layout with company details
-- **Contact**: Form with validation and contact information
+- **Colors**: Semantic color names (`--color-primary`, `--color-text`)
+- **Spacing**: T-shirt sizing scale (`--spacing-sm`, `--spacing-xl`)
+- **Typography**: Responsive font sizes
+- **Components**: Standardized cards, buttons, and inputs
 
 ## 🚀 Deployment
 
 This project is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `master` branch triggers an automatic build and deployment.
-
-### Manual Deployment
-
-The website is automatically deployed via GitHub Actions on every push to the `master` branch. No manual deployment is needed.
-
-## 📈 SEO Features
-
-- **Meta Tags**: Comprehensive title, description, keywords, and author tags
-- **Open Graph**: Facebook and social media sharing optimization
-- **Twitter Cards**: Enhanced Twitter sharing with large image cards
-- **Structured Data**: JSON-LD schema markup for better search understanding
-- **Sitemap**: XML sitemap for search engine crawling
-- **Robots.txt**: Search engine crawling instructions
-- **Canonical URLs**: Prevents duplicate content issues
-- **Mobile Optimization**: Mobile-first design with proper viewport settings
-
-The website is fully responsive and optimized for:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (320px - 767px)
-
-## 🔧 Customization
-
-### Updating Personal Information
-
-1. **Profile Information**: Edit `src/App.vue` hero section
-2. **Skills**: Modify `src/components/SkillsSection.vue`
-3. **Experience**: Update `src/components/ExperienceSection.vue`
-4. **Contact**: Edit `src/components/ContactForm.vue`
-
-### Styling
-
-- **Colors**: Update CSS variables in `src/assets/base.css`
-- **Layout**: Modify component styles in respective `.vue` files
-- **Global Styles**: Edit `src/assets/main.css`
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
@@ -159,25 +116,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - LinkedIn: [stephengineer](https://www.linkedin.com/in/stephengineer/)
 - GitHub: [stephengineer](https://github.com/stephengineer)
 
-## 🤝 Contributing
+## 📄 License
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+ across all metrics
-- **Bundle Size**: Optimized with code splitting
-- **Loading Time**: < 2s on 3G networks
-- **SEO**: Fully optimized for search engines
-
-## 🔮 Future Enhancements
-
-- [ ] Blog section
-- [ ] Project portfolio
-- [ ] Dark mode toggle
-- [ ] Multi-language support
-- [ ] PWA features
-
----
-
-⭐ If you found this project helpful, please give it a star!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

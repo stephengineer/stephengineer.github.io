@@ -1,27 +1,21 @@
 <script setup>
+import { useHead } from '@unhead/vue'
 import SkillsSection from '../components/SkillsSection.vue'
 import ContactForm from '../components/ContactForm.vue'
 import ExperienceSection from '../components/ExperienceSection.vue'
 import EducationSection from '../components/EducationSection.vue'
-import { useRouter } from 'vue-router'
+import SocialLinks from '../components/SocialLinks.vue'
+import { siteConfig } from '../data/siteConfig'
 
-const router = useRouter()
-
-const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    const navbar = document.querySelector('.navbar')
-    const navbarHeight = navbar ? navbar.offsetHeight : 80
-    const isMobile = window.innerWidth <= 768
-    const extraOffset = isMobile ? 20 : 0
-    const totalOffset = navbarHeight + extraOffset
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
-    window.scrollTo({
-      top: elementPosition,
-      behavior: 'smooth'
-    })
-  }
-}
+useHead({
+  title: siteConfig.seo.title,
+  meta: [
+    { name: 'description', content: siteConfig.seo.description },
+    { name: 'keywords', content: siteConfig.seo.keywords },
+    { property: 'og:title', content: siteConfig.seo.title },
+    { property: 'og:description', content: siteConfig.seo.description },
+  ],
+})
 </script>
 
 <template>
@@ -32,40 +26,38 @@ const scrollToSection = (sectionId) => {
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
-              I'm <span class="text-primary">Stephen Wang</span>,<br>
+              I'm <span class="text-primary">Stephen Wang</span>,<br />
               <span class="hero-subtitle">Machine Learning Engineer</span>
             </h1>
             <p class="hero-description">
-              Focusing on post-training techniques for large language models, and multi-agent systems. 
-              Passionate about advancing intelligent systems that combine reasoning, creativity, and real-world impact AI native applications.
+              Focusing on post-training techniques for large language models, and multi-agent
+              systems. Passionate about advancing intelligent systems that combine reasoning,
+              creativity, and real-world impact AI native applications.
             </p>
             <div class="hero-buttons">
-              <a href="https://www.buymeacoffee.com/stephengineer" target="_blank" rel="noopener" class="btn-primary coffee-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                  <path d="M2 21h18v-2H2v2zm1-3h16l-1-14H4l-1 14zm2-2h12l.5-7H4.5L4 16zm8-9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+              <a
+                href="https://www.buymeacoffee.com/stephengineer"
+                target="_blank"
+                rel="noopener"
+                class="btn-primary coffee-btn"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style="margin-right: 8px"
+                >
+                  <path
+                    d="M2 21h18v-2H2v2zm1-3h16l-1-14H4l-1 14zm2-2h12l.5-7H4.5L4 16zm8-9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"
+                  />
                 </svg>
                 Buy Me a Coffee
               </a>
             </div>
-            <div class="social-links">
-              <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener" class="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="https://x.com/stephengineers" target="_blank" rel="noopener" class="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
+            <SocialLinks />
           </div>
-          
+
           <div class="hero-image">
             <div class="image-container">
               <img alt="Stephen Wang" class="profile-image" src="../assets/profile.jpeg" />
@@ -81,10 +73,11 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">My Technical Skills</h2>
           <p class="section-description">
-            I specialize in PEFT and RL techniques for LLMs, and high-performance training with Megatron and inference with vLLM.
+            I specialize in PEFT and RL techniques for LLMs, and high-performance training with
+            Megatron and inference with vLLM.
           </p>
         </div>
-        
+
         <SkillsSection />
       </div>
     </section>
@@ -95,11 +88,11 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Work Experience</h2>
           <p class="section-description">
-            My professional journey as an ML engineer and researcher, working with cutting-edge technologies 
-            and contributing to the advancement of AI.
+            My professional journey as an ML engineer and researcher, working with cutting-edge
+            technologies and contributing to the advancement of AI.
           </p>
         </div>
-        
+
         <ExperienceSection />
       </div>
     </section>
@@ -110,11 +103,11 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Education</h2>
           <p class="section-description">
-            My academic background in computer science and applied mathematics, 
-            providing a strong foundation for my work in AI and machine learning.
+            My academic background in computer science and applied mathematics, providing a strong
+            foundation for my work in AI and machine learning.
           </p>
         </div>
-        
+
         <EducationSection />
       </div>
     </section>
@@ -125,15 +118,22 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Recommended Podcasts</h2>
           <p class="section-description">
-            A curated list of podcasts I find valuable for staying updated on product development, 
+            A curated list of podcasts I find valuable for staying updated on product development,
             AI research, and the latest trends in technology.
           </p>
         </div>
-        
+
         <div class="podcast-link-container">
           <router-link to="/podcasts" class="podcast-link-btn">
             <span>View All Podcasts</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>
             </svg>
@@ -148,11 +148,11 @@ const scrollToSection = (sectionId) => {
         <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
           <p class="section-description">
-            Interested in collaborating on AI native applications or discussing opportunities? 
-            Feel free to reach out!
+            Interested in collaborating on AI native applications or discussing opportunities? Feel
+            free to reach out!
           </p>
         </div>
-        
+
         <ContactForm />
       </div>
     </section>
@@ -165,26 +165,10 @@ const scrollToSection = (sectionId) => {
             <h3 class="footer-logo">Stephen<span class="text-primary">Wang</span></h3>
             <p class="footer-tagline">Advancing AI research, one breakthrough at a time.</p>
           </div>
-          
-          <div class="footer-social">
-            <a href="https://github.com/stephengineer" target="_blank" rel="noopener" class="footer-social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/stephengineer" target="_blank" rel="noopener" class="footer-social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="https://x.com/stephengineers" target="_blank" rel="noopener" class="footer-social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-          </div>
+
+          <SocialLinks variant="footer" />
         </div>
-        
+
         <div class="footer-bottom">
           <p>&copy; 2016-2026 Stephen Wang. All rights reserved.</p>
         </div>
@@ -241,8 +225,9 @@ const scrollToSection = (sectionId) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(22, 93, 255, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(54, 207, 201, 0.05) 0%, transparent 50%);
+  background:
+    radial-gradient(circle at 20% 80%, rgba(22, 93, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(54, 207, 201, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -269,7 +254,7 @@ const scrollToSection = (sectionId) => {
     justify-items: center;
     text-align: center;
   }
-  
+
   .hero-image {
     order: 1;
     width: 100%;
@@ -277,7 +262,7 @@ const scrollToSection = (sectionId) => {
     justify-content: center;
     align-items: center;
   }
-  
+
   .hero-text {
     order: 2;
     width: 100%;
@@ -324,7 +309,7 @@ const scrollToSection = (sectionId) => {
 }
 
 .text-primary {
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  background: linear-gradient(135deg, #165dff 0%, #36cfc9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -376,7 +361,7 @@ const scrollToSection = (sectionId) => {
 
 .btn-primary {
   padding: 0.75rem 1.5rem;
-  background: #165DFF;
+  background: #165dff;
   color: white;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -392,7 +377,7 @@ const scrollToSection = (sectionId) => {
     width: 100%;
     max-width: 200px;
   }
-  
+
   .coffee-btn {
     width: 100%;
     max-width: 280px;
@@ -400,7 +385,7 @@ const scrollToSection = (sectionId) => {
     padding: 0.7rem 1.2rem;
     white-space: nowrap;
   }
-  
+
   .coffee-btn svg {
     width: 18px;
     height: 18px;
@@ -409,7 +394,7 @@ const scrollToSection = (sectionId) => {
 }
 
 .btn-primary:hover {
-  background: #0E4ACC;
+  background: #0e4acc;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
 }
@@ -418,14 +403,14 @@ const scrollToSection = (sectionId) => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #165DFF 0%, #0E4ACC 100%);
+  background: linear-gradient(135deg, #165dff 0%, #0e4acc 100%);
   box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .coffee-btn:hover {
-  background: linear-gradient(135deg, #0E4ACC 0%, #0A3BB8 100%);
+  background: linear-gradient(135deg, #0e4acc 0%, #0a3bb8 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
 }
@@ -452,7 +437,7 @@ const scrollToSection = (sectionId) => {
 }
 
 .social-link:hover {
-  color: #165DFF;
+  color: #165dff;
   transform: translateY(-2px);
 }
 
@@ -466,14 +451,14 @@ const scrollToSection = (sectionId) => {
   .hero-content {
     justify-items: center;
   }
-  
+
   .hero-image {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .image-container {
     width: 100%;
     display: flex;
@@ -613,7 +598,7 @@ const scrollToSection = (sectionId) => {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #165DFF 0%, #0E4ACC 100%);
+  background: linear-gradient(135deg, #165dff 0%, #0e4acc 100%);
   color: white;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -624,7 +609,7 @@ const scrollToSection = (sectionId) => {
 }
 
 .podcast-link-btn:hover {
-  background: linear-gradient(135deg, #0E4ACC 0%, #0A3BB8 100%);
+  background: linear-gradient(135deg, #0e4acc 0%, #0a3bb8 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
 }
@@ -694,7 +679,7 @@ const scrollToSection = (sectionId) => {
 }
 
 .footer-social-link:hover {
-  color: #165DFF;
+  color: #165dff;
   transform: translateY(-2px);
 }
 
@@ -707,4 +692,3 @@ const scrollToSection = (sectionId) => {
   font-size: 0.875rem;
 }
 </style>
-

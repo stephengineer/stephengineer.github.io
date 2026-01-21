@@ -3,7 +3,14 @@
     <div class="container">
       <div class="page-header">
         <router-link to="/" class="back-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <path d="M19 12H5"></path>
             <path d="M12 19l-7-7 7-7"></path>
           </svg>
@@ -11,18 +18,30 @@
         </router-link>
         <h1 class="page-title">Recommended Podcasts</h1>
         <p class="page-description">
-          A curated list of podcasts I find valuable for staying updated on product development, 
-          AI research, and the latest trends in technology.
+          A curated list of podcasts I find valuable for staying updated on product development, AI
+          research, and the latest trends in technology.
         </p>
       </div>
-      
+
       <PodcastSection />
     </div>
   </div>
 </template>
 
 <script setup>
+import { useHead } from '@unhead/vue'
 import PodcastSection from '../components/PodcastSection.vue'
+
+useHead({
+  title: 'Recommended Podcasts | Stephen Wang',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'A curated list of podcasts on product development, AI research, and technology trends recommended by Stephen Wang.',
+    },
+  ],
+})
 </script>
 
 <style scoped>
@@ -74,7 +93,7 @@ import PodcastSection from '../components/PodcastSection.vue'
 }
 
 .back-link:hover {
-  color: #165DFF;
+  color: #165dff;
   opacity: 1;
   transform: translateX(-4px);
 }
@@ -108,4 +127,3 @@ import PodcastSection from '../components/PodcastSection.vue'
   }
 }
 </style>
-

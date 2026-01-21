@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/' : '/',
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   build: {
     outDir: 'dist',
@@ -16,8 +16,8 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: undefined
-      }
-    }
-  }
+        manualChunks: undefined,
+      },
+    },
+  },
 })

@@ -5,23 +5,23 @@
         <router-link to="/" @click="handleBrandClick" class="navbar-brand">
           Stephen<span class="text-primary">Wang</span>
         </router-link>
-        
+
         <!-- Desktop Navigation -->
         <div class="navbar-nav desktop-nav">
-          <a @click.stop="scrollToSection('about')" class="nav-link">About</a>
-          <a @click.stop="scrollToSection('skills')" class="nav-link">Skills</a>
-          <a @click.stop="scrollToSection('experience')" class="nav-link">Experience</a>
-          <a @click.stop="scrollToSection('education')" class="nav-link">Education</a>
+          <a @click.stop="handleNavClick('about')" class="nav-link">About</a>
+          <a @click.stop="handleNavClick('skills')" class="nav-link">Skills</a>
+          <a @click.stop="handleNavClick('experience')" class="nav-link">Experience</a>
+          <a @click.stop="handleNavClick('education')" class="nav-link">Education</a>
           <a @click.stop="handlePodcastClick" class="nav-link">Podcasts</a>
-          <a @click.stop="scrollToSection('contact')" class="nav-link">Contact</a>
+          <a @click.stop="handleNavClick('contact')" class="nav-link">Contact</a>
         </div>
-        
+
         <!-- Mobile menu button -->
-        <button 
-          @click.stop="toggleMobileMenu" 
+        <button
+          @click.stop="toggleMobileMenu"
           @touchstart.stop="toggleMobileMenu"
-          class="mobile-menu-btn" 
-          :class="{ 'active': isMobileMenuOpen }"
+          class="mobile-menu-btn"
+          :class="{ active: isMobileMenuOpen }"
           type="button"
         >
           <span class="hamburger">
@@ -31,15 +31,15 @@
           </span>
         </button>
       </div>
-      
+
       <!-- Mobile Navigation -->
       <div class="mobile-nav" :class="{ 'mobile-nav-open': isMobileMenuOpen }">
-        <a @click.stop="scrollToSection('about')" class="mobile-nav-link">About</a>
-        <a @click.stop="scrollToSection('skills')" class="mobile-nav-link">Skills</a>
-        <a @click.stop="scrollToSection('experience')" class="mobile-nav-link">Experience</a>
-        <a @click.stop="scrollToSection('education')" class="mobile-nav-link">Education</a>
+        <a @click.stop="handleNavClick('about')" class="mobile-nav-link">About</a>
+        <a @click.stop="handleNavClick('skills')" class="mobile-nav-link">Skills</a>
+        <a @click.stop="handleNavClick('experience')" class="mobile-nav-link">Experience</a>
+        <a @click.stop="handleNavClick('education')" class="mobile-nav-link">Education</a>
         <a @click.stop="handlePodcastClick" class="mobile-nav-link">Podcasts</a>
-        <a @click.stop="scrollToSection('contact')" class="mobile-nav-link">Contact</a>
+        <a @click.stop="handleNavClick('contact')" class="mobile-nav-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -48,81 +48,28 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useScrollToSection } from '../composables/useScrollToSection'
+import { useMobileMenu } from '../composables/useMobileMenu'
 
 const router = useRouter()
 const route = useRoute()
 const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
 
-const toggleMobileMenu = (event) => {
-  console.log('toggleMobileMenu called, event:', event)
-  console.log('current state:', isMobileMenuOpen.value)
-  
-  // 阻止默认行为和事件冒泡
-  if (event) {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-  
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-  console.log('new state:', isMobileMenuOpen.value)
-  
-  // 防止背景滚动
-  if (isMobileMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
-  }
-}
+const { scrollToSection: scrollTo } = useScrollToSection()
+const {
+  isOpen: isMobileMenuOpen,
+  toggle: toggleMobileMenu,
+  close: closeMobileMenu,
+} = useMobileMenu()
 
-const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false
-  document.body.style.overflow = ''
-}
-
-const scrollToSection = (sectionId) => {
-  // 如果不在主页，先跳转到主页
-  if (route.path !== '/') {
-    router.push('/').then(() => {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          const navbar = document.querySelector('.navbar')
-          const navbarHeight = navbar ? navbar.offsetHeight : 80
-          const isMobile = window.innerWidth <= 768
-          const extraOffset = isMobile ? 20 : 0
-          const totalOffset = navbarHeight + extraOffset
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
-          window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth'
-          })
-        }
-      }, 100)
-    })
-  } else {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const navbar = document.querySelector('.navbar')
-      const navbarHeight = navbar ? navbar.offsetHeight : 80
-      const isMobile = window.innerWidth <= 768
-      const extraOffset = isMobile ? 20 : 0
-      const totalOffset = navbarHeight + extraOffset
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      })
-    }
-  }
-  
-  // 关闭移动端菜单并恢复滚动
+const handleNavClick = (sectionId) => {
+  scrollTo(sectionId)
   closeMobileMenu()
 }
 
 const handlePodcastClick = () => {
   if (route.path === '/') {
-    scrollToSection('podcasts')
+    handleNavClick('podcasts')
   } else {
     router.push('/podcasts')
     closeMobileMenu()
@@ -143,22 +90,10 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  
-  // 点击外部区域关闭菜单
-  document.addEventListener('click', (e) => {
-    const navbar = document.querySelector('.navbar')
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn')
-    
-    // 如果点击的不是导航栏内的任何元素，且菜单是打开的，则关闭菜单
-    if (navbar && !navbar.contains(e.target) && isMobileMenuOpen.value) {
-      closeMobileMenu()
-    }
-  })
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  document.body.style.overflow = '' // 清理样式
 })
 </script>
 
@@ -225,7 +160,7 @@ onUnmounted(() => {
 }
 
 .text-primary {
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  background: linear-gradient(135deg, #165dff 0%, #36cfc9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -252,12 +187,12 @@ onUnmounted(() => {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  background: linear-gradient(135deg, #165dff 0%, #36cfc9 100%);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #36CFC9;
+  color: #36cfc9;
 }
 
 .nav-link:hover::after {
@@ -362,7 +297,7 @@ onUnmounted(() => {
 }
 
 .mobile-nav-link:hover {
-  color: #36CFC9;
+  color: #36cfc9;
   background: rgba(255, 255, 255, 0.05);
   padding-left: 2rem;
 }
@@ -375,11 +310,11 @@ onUnmounted(() => {
   .desktop-nav {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .mobile-nav {
     display: flex;
   }
@@ -390,11 +325,11 @@ onUnmounted(() => {
   .navbar-content {
     padding: 0.75rem 1rem;
   }
-  
+
   .navbar-brand {
     font-size: 1rem;
   }
-  
+
   .mobile-menu-btn {
     min-width: 44px;
     min-height: 44px;
@@ -409,7 +344,7 @@ onUnmounted(() => {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
+
   .mobile-menu-btn:active {
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(0.95);

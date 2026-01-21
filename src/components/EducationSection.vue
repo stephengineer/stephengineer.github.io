@@ -1,37 +1,30 @@
+<script setup>
+import { education } from '../data/education'
+</script>
+
 <template>
   <div class="education-container">
     <div class="education-grid">
-      <!-- Education 1 -->
-      <div class="education-card">
+      <div v-for="edu in education" :key="edu.id" class="education-card">
         <div class="education-header">
           <div class="education-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
               <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
               <path d="M6 12v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5"></path>
             </svg>
           </div>
-          <h3 class="education-school">Georgia Institute of Technology</h3>
+          <h3 class="education-school">{{ edu.school }}</h3>
         </div>
         <div class="education-details">
-          <p class="education-degree">Master's degree</p>
-          <p class="education-specialization">Computer Science, Specialization in Machine Learning</p>
-        </div>
-      </div>
-      
-      <!-- Education 2 -->
-      <div class="education-card">
-        <div class="education-header">
-          <div class="education-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-              <path d="M6 12v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5"></path>
-            </svg>
-          </div>
-          <h3 class="education-school">University of California, Los Angeles</h3>
-        </div>
-        <div class="education-details">
-          <p class="education-degree">Bachelor's degree</p>
-          <p class="education-specialization">Computational and Applied Mathematics</p>
+          <p class="education-degree">{{ edu.degree }}</p>
+          <p class="education-specialization">{{ edu.specialization }}</p>
         </div>
       </div>
     </div>
@@ -74,7 +67,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  background: linear-gradient(135deg, #165dff 0%, #36cfc9 100%);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -105,7 +98,7 @@
   height: 48px;
   background: linear-gradient(135deg, rgba(22, 93, 255, 0.1) 0%, rgba(54, 207, 201, 0.1) 100%);
   border-radius: 12px;
-  color: #165DFF;
+  color: #165dff;
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
@@ -147,34 +140,34 @@
   .education-grid {
     gap: 1.5rem;
   }
-  
+
   .education-card {
     padding: 1.5rem;
   }
-  
+
   .education-header {
     gap: 0.875rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .education-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .education-icon svg {
     width: 24px;
     height: 24px;
   }
-  
+
   .education-school {
     font-size: 1.125rem;
   }
-  
+
   .education-degree {
     font-size: 0.9375rem;
   }
-  
+
   .education-specialization {
     font-size: 0.8125rem;
   }
@@ -184,7 +177,7 @@
   .education-card {
     padding: 1.25rem;
   }
-  
+
   .education-header {
     flex-direction: column;
     align-items: flex-start;
@@ -192,4 +185,3 @@
   }
 }
 </style>
-

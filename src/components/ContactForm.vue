@@ -5,70 +5,81 @@
         <form @submit.prevent="handleSubmit" class="contact-form">
           <div class="form-group">
             <label for="name" class="form-label">Your Name</label>
-            <input 
-              type="text" 
-              id="name" 
+            <input
+              type="text"
+              id="name"
               v-model="form.name"
-              class="form-input" 
+              class="form-input"
               placeholder="John Doe"
               required
-            >
+            />
           </div>
-          
+
           <div class="form-group">
             <label for="email" class="form-label">Email Address</label>
-            <input 
-              type="email" 
-              id="email" 
+            <input
+              type="email"
+              id="email"
               v-model="form.email"
-              class="form-input" 
+              class="form-input"
               placeholder="john@example.com"
               required
-            >
+            />
           </div>
-          
+
           <div class="form-group">
             <label for="message" class="form-label">Your Message</label>
-            <textarea 
-              id="message" 
+            <textarea
+              id="message"
               v-model="form.message"
-              rows="5" 
-              class="form-textarea" 
+              rows="5"
+              class="form-textarea"
               placeholder="Tell me about your project or collaboration opportunity..."
               required
             ></textarea>
           </div>
-          
+
           <button type="submit" class="submit-btn" :disabled="isSubmitting">
             <span v-if="!isSubmitting">Send Message</span>
             <span v-else>Sending...</span>
           </button>
+
+          <div v-if="submitStatus === 'success'" class="status-message status-success">
+            Opening your email client...
+          </div>
+          <div v-if="submitStatus === 'error'" class="status-message status-error">
+            Something went wrong. Please try again or email directly.
+          </div>
         </form>
       </div>
-      
+
       <div class="contact-info-section">
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
               </svg>
             </div>
             <div class="contact-details">
               <h3 class="contact-title">Email</h3>
-              <p class="contact-text">zhongqi1112@gmail.com</p>
+              <p class="contact-text">{{ siteConfig.email }}</p>
             </div>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
               </svg>
             </div>
             <div class="contact-details">
               <h3 class="contact-title">Location</h3>
-              <p class="contact-text">San Francisco Bay Area, California, USA</p>
+              <p class="contact-text">{{ siteConfig.location }}</p>
             </div>
           </div>
         </div>
@@ -79,35 +90,49 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { siteConfig } from '../data/siteConfig'
 
 const isSubmitting = ref(false)
+const submitStatus = ref(null)
 
 const form = reactive({
   name: '',
   email: '',
-  message: ''
+  message: '',
 })
 
-const handleSubmit = async () => {
-  isSubmitting.value = true
-  
-  // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  // Create mailto link
-  const subject = encodeURIComponent(`Contact from ${form.name}`)
-  const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`)
-  const mailtoLink = `mailto:zhongqi1112@gmail.com?subject=${subject}&body=${body}`
-  
-  // Open email client
-  window.location.href = mailtoLink
-  
-  // Reset form
+const resetForm = () => {
   form.name = ''
   form.email = ''
   form.message = ''
-  
-  isSubmitting.value = false
+}
+
+const handleSubmit = async () => {
+  if (isSubmitting.value) return
+
+  isSubmitting.value = true
+  submitStatus.value = null
+
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 500))
+
+    const subject = encodeURIComponent(`Contact from ${form.name}`)
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    )
+    const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`
+
+    window.location.href = mailtoLink
+    resetForm()
+    submitStatus.value = 'success'
+  } catch (_error) {
+    submitStatus.value = 'error'
+  } finally {
+    isSubmitting.value = false
+    setTimeout(() => {
+      submitStatus.value = null
+    }, 3000)
+  }
 }
 </script>
 
@@ -162,7 +187,7 @@ const handleSubmit = async () => {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #165DFF;
+  border-color: #165dff;
   box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.1);
 }
 
@@ -173,7 +198,7 @@ const handleSubmit = async () => {
 
 .submit-btn {
   padding: 0.75rem 1.5rem;
-  background: #165DFF;
+  background: #165dff;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -185,7 +210,7 @@ const handleSubmit = async () => {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #0E4ACC;
+  background: #0e4acc;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
 }
@@ -216,7 +241,7 @@ const handleSubmit = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #165DFF;
+  color: #165dff;
   flex-shrink: 0;
 }
 
@@ -240,18 +265,38 @@ const handleSubmit = async () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #165DFF;
+  color: #165dff;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .resume-link:hover {
-  color: #0E4ACC;
+  color: #0e4acc;
   text-decoration: underline;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.status-message {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
+
+.status-success {
+  background: rgba(52, 211, 153, 0.1);
+  color: #059669;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.status-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 </style>

@@ -6,13 +6,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/podcasts',
     name: 'Podcasts',
-    component: Podcasts
-  }
+    component: Podcasts,
+  },
 ]
 
 const router = createRouter({
@@ -24,8 +24,7 @@ const router = createRouter({
     } else {
       return { top: 0 }
     }
-  }
+  },
 })
 
 export default router
-

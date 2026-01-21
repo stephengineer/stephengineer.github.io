@@ -1,38 +1,16 @@
 <script setup>
-// No animation needed for the new design
+import { skills } from '../data/skills'
 </script>
 
 <template>
   <div class="skills-container">
     <div class="skills-grid">
-      <div class="skill-category">
-        <h3 class="category-title">LLMs</h3>
+      <div v-for="skillGroup in skills" :key="skillGroup.category" class="skill-category">
+        <h3 class="category-title">{{ skillGroup.category }}</h3>
         <div class="skill-tags">
-          <span class="skill-tag">PEFT</span>
-          <span class="skill-tag">RLHF</span>
-          <span class="skill-tag">RAG</span>
-          <span class="skill-tag">KV-Caching</span>
-          <span class="skill-tag">Flash Attention</span>
-        </div>
-      </div>
-      
-      <div class="skill-category">
-        <h3 class="category-title">Frameworks</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">vLLM</span>
-          <span class="skill-tag">TensorRT</span>
-          <span class="skill-tag">SGLang</span>
-          <span class="skill-tag">Megatron</span>
-          <span class="skill-tag">DeepSpeed</span>
-        </div>
-      </div>
-      
-      <div class="skill-category">
-        <h3 class="category-title">Research</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Multi-agents</span>
-          <span class="skill-tag">Attention mechanisms</span>
-          <span class="skill-tag">Model architectures</span>
+          <span v-for="skill in skillGroup.items" :key="skill" class="skill-tag">
+            {{ skill }}
+          </span>
         </div>
       </div>
     </div>
@@ -90,7 +68,7 @@
   transform: translateX(-50%);
   width: 40px;
   height: 3px;
-  background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+  background: linear-gradient(135deg, #165dff 0%, #36cfc9 100%);
   border-radius: 2px;
 }
 
@@ -155,15 +133,15 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .skill-category {
     padding: 1.5rem;
   }
-  
+
   .skill-tags {
     gap: 0.625rem;
   }
-  
+
   .skill-tag {
     padding: 0.5rem 1rem;
     font-size: 0.8125rem;
