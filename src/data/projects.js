@@ -5,7 +5,7 @@ export const projects = [
     subtitle:
       'Post-trained large language models for scalable document understanding, multi-label classification, and structured information extraction.',
     contributions: [
-      'Led post-training of Qwen2.5 models (3B–32B) using full-parameter SFT combined with GRPO on a high-quality, 10K+ curated annotation dataset.',
+      'Led post-training of Qwen2.5 models (3B–72B) using full-parameter SFT combined with GRPO on a high-quality, 10K+ curated annotation dataset.',
       'Reproduced the XDoc benchmark pipeline, enabling accurate multi-label document understanding across 45 categories and achieving +15% Macro-F1 improvement over baseline models.',
       'Designed training pipelines following InstructGPT-style data distributions to generate tens of thousands of SFT samplesDesigned a scalable multi-task learning framework by extending tokenizer vocabularies, restructuring loss functions, and integrating customized focal loss, label smoothing, and dynamic masking strategies.Proposed causal inference–guided reasoning strategies combined with CoT to improve complex question solving',
       'Introduced non-autoregressive generation techniques to significantly improve token generation efficiency and reduce inference latency.',
@@ -30,7 +30,6 @@ export const projects = [
       'Conducted post-training alignment using PPO and GRPO on Qwen2.5 models with large-scale, high-quality labeled datasets',
       'Designed training pipelines following InstructGPT-style data distributions to generate tens of thousands of SFT samples',
       'Proposed causal inference–guided reasoning strategies combined with CoT to improve complex question solving',
-      'Reproduced XDoc benchmark results, achieving +15% Macro-F1 across 45 classification labels',
       'Optimized inference using vLLM, TensorRT, and Triton, significantly improving throughput under high concurrency',
     ],
     tags: [
