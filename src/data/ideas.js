@@ -55,6 +55,14 @@ export const ideas = [
     category: 'Conversations & Perspectives',
     items: [
       {
+        id: 'sulaiman-ghori',
+        type: 'Podcast',
+        title: 'WTF is happening at xAI',
+        takeaway: 'A lot of explosive information about xAI from inside the company has been revealed!',
+        url: 'https://www.youtube.com/watch?v=8jN60eJr4Ps',
+        author: 'Ti Morse',
+      },
+      {
         id: 'dwarkesh-patel',
         type: 'Podcast',
         title: 'Dwarkesh Patel: The Scaling Era of AI is Here',
