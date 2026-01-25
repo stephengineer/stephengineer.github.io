@@ -176,18 +176,19 @@ useHead({
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="container">
+      <div class="footer-container">
         <div class="footer-content">
           <div class="footer-brand">
-            <h3 class="footer-logo">Stephen<span class="text-primary">Wang</span></h3>
-            <p class="footer-tagline">Advancing AI research, one breakthrough at a time.</p>
+            <span class="footer-logo">Stephen Wang</span>
+            <span class="footer-separator">·</span>
+            <span class="footer-tagline">ML Research Scientist</span>
           </div>
 
-          <SocialLinks variant="footer" />
+          <SocialLinks variant="footer" :size="18" />
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Stephen Wang. All rights reserved.</p>
+          <p>&copy; 2026 Stephen Wang</p>
         </div>
       </div>
     </footer>
@@ -562,17 +563,29 @@ useHead({
   }
 }
 
-/* Footer */
+/* Footer - matches navbar style */
 .footer {
-  padding: 3rem 0 2rem;
-  background: var(--vt-c-white-mute);
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.95);
   border-top: 1px solid var(--vt-c-divider-light-2);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
   text-align: center;
 }
@@ -586,42 +599,39 @@ useHead({
 }
 
 .footer-brand {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-logo {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--vt-c-navy);
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.footer-separator {
+  color: var(--vt-c-divider-light-1);
+  font-weight: 300;
 }
 
 .footer-tagline {
   color: var(--vt-c-text-light-2);
   font-size: 0.875rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-social-link {
-  color: var(--color-text);
-  transition: all 0.3s ease;
-}
-
-.footer-social-link:hover {
-  color: #165dff;
-  transform: translateY(-2px);
+  font-weight: 500;
 }
 
 .footer-bottom {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vt-c-divider-light-2);
   text-align: center;
-  color: var(--color-text);
-  font-size: 0.875rem;
+}
+
+.footer-bottom p {
+  color: var(--vt-c-text-light-2);
+  font-size: 0.8125rem;
+  margin: 0;
 }
 </style>
