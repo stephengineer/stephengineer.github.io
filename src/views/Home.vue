@@ -30,15 +30,11 @@ useHead({
           <!-- Profile Image -->
           <div class="hero-image-wrapper">
             <img alt="Stephen Wang" class="hero-avatar" src="../assets/profile.jpeg" />
-            <div class="avatar-ring"></div>
           </div>
 
           <!-- Hero Text -->
           <div class="hero-text">
-            <div class="hero-badge">
-              <span class="badge-dot"></span>
-              ML Research Scientist
-            </div>
+            <div class="hero-badge">ML Research Scientist</div>
             <h1 class="hero-name">Stephen Wang</h1>
             <p class="hero-tagline">
               Building intelligent systems that work in the real world
@@ -251,34 +247,23 @@ useHead({
 
 /* Profile Image */
 .hero-image-wrapper {
-  position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-avatar {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--vt-c-white);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  position: relative;
-  z-index: 2;
+  border: 3px solid var(--vt-c-white);
+  box-shadow: var(--shadow-lg);
 }
 
 @media (min-width: 768px) {
   .hero-avatar {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
-}
-
-.avatar-ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid var(--color-primary-alpha-20);
-  z-index: 1;
 }
 
 /* Hero Text */
@@ -287,24 +272,14 @@ useHead({
 }
 
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-primary);
   background: var(--color-primary-alpha-10);
-  padding: 0.5rem 1rem;
+  padding: 0.375rem 0.875rem;
   border-radius: var(--radius-full);
   margin-bottom: 1rem;
-  letter-spacing: 0.02em;
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-primary);
-  border-radius: 50%;
 }
 
 .hero-name {
