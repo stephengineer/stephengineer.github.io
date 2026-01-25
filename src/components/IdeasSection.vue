@@ -153,18 +153,26 @@ const getMeta = (item) => {
 
 .idea-card {
   display: block;
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
   text-decoration: none;
-  transition: var(--transition-base);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .idea-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   border-color: var(--color-primary-alpha-30);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.idea-card:active {
+  transform: translateY(-2px);
+  transition-duration: 0.1s;
 }
 
 .idea-header {
@@ -224,16 +232,24 @@ const getMeta = (item) => {
 .read-more {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.75rem;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text);
   opacity: 0.7;
-  transition: var(--transition-base);
+  transition: all 0.25s ease;
+}
+
+.read-more svg {
+  transition: transform 0.25s ease;
 }
 
 .idea-card:hover .read-more {
   color: var(--color-primary);
   opacity: 1;
+}
+
+.idea-card:hover .read-more svg {
+  transform: translateX(4px);
 }
 </style>

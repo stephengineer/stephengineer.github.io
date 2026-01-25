@@ -24,7 +24,11 @@ import BaseCard from './BaseCard.vue'
           <h4 class="section-label">Core Contributions:</h4>
           <ul class="contribution-list">
             <li v-for="(item, i) in project.contributions" :key="i" class="contribution-item">
-              <span class="bullet">•</span>
+              <span class="bullet-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
               <span class="contribution-text">{{ item }}</span>
             </li>
           </ul>
@@ -131,11 +135,15 @@ import BaseCard from './BaseCard.vue'
   line-height: 1.6;
 }
 
-.bullet {
+.bullet-icon {
   color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  flex-shrink: 0;
+  margin-top: 3px;
+  transition: transform 0.2s ease;
+}
+
+.contribution-item:hover .bullet-icon {
+  transform: translateX(3px);
 }
 
 .project-footer {
@@ -152,11 +160,18 @@ import BaseCard from './BaseCard.vue'
 
 .project-tag {
   font-size: 0.8125rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.875rem;
   background: var(--color-primary-alpha-10);
   color: var(--color-primary);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-primary-alpha-15);
+}
+
+.project-tag:hover {
+  background: var(--color-primary-alpha-20);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {

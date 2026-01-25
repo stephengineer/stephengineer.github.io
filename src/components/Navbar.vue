@@ -183,8 +183,10 @@ onUnmounted(() => {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  cursor: pointer;
+  padding: 0.5rem 0;
 }
 
 .nav-link::after {

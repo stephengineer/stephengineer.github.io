@@ -1,13 +1,13 @@
 @import './base.css';
 
-/* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Import Archivo (headings) and Space Grotesk (body) for modern tech look */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 #app {
   font-weight: normal;
   animation: fadeIn 0.8s ease-in-out;
   min-height: 100vh;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 @keyframes fadeIn {
@@ -97,4 +97,20 @@ textarea:focus {
 ::selection {
   background: rgba(22, 93, 255, 0.2);
   color: var(--color-heading);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  #app {
+    animation: none;
+  }
 }

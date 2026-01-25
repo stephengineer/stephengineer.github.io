@@ -10,8 +10,12 @@ import BaseCard from './BaseCard.vue'
         <h3 class="category-title">{{ skillGroup.category }}</h3>
         <ul class="skill-list">
           <li v-for="skill in skillGroup.items" :key="skill" class="skill-item">
-            <span class="bullet">•</span>
-            {{ skill }}
+            <span class="skill-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </span>
+            <span class="skill-text">{{ skill }}</span>
           </li>
         </ul>
       </BaseCard>
@@ -77,17 +81,34 @@ import BaseCard from './BaseCard.vue'
 
 .skill-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--spacing-sm);
   color: var(--color-text);
   font-size: 0.9375rem;
   line-height: 1.5;
+  padding: 0.375rem 0;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
 }
 
-.bullet {
+.skill-item:hover {
   color: var(--color-primary);
-  font-weight: bold;
-  line-height: 1.5;
+  padding-left: 0.5rem;
+  background: var(--color-primary-alpha-10);
+}
+
+.skill-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover .skill-icon {
+  transform: translateX(2px);
+}
+
+.skill-text {
+  flex: 1;
 }
 
 @media (max-width: 768px) {
