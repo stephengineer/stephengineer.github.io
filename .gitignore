@@ -43,6 +43,7 @@ Desktop.ini
 # vibe coding
 .cursor/
 .kiro/
+.agent/
 .opencode/
 .shared/
 .vscode/
