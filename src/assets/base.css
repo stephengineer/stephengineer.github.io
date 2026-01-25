@@ -190,51 +190,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar - Light Mode */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--vt-c-white-soft);
-  border-radius: 5px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(27, 42, 78, 0.2);
-  border-radius: 5px;
-  border: 2px solid var(--vt-c-white-soft);
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(27, 42, 78, 0.35);
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Scrollbar color variables */
+:root {
+  --scrollbar-thumb: #C4C4C4;
+  --scrollbar-thumb-hover: #A0A0A0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-thumb: #404040;
+    --scrollbar-thumb-hover: #14B8A6;
+  }
 }
 
 /* Firefox scrollbar */
-* {
+html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(27, 42, 78, 0.2) var(--vt-c-white-soft);
-}
-
-/* Custom Scrollbar - Dark Mode */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: #171717;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid #171717;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  * {
-    scrollbar-color: rgba(255, 255, 255, 0.15) #171717;
-  }
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
 /* Heading typography - Archivo for bold, impactful titles */
