@@ -38,7 +38,7 @@ import { experiences } from '../data/experience'
 }
 
 .experience-card {
-  background: var(--vt-c-white);
+  background: var(--color-background);
   border-radius: var(--bento-radius);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-card);
@@ -74,7 +74,7 @@ import { experiences } from '../data/experience'
 .experience-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   margin: 0;
   line-height: 1.3;
 }
@@ -82,7 +82,7 @@ import { experiences } from '../data/experience'
 .experience-company {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -112,7 +112,7 @@ import { experiences } from '../data/experience'
 
 .achievement-item {
   font-size: 0.9375rem;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   line-height: 1.6;
   padding-left: 1rem;
   position: relative;

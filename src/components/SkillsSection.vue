@@ -47,7 +47,7 @@ const categoryIcons = {
 }
 
 .skill-card {
-  background: var(--vt-c-white);
+  background: var(--color-background);
   border-radius: var(--bento-radius);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-card);
@@ -83,7 +83,7 @@ const categoryIcons = {
 .skill-title {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   margin: 0;
   line-height: 1.3;
 }
@@ -99,7 +99,7 @@ const categoryIcons = {
 
 .skill-item {
   font-size: 0.9375rem;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   line-height: 1.5;
   padding-left: 1rem;
   position: relative;

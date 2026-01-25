@@ -225,7 +225,7 @@ useHead({
 /* Hero Section - Professional Researcher */
 .hero-section {
   padding: 8rem 0 5rem;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -256,7 +256,7 @@ useHead({
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--vt-c-white);
+  border: 3px solid var(--color-background);
   box-shadow: var(--shadow-lg);
   user-select: none;
   -webkit-user-select: none;
@@ -290,7 +290,7 @@ useHead({
 .hero-name {
   font-size: clamp(2.25rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem 0;
@@ -299,7 +299,7 @@ useHead({
 .hero-tagline {
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   margin: 0 0 1rem 0;
   line-height: 1.5;
 }
@@ -312,7 +312,7 @@ useHead({
 
 .hero-description {
   font-size: 0.9375rem;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   line-height: 1.7;
   margin: 0;
   max-width: 520px;
@@ -336,11 +336,11 @@ useHead({
 .hero-tag {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--vt-c-text-light-2);
-  background: var(--vt-c-white-soft);
+  color: var(--color-text);
+  background: var(--color-background-soft);
   padding: 0.375rem 0.875rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--vt-c-divider-light-1);
+  border: 1px solid var(--color-border);
   transition: all 0.2s ease;
 }
 
@@ -418,7 +418,7 @@ useHead({
 /* Section Styles - Apple-inspired */
 .skills-section {
   padding: 5rem 0;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -430,7 +430,7 @@ useHead({
 
 .contact-section {
   padding: 5rem 0;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -442,7 +442,7 @@ useHead({
 
 .experience-section {
   padding: 5rem 0;
-  background: var(--vt-c-white-soft);
+  background: var(--color-background-soft);
   position: relative;
 }
 
@@ -454,7 +454,7 @@ useHead({
 
 .education-section {
   padding: 5rem 0;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -466,7 +466,7 @@ useHead({
 
 .projects-section {
   padding: 5rem 0;
-  background: var(--vt-c-white-soft);
+  background: var(--color-background-soft);
   position: relative;
 }
 
@@ -478,7 +478,7 @@ useHead({
 
 .research-section {
   padding: 5rem 0;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -490,7 +490,7 @@ useHead({
 
 .ideas-section {
   padding: 5rem 0;
-  background: var(--vt-c-white-soft);
+  background: var(--color-background-soft);
   position: relative;
 }
 
@@ -509,13 +509,13 @@ useHead({
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   letter-spacing: -0.02em;
 }
 
 .section-description {
   font-size: 1rem;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   max-width: 38rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -566,8 +566,8 @@ useHead({
 /* Footer - matches navbar style */
 .footer {
   padding: 2rem 0;
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid var(--vt-c-divider-light-2);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-container {
@@ -607,17 +607,17 @@ useHead({
 .footer-logo {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   letter-spacing: -0.02em;
 }
 
 .footer-separator {
-  color: var(--vt-c-divider-light-1);
+  color: var(--color-border);
   font-weight: 300;
 }
 
 .footer-tagline {
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -625,12 +625,12 @@ useHead({
 .footer-bottom {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--vt-c-divider-light-2);
+  border-top: 1px solid var(--color-border);
   text-align: center;
 }
 
 .footer-bottom p {
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   font-size: 0.8125rem;
   margin: 0;
 }

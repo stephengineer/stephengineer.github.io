@@ -111,7 +111,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 9999;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -119,8 +119,8 @@ onUnmounted(() => {
 }
 
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom-color: var(--vt-c-divider-light-2);
+  background: var(--glass-bg-strong);
+  border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-nav);
 }
 
@@ -152,7 +152,7 @@ onUnmounted(() => {
 .navbar-brand {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   text-decoration: none;
   letter-spacing: -0.02em;
   transition: color 0.2s ease;
@@ -183,7 +183,7 @@ onUnmounted(() => {
 .nav-link {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   text-decoration: none;
   padding: 0.5rem 0.875rem;
   border-radius: 0.5rem;
@@ -192,7 +192,7 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   background: var(--color-primary-alpha-10);
 }
 
@@ -214,7 +214,7 @@ onUnmounted(() => {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 1px solid var(--vt-c-divider-light-1);
+  border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -228,11 +228,11 @@ onUnmounted(() => {
 }
 
 .mobile-menu-btn:hover {
-  background: var(--vt-c-white-mute);
+  background: var(--color-background-mute);
 }
 
 .mobile-menu-btn:active {
-  background: var(--vt-c-divider-light-2);
+  background: var(--color-border);
 }
 
 .hamburger {
@@ -246,7 +246,7 @@ onUnmounted(() => {
 .hamburger-line {
   width: 100%;
   height: 2px;
-  background-color: var(--vt-c-navy);
+  background-color: var(--color-heading);
   border-radius: 1px;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -270,8 +270,8 @@ onUnmounted(() => {
   display: none;
   flex-direction: column;
   padding: 0.5rem 0 1rem;
-  background: var(--vt-c-white);
-  border-top: 1px solid var(--vt-c-divider-light-2);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -294,7 +294,7 @@ onUnmounted(() => {
   padding: 0.75rem 1rem;
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   text-decoration: none;
   border-radius: 0.5rem;
   margin: 0 0.5rem;
@@ -303,7 +303,7 @@ onUnmounted(() => {
 
 .mobile-nav-link:hover,
 .mobile-nav-link:active {
-  color: var(--vt-c-navy);
+  color: var(--color-heading);
   background: var(--color-primary-alpha-10);
 }
 </style>
