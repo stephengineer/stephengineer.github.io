@@ -1,18 +1,29 @@
 export const siteConfig = {
   name: 'Stephen Wang',
-  title: 'Research Scientist & AI Engineer',
+  title: 'ML Research Scientist',
+  tagline: 'Building intelligent systems that work in the real world',
   email: 'zhongqi1112@gmail.com',
   location: 'San Francisco Bay Area, California, USA',
+  url: 'https://stephengineer.github.io',
   social: {
     github: 'https://github.com/stephengineer',
     linkedin: 'https://www.linkedin.com/in/stephengineer',
     twitter: 'https://x.com/stephengineers',
+    twitterHandle: '@stephengineers',
   },
   seo: {
-    title: 'Stephen Wang - Research Scientist & AI Engineer | Large Language Models Expert',
+    title: 'Stephen Wang | ML Research Scientist - LLM Training & Agentic AI Systems',
     description:
-      'Research Scientist at VisionFlow AI specializing in Large Language Models, Multi-agent Systems, and Generative AI. Expert in LLM post-training techniques including LoRA, PPO, and GRPO.',
+      'ML Research Scientist specializing in LLM training, post-training alignment (RLHF, DPO, GRPO), and agentic AI systems. Building intelligent systems that work in the real world.',
     keywords:
-      'Stephen Wang, Research Scientist, AI Engineer, Large Language Models, LLM, Multi-agent Systems, Generative AI, Machine Learning',
+      'Stephen Wang, ML Research Scientist, LLM Training, Post-Training Alignment, RLHF, DPO, GRPO, Agentic AI, RAG Systems, Large Language Models, Machine Learning Engineer, AI Researcher, Distributed Training, vLLM, TensorRT-LLM, DeepSpeed, PyTorch',
+    image: 'https://stephengineer.github.io/og-image.png',
+    twitterCard: 'summary_large_image',
   },
+  expertise: [
+    'LLM Training',
+    'Post-Training Alignment',
+    'Agentic Systems',
+    'RAG Architectures',
+  ],
 }

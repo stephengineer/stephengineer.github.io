@@ -17,19 +17,31 @@ useHead({
     { name: 'keywords', content: siteConfig.seo.keywords },
     { property: 'og:title', content: siteConfig.seo.title },
     { property: 'og:description', content: siteConfig.seo.description },
+    { property: 'og:image', content: siteConfig.seo.image },
+    { property: 'og:url', content: siteConfig.url },
+    { name: 'twitter:card', content: siteConfig.seo.twitterCard },
+    { name: 'twitter:title', content: siteConfig.seo.title },
+    { name: 'twitter:description', content: siteConfig.seo.description },
+    { name: 'twitter:image', content: siteConfig.seo.image },
   ],
 })
 </script>
 
 <template>
-  <div class="home">
+  <main class="home" role="main">
     <!-- Hero Section -->
-    <section id="about" class="hero-section">
+    <section id="about" class="hero-section" aria-label="About Stephen Wang">
       <div class="container">
         <div class="hero-content">
           <!-- Profile Image -->
           <div class="hero-image-wrapper">
-            <img alt="Stephen Wang" class="hero-avatar" src="../assets/profile.jpeg" />
+            <img
+              alt="Stephen Wang - ML Research Scientist specializing in LLM Training and Agentic AI Systems"
+              class="hero-avatar"
+              src="../assets/profile.jpeg"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
 
           <!-- Hero Text -->
@@ -74,7 +86,7 @@ useHead({
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills-section">
+    <section id="skills" class="skills-section" aria-label="Technical Expertise">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Technical Expertise</h2>
@@ -89,7 +101,7 @@ useHead({
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience-section">
+    <section id="experience" class="experience-section" aria-label="Work Experience">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Work Experience</h2>
@@ -104,7 +116,7 @@ useHead({
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section" aria-label="Selected Projects">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Selected Projects</h2>
@@ -119,7 +131,7 @@ useHead({
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="research-section">
+    <section id="research" class="research-section" aria-label="Research Interests">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Research Interests</h2>
@@ -130,7 +142,7 @@ useHead({
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education-section">
+    <section id="education" class="education-section" aria-label="Education">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Education</h2>
@@ -145,7 +157,7 @@ useHead({
     </section>
 
     <!-- Ideas Section -->
-    <section id="ideas" class="ideas-section">
+    <section id="ideas" class="ideas-section" aria-label="Ideas I'm Exploring">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Ideas I’m Exploring</h2>
@@ -160,7 +172,7 @@ useHead({
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" aria-label="Contact">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
@@ -175,7 +187,7 @@ useHead({
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="footer-container">
         <div class="footer-content">
           <div class="footer-brand">
@@ -192,7 +204,7 @@ useHead({
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <style scoped>
