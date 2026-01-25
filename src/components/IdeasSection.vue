@@ -153,7 +153,7 @@ const getMeta = (item) => {
 
 .idea-card {
   display: block;
-  background: var(--vt-c-white);
+  background: var(--color-background);
   border-radius: var(--bento-radius);
   padding: var(--spacing-lg);
   text-decoration: none;

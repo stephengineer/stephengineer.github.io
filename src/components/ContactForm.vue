@@ -187,8 +187,8 @@ const handleSubmit = async () => {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #165dff;
-  box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-10);
 }
 
 .form-textarea {
@@ -198,7 +198,7 @@ const handleSubmit = async () => {
 
 .submit-btn {
   padding: 0.75rem 1.5rem;
-  background: #165dff;
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -206,13 +206,13 @@ const handleSubmit = async () => {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);
+  box-shadow: 0 4px 15px var(--color-primary-alpha-30);
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #0e4acc;
+  background: var(--color-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(22, 93, 255, 0.4);
+  box-shadow: 0 8px 25px var(--color-primary-alpha-40);
 }
 
 .submit-btn:disabled {
@@ -236,12 +236,12 @@ const handleSubmit = async () => {
 .contact-icon {
   width: 3rem;
   height: 3rem;
-  background: rgba(22, 93, 255, 0.1);
+  background: var(--color-primary-alpha-10);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #165dff;
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -265,14 +265,14 @@ const handleSubmit = async () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #165dff;
+  color: var(--color-primary);
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .resume-link:hover {
-  color: #0e4acc;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 

@@ -31,7 +31,7 @@ defineProps({
 
 <style scoped>
 .card {
-  background: var(--vt-c-white);
+  background: var(--color-background);
   border-radius: var(--bento-radius);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -42,7 +42,7 @@ defineProps({
 
 /* Glass morphism effect */
 .card--glass {
-  background: var(--vt-c-white);
+  background: var(--color-background);
   box-shadow: var(--shadow-card);
 }
 

@@ -75,8 +75,8 @@ import { education } from '../data/education'
 
 .education-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: rgba(22, 93, 255, 0.3);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-primary-alpha-30);
 }
 
 .education-card:hover::before {
@@ -96,15 +96,15 @@ import { education } from '../data/education'
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, rgba(22, 93, 255, 0.1) 0%, rgba(54, 207, 201, 0.1) 100%);
+  background: var(--color-primary-alpha-10);
   border-radius: 12px;
-  color: #165dff;
+  color: var(--color-primary);
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
 
 .education-card:hover .education-icon {
-  background: linear-gradient(135deg, rgba(22, 93, 255, 0.15) 0%, rgba(54, 207, 201, 0.15) 100%);
+  background: var(--color-primary-alpha-20);
   transform: scale(1.05);
 }
 
