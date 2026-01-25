@@ -31,22 +31,19 @@ defineProps({
 
 <style scoped>
 .card {
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--vt-c-white);
+  border-radius: var(--bento-radius);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: var(--shadow-card);
 }
 
 /* Glass morphism effect */
 .card--glass {
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: var(--vt-c-white);
+  box-shadow: var(--shadow-card);
 }
 
 .card--compact {
@@ -61,48 +58,9 @@ defineProps({
   padding: var(--spacing-2xl);
 }
 
-/* Gradient accent line on top */
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Subtle glow effect on hover */
-.card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(22, 93, 255, 0.06),
-    transparent 40%
-  );
-}
-
 .card--hoverable:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-primary-alpha-20);
-}
-
-.card--hoverable:hover::before {
-  transform: scaleX(1);
-}
-
-.card--hoverable:hover::after {
-  opacity: 1;
 }
 
 /* Active/pressed state */

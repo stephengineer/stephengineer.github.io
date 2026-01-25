@@ -1,24 +1,30 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Professional Researcher Color Palette */
 :root {
+  /* Base colors */
   --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --vt-c-white-soft: #FAFBFC;
+  --vt-c-white-mute: #F6F8FA;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  /* Dark mode base */
+  --vt-c-black: #0D1117;
+  --vt-c-black-soft: #161B22;
+  --vt-c-black-mute: #21262D;
 
-  --vt-c-indigo: #2c3e50;
+  /* Professional navy */
+  --vt-c-navy: #1B2A4E;
+  --vt-c-navy-light: #2C3E5D;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  /* Refined dividers */
+  --vt-c-divider-light-1: rgba(27, 42, 78, 0.12);
+  --vt-c-divider-light-2: rgba(27, 42, 78, 0.06);
+  --vt-c-divider-dark-1: rgba(255, 255, 255, 0.16);
+  --vt-c-divider-dark-2: rgba(255, 255, 255, 0.08);
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  /* Text colors - professional hierarchy */
+  --vt-c-text-light-1: #1B2A4E;
+  --vt-c-text-light-2: #506690;
+  --vt-c-text-dark-1: #F0F6FC;
+  --vt-c-text-dark-2: rgba(240, 246, 252, 0.7);
 }
 
 /* semantic color variables for this project */
@@ -35,25 +41,28 @@
 
   --section-gap: 160px;
 
-  /* Brand colors */
-  --color-primary: #165DFF;
-  --color-primary-dark: #0E4ACC;
-  --color-primary-darker: #0A3BB8;
-  --color-secondary: #36CFC9;
-  --color-secondary-dark: #2BA8A3;
+  /* Brand colors - Professional researcher palette */
+  --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
+  --color-primary-darker: #1E40AF;
+  --color-secondary: #0EA5E9;
+  --color-secondary-dark: #0284C7;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  --gradient-primary-hover: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+  /* Accent for highlights */
+  --color-accent: #3B82F6;
+
+  /* Gradients - subtle, professional */
+  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
 
   /* Alpha variants for backgrounds */
-  --color-primary-alpha-10: rgba(22, 93, 255, 0.1);
-  --color-primary-alpha-15: rgba(22, 93, 255, 0.15);
-  --color-primary-alpha-20: rgba(22, 93, 255, 0.2);
-  --color-primary-alpha-30: rgba(22, 93, 255, 0.3);
-  --color-primary-alpha-40: rgba(22, 93, 255, 0.4);
-  --color-secondary-alpha-10: rgba(54, 207, 201, 0.1);
-  --color-secondary-alpha-15: rgba(54, 207, 201, 0.15);
+  --color-primary-alpha-10: rgba(37, 99, 235, 0.08);
+  --color-primary-alpha-15: rgba(37, 99, 235, 0.12);
+  --color-primary-alpha-20: rgba(37, 99, 235, 0.16);
+  --color-primary-alpha-30: rgba(37, 99, 235, 0.24);
+  --color-primary-alpha-40: rgba(37, 99, 235, 0.32);
+  --color-secondary-alpha-10: rgba(14, 165, 233, 0.08);
+  --color-secondary-alpha-15: rgba(14, 165, 233, 0.12);
 
   /* Spacing scale */
   --spacing-xs: 0.5rem;
@@ -65,19 +74,25 @@
   --spacing-3xl: 4rem;
   --spacing-4xl: 5rem;
 
-  /* Border radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
+  /* Border radius - Apple-style larger radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 15px rgba(22, 93, 255, 0.3);
-  --shadow-lg: 0 8px 25px rgba(22, 93, 255, 0.4);
-  --shadow-card: 0 12px 24px rgba(0, 0, 0, 0.1);
-  --shadow-card-hover: 0 20px 40px rgba(22, 93, 255, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 40px rgba(22, 93, 255, 0.15);
+  /* Bento Grid specific */
+  --bento-gap: 1.25rem;
+  --bento-radius: 1.5rem;
+
+  /* Shadows - clean, professional */
+  --shadow-sm: 0 1px 2px rgba(27, 42, 78, 0.05);
+  --shadow-md: 0 4px 6px rgba(27, 42, 78, 0.07);
+  --shadow-lg: 0 10px 20px rgba(27, 42, 78, 0.1);
+  --shadow-card: 0 1px 3px rgba(27, 42, 78, 0.04), 0 4px 12px rgba(27, 42, 78, 0.06);
+  --shadow-card-hover: 0 4px 8px rgba(27, 42, 78, 0.08), 0 12px 28px rgba(27, 42, 78, 0.1);
+  --shadow-nav: 0 1px 3px rgba(27, 42, 78, 0.08);
 
   /* Glass morphism */
   --glass-bg: rgba(255, 255, 255, 0.7);

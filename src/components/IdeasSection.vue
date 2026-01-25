@@ -153,20 +153,17 @@ const getMeta = (item) => {
 
 .idea-card {
   display: block;
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
+  background: var(--vt-c-white);
+  border-radius: var(--bento-radius);
   padding: var(--spacing-lg);
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  box-shadow: var(--shadow-card);
 }
 
 .idea-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-primary-alpha-30);
   box-shadow: var(--shadow-card-hover);
 }
 
