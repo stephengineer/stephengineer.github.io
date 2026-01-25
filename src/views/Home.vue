@@ -257,6 +257,10 @@ useHead({
   object-fit: cover;
   border: 3px solid var(--vt-c-white);
   box-shadow: var(--shadow-lg);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
