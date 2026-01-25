@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <clipPath id="avatarClip">
+      <circle cx="200" cy="315" r="80"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Subtle pattern overlay -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- SW Logo badge -->
+  <rect x="60" y="235" width="160" height="160" rx="32" ry="32" fill="#FFFFFF"/>
+  <text x="140" y="340" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="75" font-weight="900" fill="#2563EB" text-anchor="middle" letter-spacing="-3">SW</text>
+  
+  <!-- Name -->
+  <text x="260" y="290" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="bold" fill="#FFFFFF">Stephen Wang</text>
+  
+  <!-- Title -->
+  <text x="260" y="355" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="rgba(255,255,255,0.9)">ML Research Scientist</text>
+  
+  <!-- Subtitle -->
+  <text x="260" y="395" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)">LLM Training • Agentic AI • Post-Training Alignment</text>
+  
+  <!-- Website URL -->
+  <text x="1140" y="590" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="rgba(255,255,255,0.5)" text-anchor="end">stephengineer.github.io</text>
+</svg>
