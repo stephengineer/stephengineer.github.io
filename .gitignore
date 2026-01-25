@@ -39,3 +39,10 @@ Thumbs.db
 .Trashes
 ehthumbs.db
 Desktop.ini
+
+# vibe coding
+.cursor/
+.kiro/
+.opencode/
+.shared/
+.vscode/
