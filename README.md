@@ -20,7 +20,7 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 ## 🛠️ Tech Stack
 
 - **Frontend**: Vue 3.5.13 with Composition API
-- **Build Tool**: Vite 6.4.1
+- **Build Tool**: Vite 6.4.2
 - **Styling**: CSS3 with CSS Variables & Scoped Styles
 - **SEO**: @unhead/vue
 - **Linting**: ESLint + Prettier
@@ -30,8 +30,7 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 
 ### Prerequisites
 
-- Node.js 18+
-- npm
+- [Bun](https://bun.sh) 1.0+
 
 ### Installation
 
@@ -43,29 +42,29 @@ git clone https://github.com/stephengineer/stephengineer.github.io.git
 cd stephengineer.github.io
 
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun dev
 ```
 
 ### Available Scripts
 
 ```bash
 # Development server
-npm run dev
+bun dev
 
 # Build for production
-npm run build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 
 # Lint and fix files
-npm run lint
+bun run lint
 
 # Format files
-npm run format
+bun run format
 ```
 
 ## 📁 Project Structure

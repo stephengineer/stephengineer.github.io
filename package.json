@@ -8,9 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && ./deploy.sh",
+    "deploy": "bun run build && ./deploy.sh",
     "build:prod": "NODE_ENV=production vite build",
-    "preview:prod": "npm run build:prod && vite preview",
+    "preview:prod": "bun run build:prod && vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
