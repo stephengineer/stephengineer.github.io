@@ -1,29 +1,3 @@
-<script setup>
-import { research } from '../data/research'
-import BaseCard from './BaseCard.vue'
-</script>
-
-<template>
-  <div class="research-container">
-    <BaseCard padding="large" class="research-card">
-      <p class="research-intro">{{ research.intro }}</p>
-
-      <div class="interests-wrapper">
-        <h3 class="interests-label">Primary interests include:</h3>
-        <ul class="interests-list">
-          <li v-for="(item, index) in research.interests" :key="index" class="interest-item">
-            <span class="bullet">•</span>
-            <span class="interest-text">{{ item }}</span>
-          </li>
-        </ul>
-      </div>
-
-      <p class="research-closing">{{ research.closing }}</p>
-    </BaseCard>
-  </div>
-</template>
-
-<style scoped>
 .research-container {
   max-width: 900px;
   margin: 0 auto;
@@ -98,4 +72,3 @@ import BaseCard from './BaseCard.vue'
     padding: var(--spacing-md);
   }
 }
-</style>

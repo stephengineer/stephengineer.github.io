@@ -1,18 +1,21 @@
-import pluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import configPrettier from 'eslint-config-prettier'
 import pluginPrettier from 'eslint-plugin-prettier'
-import vueParser from 'vue-eslint-parser'
+import pluginReact from 'eslint-plugin-react'
+import pluginReactHooks from 'eslint-plugin-react-hooks'
 
 export default [
   {
     ignores: ['dist/**', 'node_modules/**'],
   },
   {
-    files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.jsx'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -20,33 +23,19 @@ export default [
     },
     plugins: {
       prettier: pluginPrettier,
+      react: pluginReact,
+      'react-hooks': pluginReactHooks,
+    },
+    settings: {
+      react: { version: 'detect' },
     },
     rules: {
+      ...pluginReact.configs.recommended.rules,
+      ...pluginReactHooks.configs.recommended.rules,
       ...configPrettier.rules,
       'prettier/prettier': 'warn',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-      'no-console': 'warn',
-    },
-  },
-  {
-    files: ['**/*.vue'],
-    languageOptions: {
-      parser: vueParser,
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-      },
-    },
-    plugins: {
-      vue: pluginVue,
-      prettier: pluginPrettier,
-    },
-    rules: {
-      ...pluginVue.configs['flat/essential'].rules,
-      ...configPrettier.rules,
-      'prettier/prettier': 'warn',
-      'vue/multi-word-component-names': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': 'warn',
     },

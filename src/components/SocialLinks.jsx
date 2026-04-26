@@ -1,15 +1,4 @@
-<script setup>
-defineProps({
-  size: {
-    type: Number,
-    default: 20,
-  },
-  variant: {
-    type: String,
-    default: 'default',
-    validator: (v) => ['default', 'footer'].includes(v),
-  },
-})
+import './SocialLinks.css'
 
 const links = [
   {
@@ -28,53 +17,24 @@ const links = [
     icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
   },
 ]
-</script>
 
-<template>
-  <div class="social-links" :class="[`social-links--${variant}`]">
-    <a
-      v-for="link in links"
-      :key="link.name"
-      :href="link.url"
-      target="_blank"
-      rel="noopener"
-      class="social-link"
-      :aria-label="link.name"
-    >
-      <svg :width="size" :height="size" viewBox="0 0 24 24" fill="currentColor">
-        <path :d="link.icon" />
-      </svg>
-    </a>
-  </div>
-</template>
-
-<style scoped>
-.social-links {
-  display: flex;
-  gap: var(--spacing-lg);
+export default function SocialLinks({ size = 20, variant = 'default' }) {
+  return (
+    <div className={`social-links social-links--${variant}`}>
+      {links.map((link) => (
+        <a
+          key={link.name}
+          href={link.url}
+          target="_blank"
+          rel="noopener"
+          className="social-link"
+          aria-label={link.name}
+        >
+          <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+            <path d={link.icon} />
+          </svg>
+        </a>
+      ))}
+    </div>
+  )
 }
-
-.social-links--default {
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .social-links--default {
-    justify-content: flex-start;
-  }
-}
-
-.social-link {
-  color: var(--color-text);
-  transition: var(--transition-base);
-}
-
-.social-link:hover {
-  color: var(--color-primary);
-  transform: translateY(-2px);
-}
-
-.social-link::after {
-  display: none;
-}
-</style>

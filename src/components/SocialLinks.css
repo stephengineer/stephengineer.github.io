@@ -1,0 +1,28 @@
+.social-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.social-links--default {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .social-links--default {
+    justify-content: flex-start;
+  }
+}
+
+.social-link {
+  color: var(--color-text);
+  transition: var(--transition-base);
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.social-link::after {
+  display: none;
+}

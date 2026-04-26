@@ -19,10 +19,11 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Vue 3.5.13 with Composition API
+- **Frontend**: React 18 with Hooks
 - **Build Tool**: Vite 6.4.2
-- **Styling**: CSS3 with CSS Variables & Scoped Styles
-- **SEO**: @unhead/vue
+- **Styling**: CSS3 with CSS Variables & Component CSS Files
+- **SEO**: react-helmet-async
+- **Routing**: React Router v6
 - **Linting**: ESLint + Prettier
 - **Deployment**: GitHub Pages with GitHub Actions
 
