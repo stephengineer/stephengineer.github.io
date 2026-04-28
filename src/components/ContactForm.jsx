@@ -34,7 +34,7 @@ export default function ContactForm() {
           message: form.message,
           subject: `Contact from ${form.name}`,
           from_name: form.name,
-          botcheck: e.target.botcheck?.value || '',
+          botcheck: e.target.botcheck?.checked ? 'on' : '',
         }),
       })
 
