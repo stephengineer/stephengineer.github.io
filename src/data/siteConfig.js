@@ -4,6 +4,7 @@ export const siteConfig = {
   tagline: 'Building intelligent systems that work in the real world',
   email: 'zhongqi1112@gmail.com',
   location: 'San Francisco Bay Area, California, USA',
+  web3formsAccessKey: '33c6ad0c-06c1-4e09-bc97-f85b99fcfbac',
   url: 'https://stephengineer.github.io',
   social: {
     github: 'https://github.com/stephengineer',

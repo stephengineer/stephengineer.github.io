@@ -21,19 +21,36 @@ export default function ContactForm() {
     setSubmitStatus(null)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      const subject = encodeURIComponent(`Contact from ${form.name}`)
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-      )
-      window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`
-      resetForm()
-      setSubmitStatus('success')
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: siteConfig.web3formsAccessKey,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `Contact from ${form.name}`,
+          from_name: form.name,
+          botcheck: e.target.botcheck?.value || '',
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        resetForm()
+        setSubmitStatus('success')
+      } else {
+        setSubmitStatus('error')
+      }
     } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
-      setTimeout(() => setSubmitStatus(null), 3000)
+      setTimeout(() => setSubmitStatus(null), 5000)
     }
   }
 
@@ -42,6 +59,14 @@ export default function ContactForm() {
       <div className="contact-grid">
         <div className="contact-form-section">
           <form onSubmit={handleSubmit} className="contact-form">
+            <input
+              type="checkbox"
+              name="botcheck"
+              tabIndex="-1"
+              autoComplete="off"
+              style={{ display: 'none' }}
+            />
+
             <div className="form-group">
               <label htmlFor="name" className="form-label">
                 Your Name
@@ -95,7 +120,9 @@ export default function ContactForm() {
             </button>
 
             {submitStatus === 'success' && (
-              <div className="status-message status-success">Opening your email client...</div>
+              <div className="status-message status-success">
+                Thanks — your message was sent. I&#39;ll be in touch soon.
+              </div>
             )}
             {submitStatus === 'error' && (
               <div className="status-message status-error">
