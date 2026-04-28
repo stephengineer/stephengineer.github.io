@@ -61,7 +61,7 @@ export const projects = [
       'Controllability',
       'Efficient inference',
     ],
-    badge: 'Flagship Project',
+    badge: 'LLM Alignment',
   },
   {
     id: 'multi-agent',
@@ -101,5 +101,6 @@ export const projects = [
       'Reliability',
       'Human–AI interaction',
     ],
+    badge: 'Production System',
   },
 ]
