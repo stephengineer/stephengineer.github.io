@@ -31,11 +31,11 @@ export const projects = [
     subtitle:
       'Post-trained large language models for scalable document understanding, multi-label classification, and structured information extraction.',
     contributions: [
-      'Led post-training of Qwen2.5 models (3B–72B) using full-parameter SFT combined with GRPO on a high-quality, 10K+ curated annotation dataset.',
-      'Reproduced the XDoc benchmark pipeline, enabling accurate multi-label document understanding across 45 categories and achieving +15% Macro-F1 improvement over baseline models.',
+      'Led post-training of Qwen2.5 models (**3B–72B**) using full-parameter SFT combined with GRPO on a high-quality, **10K+** curated annotation dataset.',
+      'Reproduced the XDoc benchmark pipeline, enabling accurate multi-label document understanding across 45 categories and achieving **+15% Macro-F1** improvement over baseline models.',
       'Built a scalable multi-task learning framework by extending tokenizer vocabularies, restructuring loss functions, and integrating customized focal loss, label smoothing, and dynamic masking strategies.',
       'Introduced non-autoregressive generation techniques to significantly improve token generation efficiency and reduce inference latency.',
-      'Built end-to-end training and inference pipelines using Megatron-LM for distributed training and vLLM for high-throughput deployment, supporting 50K+ daily document labeling requests with low latency.',
+      'Built end-to-end training and inference pipelines using Megatron-LM for distributed training and vLLM for high-throughput deployment, supporting **50K+ daily document labeling requests** with low latency.',
     ],
     tags: [
       'LLM post-training',
@@ -83,7 +83,7 @@ export const projects = [
       'Developed a natural-language-driven command-and-control system capable of interpreting, executing, and visualizing complex operational instructions.',
     contributions: [
       'Designed BiLSTM-CRF + BERT NER models for structured command extraction.',
-      'Built GPT-based NER with KNN prompting and self-verification (Accuracy 0.94, Recall 0.95).',
+      'Built GPT-based NER with KNN prompting and self-verification (**Accuracy 0.94, Recall 0.95**).',
       'Implemented continuous learning pipelines for model improvement.',
       'Developed trajectory prediction models using RNN/LSTM for dynamic target tracking.',
       'Integrated response generation with automated + human evaluation.',

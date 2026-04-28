@@ -2,6 +2,19 @@ import { projects } from '../data/projects.js'
 import BaseCard from './BaseCard.jsx'
 import './ProjectsSection.css'
 
+function renderContribution(text) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <span key={i} className="contribution-highlight">
+          {part.slice(2, -2)}
+        </span>
+      )
+    }
+    return part
+  })
+}
+
 export default function ProjectsSection() {
   return (
     <div className="projects-container">
@@ -33,7 +46,7 @@ export default function ProjectsSection() {
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </span>
-                    <span className="contribution-text">{item}</span>
+                    <span className="contribution-text">{renderContribution(item)}</span>
                   </li>
                 ))}
               </ul>
