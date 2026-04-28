@@ -110,7 +110,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 ## 👨‍💻 Author
 
 **Stephen Wang**
-- Research Scientist at VisionFlow AI
+- Research Scientist
 - Specializing in Large Language Models & Multi-agent Systems
 - Email: zhongqi1112@gmail.com
 - LinkedIn: [stephengineer](https://www.linkedin.com/in/stephengineer/)
