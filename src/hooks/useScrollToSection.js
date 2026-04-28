@@ -17,8 +17,7 @@ export function useScrollToSection() {
       const mobileOffset = isMobile ? 20 : 0
       const totalOffset = navbarHeight + mobileOffset + extraOffset
 
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset - totalOffset
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - totalOffset
 
       window.scrollTo({ top: elementPosition, behavior })
     }

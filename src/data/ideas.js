@@ -58,7 +58,8 @@ export const ideas = [
         id: 'sulaiman-ghori',
         type: 'Podcast',
         title: 'WTF is happening at xAI',
-        takeaway: 'A lot of explosive information about xAI from inside the company has been revealed!',
+        takeaway:
+          'A lot of explosive information about xAI from inside the company has been revealed!',
         url: 'https://www.youtube.com/watch?v=8jN60eJr4Ps',
         author: 'Ti Morse',
       },
@@ -74,7 +75,7 @@ export const ideas = [
       {
         id: 'lennys-podcast',
         type: 'Podcast',
-        title: "How to consistently go viral: Nikita Bier’s playbook for winning at consumer apps",
+        title: 'How to consistently go viral: Nikita Bier’s playbook for winning at consumer apps',
         takeaway: 'Deep dives into how product leaders operationalize technical innovations.',
         url: 'https://www.youtube.com/watch?v=bhnfZhJWCWY',
         author: 'Lenny Rachitsky',
@@ -82,7 +83,7 @@ export const ideas = [
       {
         id: 'latent-space',
         type: 'Podcast',
-        title: 'Greg Brockman on OpenAI\'s Road to AGI',
+        title: "Greg Brockman on OpenAI's Road to AGI",
         takeaway: 'Excellent technical depth on the emerging stack for AI engineers.',
         url: 'https://www.youtube.com/watch?v=35ZWesLrv5A',
         author: 'Latent Space',

@@ -1,6 +1,12 @@
 import './BaseCard.css'
 
-export default function BaseCard({ children, hoverable = true, padding = 'default', glass = true, className = '' }) {
+export default function BaseCard({
+  children,
+  hoverable = true,
+  padding = 'default',
+  glass = true,
+  className = '',
+}) {
   const classes = [
     'card',
     hoverable ? 'card--hoverable' : '',

@@ -26,7 +26,7 @@ export default function SocialLinks({ size = 20, variant = 'default' }) {
           key={link.name}
           href={link.url}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className="social-link"
           aria-label={link.name}
         >

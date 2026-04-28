@@ -20,10 +20,5 @@ export const siteConfig = {
     image: 'https://stephengineer.github.io/og-image.png',
     twitterCard: 'summary_large_image',
   },
-  expertise: [
-    'LLM Training',
-    'Post-Training Alignment',
-    'Agentic Systems',
-    'RAG Architectures',
-  ],
+  expertise: ['LLM Training', 'Post-Training Alignment', 'Agentic Systems', 'RAG Architectures'],
 }

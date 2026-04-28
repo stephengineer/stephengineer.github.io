@@ -12,14 +12,7 @@ export const projects = [
       'Developed an async load-testing framework on Locust that correlates webhook callbacks with originating requests via gevent.AsyncResult, capturing true end-to-end latency for asynchronous LLM systems under concurrent load.',
       'Packaged the stack with uv, a Flask webhook server, and Docker for reproducible deployment, with dual message providers backed by curated LangSmith datasets and dynamically generated LLM follow-ups.',
     ],
-    tags: [
-      'LLM evaluation',
-      'LLM-as-judge',
-      'LangSmith',
-      'MCP',
-      'Load testing',
-      'Async systems',
-    ],
+    tags: ['LLM evaluation', 'LLM-as-judge', 'LangSmith', 'MCP', 'Load testing', 'Async systems'],
     badge: 'Evaluation Infrastructure',
   },
   {
@@ -55,12 +48,7 @@ export const projects = [
       'Proposed causal inference–guided reasoning strategies combined with CoT to improve complex question solving',
       'Optimized inference using vLLM, TensorRT, and Triton, significantly improving throughput under high concurrency',
     ],
-    tags: [
-      'LLM alignment',
-      'Post-training',
-      'Controllability',
-      'Efficient inference',
-    ],
+    tags: ['LLM alignment', 'Post-training', 'Controllability', 'Efficient inference'],
     badge: 'LLM Alignment',
   },
   {
@@ -75,12 +63,7 @@ export const projects = [
       'Built semi-automated annotation pipelines for dialogue supervision',
       'Established structured memory retrieval under RAG architectures',
     ],
-    tags: [
-      'Agentic systems',
-      'Memory',
-      'Planning',
-      'Emergent behavior',
-    ],
+    tags: ['Agentic systems', 'Memory', 'Planning', 'Emergent behavior'],
     badge: 'Research Focus',
   },
   {
@@ -95,12 +78,7 @@ export const projects = [
       'Developed trajectory prediction models using RNN/LSTM for dynamic target tracking',
       'Integrated response generation with automated + human evaluation',
     ],
-    tags: [
-      'Structured prediction',
-      'Sequence modeling',
-      'Reliability',
-      'Human–AI interaction',
-    ],
+    tags: ['Structured prediction', 'Sequence modeling', 'Reliability', 'Human–AI interaction'],
     badge: 'Production System',
   },
 ]

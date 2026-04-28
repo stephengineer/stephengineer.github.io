@@ -29,7 +29,7 @@ export default function ContactForm() {
       window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`
       resetForm()
       setSubmitStatus('success')
-    } catch (_error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -43,7 +43,9 @@ export default function ContactForm() {
         <div className="contact-form-section">
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
-              <label htmlFor="name" className="form-label">Your Name</label>
+              <label htmlFor="name" className="form-label">
+                Your Name
+              </label>
               <input
                 type="text"
                 id="name"
@@ -57,7 +59,9 @@ export default function ContactForm() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Email Address</label>
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
               <input
                 type="email"
                 id="email"
@@ -71,7 +75,9 @@ export default function ContactForm() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message" className="form-label">Your Message</label>
+              <label htmlFor="message" className="form-label">
+                Your Message
+              </label>
               <textarea
                 id="message"
                 name="message"

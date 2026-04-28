@@ -9,7 +9,11 @@ export default function Navbar() {
   const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
   const { scrollToSection } = useScrollToSection()
-  const { isOpen: isMobileMenuOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useMobileMenu()
+  const {
+    isOpen: isMobileMenuOpen,
+    toggle: toggleMobileMenu,
+    close: closeMobileMenu,
+  } = useMobileMenu()
 
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId)
@@ -49,14 +53,72 @@ export default function Navbar() {
           </Link>
 
           <div className="navbar-nav desktop-nav">
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('about') }} className="nav-link">About</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('skills') }} className="nav-link">Skills</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('experience') }} className="nav-link">Experience</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('projects') }} className="nav-link">Projects</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('research') }} className="nav-link">Research</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('education') }} className="nav-link">Education</a>
-            <a onClick={handleIdeasClick} className="nav-link">Ideas</a>
-            <a onClick={(e) => { e.stopPropagation(); handleNavClick('contact') }} className="nav-link nav-link-cta">Contact</a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('about')
+              }}
+              className="nav-link"
+            >
+              About
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('skills')
+              }}
+              className="nav-link"
+            >
+              Skills
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('experience')
+              }}
+              className="nav-link"
+            >
+              Experience
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('projects')
+              }}
+              className="nav-link"
+            >
+              Projects
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('research')
+              }}
+              className="nav-link"
+            >
+              Research
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('education')
+              }}
+              className="nav-link"
+            >
+              Education
+            </a>
+            <a onClick={handleIdeasClick} className="nav-link">
+              Ideas
+            </a>
+            <a
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNavClick('contact')
+              }}
+              className="nav-link nav-link-cta"
+            >
+              Contact
+            </a>
           </div>
 
           <button
@@ -75,14 +137,72 @@ export default function Navbar() {
         </div>
 
         <div className={`mobile-nav${isMobileMenuOpen ? ' mobile-nav-open' : ''}`}>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('about') }} className="mobile-nav-link">About</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('skills') }} className="mobile-nav-link">Skills</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('experience') }} className="mobile-nav-link">Experience</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('projects') }} className="mobile-nav-link">Projects</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('research') }} className="mobile-nav-link">Research</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('education') }} className="mobile-nav-link">Education</a>
-          <a onClick={handleIdeasClick} className="mobile-nav-link">Ideas</a>
-          <a onClick={(e) => { e.stopPropagation(); handleNavClick('contact') }} className="mobile-nav-link">Contact</a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('about')
+            }}
+            className="mobile-nav-link"
+          >
+            About
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('skills')
+            }}
+            className="mobile-nav-link"
+          >
+            Skills
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('experience')
+            }}
+            className="mobile-nav-link"
+          >
+            Experience
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('projects')
+            }}
+            className="mobile-nav-link"
+          >
+            Projects
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('research')
+            }}
+            className="mobile-nav-link"
+          >
+            Research
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('education')
+            }}
+            className="mobile-nav-link"
+          >
+            Education
+          </a>
+          <a onClick={handleIdeasClick} className="mobile-nav-link">
+            Ideas
+          </a>
+          <a
+            onClick={(e) => {
+              e.stopPropagation()
+              handleNavClick('contact')
+            }}
+            className="mobile-nav-link"
+          >
+            Contact
+          </a>
         </div>
       </div>
     </nav>

@@ -50,9 +50,9 @@ export default function Home() {
                   Building intelligent systems that work in the real world
                 </p>
                 <p className="hero-description">
-                  I focus on generative models, post-training alignment, and agentic AI systems.
-                  I build and fine-tune language models, design efficient training pipelines,
-                  and turn research ideas into production-ready intelligent systems.
+                  I focus on generative models, post-training alignment, and agentic AI systems. I
+                  build and fine-tune language models, design efficient training pipelines, and turn
+                  research ideas into production-ready intelligent systems.
                 </p>
               </div>
 
@@ -68,7 +68,7 @@ export default function Home() {
                 <a
                   href="https://www.buymeacoffee.com/stephengineer"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="btn-primary"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -87,8 +87,8 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Technical Expertise</h2>
               <p className="section-description">
-                I enjoy working at the intersection of research and deployment —
-                turning foundation models into reliable, scalable intelligent systems.
+                I enjoy working at the intersection of research and deployment — turning foundation
+                models into reliable, scalable intelligent systems.
               </p>
             </div>
             <SkillsSection />
@@ -101,8 +101,8 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Work Experience</h2>
               <p className="section-description">
-                My career has focused on turning machine learning research into reliable, real-world AI
-                systems — combining deep technical rigor with practical deployment.
+                My career has focused on turning machine learning research into reliable, real-world
+                AI systems — combining deep technical rigor with practical deployment.
               </p>
             </div>
             <ExperienceSection />
@@ -115,8 +115,8 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Selected Projects</h2>
               <p className="section-description">
-                Technical projects demonstrating end-to-end capabilities in LLM training, RAG systems,
-                and multi-agent architectures.
+                Technical projects demonstrating end-to-end capabilities in LLM training, RAG
+                systems, and multi-agent architectures.
               </p>
             </div>
             <ProjectsSection />
@@ -139,8 +139,8 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Education</h2>
               <p className="section-description">
-                Academic foundation in computer science and applied mathematics,
-                supporting my work in generative models, training systems, and AI research.
+                Academic foundation in computer science and applied mathematics, supporting my work
+                in generative models, training systems, and AI research.
               </p>
             </div>
             <EducationSection />
@@ -153,8 +153,8 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Ideas I&#39;m Exploring</h2>
               <p className="section-description">
-                Articles, talks, and conversations that shape how I think about AI systems, alignment,
-                and real-world deployment.
+                Articles, talks, and conversations that shape how I think about AI systems,
+                alignment, and real-world deployment.
               </p>
             </div>
             <IdeasSection />
@@ -167,8 +167,9 @@ export default function Home() {
             <div className="section-header">
               <h2 className="section-title">Get In Touch</h2>
               <p className="section-description">
-                Interested in collaborating on AI research, agentic systems, or applied ML?
-                I&#39;m open to conversations around research collaboration, engineering roles, and AI product development.
+                Interested in collaborating on AI research, agentic systems, or applied ML? I&#39;m
+                open to conversations around research collaboration, engineering roles, and AI
+                product development.
               </p>
             </div>
             <ContactForm />
