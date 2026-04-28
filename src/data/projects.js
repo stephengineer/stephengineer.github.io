@@ -1,5 +1,28 @@
 export const projects = [
   {
+    id: 'conversational-ai-evaluation-pipeline',
+    title: 'Conversational AI Evaluation Pipeline',
+    subtitle:
+      'Closed-loop evaluation and load-testing infrastructure for real-time, multi-turn LLM conversational assistants, with experiment tracking and end-to-end latency measurement.',
+    contributions: [
+      'Built a Python evaluation framework supporting single-round and multi-turn assessments with persistent system sessions and 7 pluggable evaluators (LLM-as-judge, JSON comparison, pairwise A/B with position randomization).',
+      'Designed an AI-powered query generation system that simulates realistic users adapting to live responses, and produced synthetic benchmarks using Claude with MCP server schemas.',
+      'Implemented dataset synchronization between local files and LangSmith with SHA-256 content-hash change detection for efficient experiment tracking and reproducibility.',
+      'Built pluggable SUT clients (scripts, MCP agents, OpenAI-compatible endpoints) integrated with Azure OpenAI, Anthropic Claude, and Azure Blob Storage for chat data management.',
+      'Developed an async load-testing framework on Locust that correlates webhook callbacks with originating requests via gevent.AsyncResult, capturing true end-to-end latency for asynchronous LLM systems under concurrent load.',
+      'Packaged the stack with uv, a Flask webhook server, and Docker for reproducible deployment, with dual message providers backed by curated LangSmith datasets and dynamically generated LLM follow-ups.',
+    ],
+    tags: [
+      'LLM evaluation',
+      'LLM-as-judge',
+      'LangSmith',
+      'MCP',
+      'Load testing',
+      'Async systems',
+    ],
+    badge: 'Evaluation Infrastructure',
+  },
+  {
     id: 'document-understanding',
     title: 'Document Understanding & Structured Summarization (LLM Post-Training)',
     subtitle:
