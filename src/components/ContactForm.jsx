@@ -130,6 +130,30 @@ export default function ContactForm() {
                 <p className="contact-text">{siteConfig.location}</p>
               </div>
             </div>
+
+            <a
+              href="https://www.buymeacoffee.com/stephengineer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-item contact-item-link"
+              aria-label="Buy Me a Coffee"
+            >
+              <div className="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M2 21h18v-2H2v2zm1-3h16l-1-14H4l-1 14zm2-2h12l.5-7H4.5L4 16zm8-9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" />
+                </svg>
+              </div>
+              <div className="contact-details">
+                <h3 className="contact-title">Support</h3>
+                <p className="contact-text">Buy Me a Coffee</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
