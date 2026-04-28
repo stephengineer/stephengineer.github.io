@@ -14,6 +14,16 @@ export const projects = [
     ],
     tags: ['LLM evaluation', 'LLM-as-judge', 'LangSmith', 'MCP', 'Load testing', 'Async systems'],
     badge: 'Evaluation Infrastructure',
+    links: [
+      {
+        label: 'Eval framework',
+        url: 'https://github.com/stephengineer/conversational_assistants_evaluation_framework',
+      },
+      {
+        label: 'Load tester',
+        url: 'https://github.com/stephengineer/locust-async-chat',
+      },
+    ],
   },
   {
     id: 'document-understanding',
