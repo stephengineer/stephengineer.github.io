@@ -1,6 +1,6 @@
 # Stephen Wang - Personal Website
 
-A modern, responsive personal website showcasing my work as a Research Scientist & AI Engineer. Built with React and Vite for optimal performance and developer experience.
+A modern, responsive personal website showcasing my work as a Research Scientist & AI Engineer. Built with React for optimal performance and developer experience.
 
 ## 🌟 Live Demo
 
