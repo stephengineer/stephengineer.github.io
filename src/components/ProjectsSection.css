@@ -95,11 +95,6 @@
   color: var(--color-primary);
   flex-shrink: 0;
   margin-top: 3px;
-  transition: transform 0.2s ease;
-}
-
-.contribution-item:hover .bullet-icon {
-  transform: translateX(3px);
 }
 
 .project-footer {
@@ -121,13 +116,7 @@
   color: var(--color-primary);
   border-radius: var(--radius-full);
   font-weight: 500;
-  transition: all 0.2s ease;
   border: 1px solid var(--color-primary-alpha-15);
-}
-
-.project-tag:hover {
-  background: var(--color-primary-alpha-20);
-  transform: translateY(-1px);
 }
 
 .links-container {
