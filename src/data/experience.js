@@ -2,7 +2,7 @@ export const experiences = [
   {
     id: 1,
     date: '2023 - Present',
-    title: 'ML Research Scientist',
+    title: 'Research Scientist',
     company: 'VisionFlow AI',
     summary:
       'Leading research and development of large language models and agentic systems, with a focus on post-training alignment, efficiency, and real-world deployment. My work spans the full lifecycle of modern AI systems — from data and training to inference optimization and agent orchestration.',
