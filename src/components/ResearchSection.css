@@ -1,24 +1,19 @@
 .research-container {
-  max-width: 900px;
+  max-width: var(--section-content-width);
   margin: 0 auto;
 }
 
-.research-card {
-  border-left: 4px solid var(--color-primary);
-}
-
 .research-intro {
+  max-width: 42rem;
+  margin: 0 auto var(--spacing-xl);
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--color-text);
-  margin-bottom: var(--spacing-xl);
+  text-align: center;
 }
 
 .interests-wrapper {
-  margin-bottom: var(--spacing-xl);
-  background: var(--color-background-soft);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-md);
+  margin: 0;
 }
 
 .interests-label {
@@ -47,19 +42,23 @@
 }
 
 .bullet {
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  width: 5px;
+  height: 5px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.55;
+  flex-shrink: 0;
+  margin-top: 0.65em;
 }
 
 .research-closing {
+  max-width: 42rem;
+  margin: var(--spacing-xl) auto 0;
   font-size: 1.125rem;
   font-style: italic;
   color: var(--color-heading);
   opacity: 0.9;
   text-align: center;
-  margin-top: var(--spacing-lg);
 }
 
 @media (max-width: 768px) {

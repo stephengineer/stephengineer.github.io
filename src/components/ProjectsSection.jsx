@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { projects } from '../data/projects.js'
 import BaseCard from './BaseCard.jsx'
 import './ProjectsSection.css'
+
+const INITIAL_VISIBLE_PROJECTS = 3
 
 function renderContribution(text) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => {
@@ -16,10 +19,14 @@ function renderContribution(text) {
 }
 
 export default function ProjectsSection() {
+  const [showAllProjects, setShowAllProjects] = useState(false)
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, INITIAL_VISIBLE_PROJECTS)
+  const hiddenProjectsCount = projects.length - visibleProjects.length
+
   return (
     <div className="projects-container">
       <div className="projects-grid">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <BaseCard key={project.id} className="project-card" padding="large">
             <div className="project-header">
               <div className="title-row">
@@ -34,18 +41,7 @@ export default function ProjectsSection() {
               <ul className="contribution-list">
                 {project.contributions.map((item, i) => (
                   <li key={i} className="contribution-item">
-                    <span className="bullet-icon">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </span>
+                    <span className="bullet-icon" aria-hidden="true" />
                     <span className="contribution-text">{renderContribution(item)}</span>
                   </li>
                 ))}
@@ -94,6 +90,16 @@ export default function ProjectsSection() {
           </BaseCard>
         ))}
       </div>
+      {projects.length > INITIAL_VISIBLE_PROJECTS && (
+        <button
+          type="button"
+          className="projects-toggle"
+          onClick={() => setShowAllProjects((current) => !current)}
+          aria-expanded={showAllProjects}
+        >
+          {showAllProjects ? 'Show fewer projects' : `Show ${hiddenProjectsCount} more projects`}
+        </button>
+      )}
     </div>
   )
 }

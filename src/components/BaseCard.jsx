@@ -2,7 +2,7 @@ import './BaseCard.css'
 
 export default function BaseCard({
   children,
-  hoverable = true,
+  hoverable = false,
   padding = 'default',
   glass = true,
   className = '',

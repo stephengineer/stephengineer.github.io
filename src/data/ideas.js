@@ -9,7 +9,7 @@ export const ideas = [
         takeaway:
           'Highlights why preference optimization alone doesn’t guarantee reasoning capabilities.',
         url: 'https://arxiv.org/abs/2505.06273v2',
-        year: '2023',
+        year: '2025',
       },
       {
         id: 'post-training',

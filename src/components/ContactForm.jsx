@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { siteConfig } from '../data/siteConfig.js'
 import './ContactForm.css'
 
@@ -6,6 +6,23 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const statusTimeoutRef = useRef(null)
+
+  const clearStatusTimeout = () => {
+    if (statusTimeoutRef.current) {
+      clearTimeout(statusTimeoutRef.current)
+      statusTimeoutRef.current = null
+    }
+  }
+
+  useEffect(
+    () => () => {
+      if (statusTimeoutRef.current) {
+        clearTimeout(statusTimeoutRef.current)
+      }
+    },
+    []
+  )
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -19,6 +36,7 @@ export default function ContactForm() {
 
     setIsSubmitting(true)
     setSubmitStatus(null)
+    clearStatusTimeout()
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -50,7 +68,10 @@ export default function ContactForm() {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
-      setTimeout(() => setSubmitStatus(null), 5000)
+      statusTimeoutRef.current = setTimeout(() => {
+        setSubmitStatus(null)
+        statusTimeoutRef.current = null
+      }, 5000)
     }
   }
 
@@ -120,12 +141,12 @@ export default function ContactForm() {
             </button>
 
             {submitStatus === 'success' && (
-              <div className="status-message status-success">
+              <div className="status-message status-success" role="status" aria-live="polite">
                 Thanks — your message was sent. I&#39;ll be in touch soon.
               </div>
             )}
             {submitStatus === 'error' && (
-              <div className="status-message status-error">
+              <div className="status-message status-error" role="alert">
                 Something went wrong. Please try again or email directly.
               </div>
             )}

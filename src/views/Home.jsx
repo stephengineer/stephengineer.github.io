@@ -35,7 +35,7 @@ export default function Home() {
             <div className="hero-content">
               <div className="hero-image-wrapper">
                 <img
-                  alt="Stephen Wang - ML Research Scientist specializing in LLM Training and Agentic AI Systems"
+                  alt="Stephen Wang - Research Scientist specializing in LLM Training and Agentic AI Systems"
                   className="hero-avatar"
                   src={profileImg}
                   loading="eager"
@@ -44,7 +44,7 @@ export default function Home() {
               </div>
 
               <div className="hero-text">
-                <div className="hero-badge">ML Research Scientist</div>
+                <div className="hero-badge">Research Scientist</div>
                 <h1 className="hero-name">Stephen Wang</h1>
                 <p className="hero-tagline">
                   Building intelligent systems that work in the real world
@@ -172,7 +172,7 @@ export default function Home() {
               <div className="footer-brand">
                 <span className="footer-logo">Stephen Wang</span>
                 <span className="footer-separator">·</span>
-                <span className="footer-tagline">ML Research Scientist</span>
+                <span className="footer-tagline">Research Scientist</span>
               </div>
               <SocialLinks variant="footer" size={18} />
             </div>
