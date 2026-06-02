@@ -205,7 +205,7 @@
 
 .skills-section {
   padding: 5rem 0;
-  background: var(--color-background);
+  background: var(--color-background-soft);
   position: relative;
 }
 
@@ -217,7 +217,7 @@
 
 .experience-section {
   padding: 5rem 0;
-  background: var(--color-background-soft);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -253,7 +253,7 @@
 
 .education-section {
   padding: 5rem 0;
-  background: var(--color-background);
+  background: var(--color-background-soft);
   position: relative;
 }
 
@@ -265,7 +265,7 @@
 
 .ideas-section {
   padding: 5rem 0;
-  background: var(--color-background-soft);
+  background: var(--color-background);
   position: relative;
 }
 
@@ -277,7 +277,7 @@
 
 .contact-section {
   padding: 5rem 0;
-  background: var(--color-background);
+  background: var(--color-background-soft);
   position: relative;
 }
 

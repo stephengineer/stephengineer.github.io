@@ -21,7 +21,7 @@
 }
 
 .card--large {
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl);
 }
 
 .card--hoverable:hover {
@@ -44,7 +44,7 @@
   }
 
   .card--large {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
   }
 
   .card--hoverable:hover {

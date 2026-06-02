@@ -13,7 +13,7 @@ export default function ResearchSection() {
           <ul className="interests-list">
             {research.interests.map((item, index) => (
               <li key={index} className="interest-item">
-                <span className="bullet">•</span>
+                <span className="bullet" aria-hidden="true" />
                 <span className="interest-text">{item}</span>
               </li>
             ))}

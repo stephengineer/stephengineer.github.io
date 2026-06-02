@@ -1,5 +1,5 @@
 .ideas-container {
-  max-width: 1200px;
+  max-width: var(--section-content-width);
   margin: 0 auto;
 }
 

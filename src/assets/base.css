@@ -40,6 +40,7 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  --section-content-width: 1000px;
 
   /* Brand colors - Professional researcher palette */
   --color-primary: #2563EB;
