@@ -1,7 +1,7 @@
 export const experiences = [
   {
     id: 1,
-    date: '2023 - Present',
+    date: '2023 - 2026',
     title: 'Research Scientist',
     company: 'VisionFlow AI',
     summary:
