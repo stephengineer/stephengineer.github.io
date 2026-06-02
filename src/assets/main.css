@@ -86,8 +86,10 @@ a:hover::after {
 }
 
 /* Focus styles for accessibility */
-button:focus,
+a:focus-visible,
+button:focus-visible,
 input:focus,
+select:focus,
 textarea:focus {
   outline: 2px solid #165DFF;
   outline-offset: 2px;

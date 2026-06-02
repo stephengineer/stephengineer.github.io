@@ -4,6 +4,17 @@ import { useScrollToSection } from '../hooks/useScrollToSection.js'
 import { useMobileMenu } from '../hooks/useMobileMenu.js'
 import './Navbar.css'
 
+const navItems = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'research', label: 'Research' },
+  { id: 'education', label: 'Education' },
+  { id: 'ideas', label: 'Ideas' },
+  { id: 'contact', label: 'Contact', cta: true },
+]
+
 export default function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -15,19 +26,10 @@ export default function Navbar() {
     close: closeMobileMenu,
   } = useMobileMenu()
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (event, sectionId) => {
+    event.preventDefault()
     scrollToSection(sectionId)
     closeMobileMenu()
-  }
-
-  const handleIdeasClick = (e) => {
-    e.stopPropagation()
-    if (location.pathname === '/') {
-      handleNavClick('ideas')
-    } else {
-      navigate('/')
-      setTimeout(() => handleNavClick('ideas'), 100)
-    }
   }
 
   const handleBrandClick = (e) => {
@@ -45,7 +47,10 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`navbar${isScrolled ? ' navbar-scrolled' : ''}`}>
+    <nav
+      className={`navbar${isScrolled ? ' navbar-scrolled' : ''}`}
+      aria-label="Primary navigation"
+    >
       <div className="navbar-container">
         <div className="navbar-content">
           <Link to="/" onClick={handleBrandClick} className="navbar-brand">
@@ -53,80 +58,25 @@ export default function Navbar() {
           </Link>
 
           <div className="navbar-nav desktop-nav">
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('about')
-              }}
-              className="nav-link"
-            >
-              About
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('skills')
-              }}
-              className="nav-link"
-            >
-              Skills
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('experience')
-              }}
-              className="nav-link"
-            >
-              Experience
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('projects')
-              }}
-              className="nav-link"
-            >
-              Projects
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('research')
-              }}
-              className="nav-link"
-            >
-              Research
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('education')
-              }}
-              className="nav-link"
-            >
-              Education
-            </a>
-            <a onClick={handleIdeasClick} className="nav-link">
-              Ideas
-            </a>
-            <a
-              onClick={(e) => {
-                e.stopPropagation()
-                handleNavClick('contact')
-              }}
-              className="nav-link nav-link-cta"
-            >
-              Contact
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(event) => handleNavClick(event, item.id)}
+                className={`nav-link${item.cta ? ' nav-link-cta' : ''}`}
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
 
           <button
             onClick={toggleMobileMenu}
-            onTouchStart={toggleMobileMenu}
             className={`mobile-menu-btn${isMobileMenuOpen ? ' active' : ''}`}
             type="button"
-            aria-label="Toggle menu"
+            aria-controls="primary-mobile-navigation"
+            aria-expanded={isMobileMenuOpen}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <span className="hamburger">
               <span className="hamburger-line"></span>
@@ -136,73 +86,22 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className={`mobile-nav${isMobileMenuOpen ? ' mobile-nav-open' : ''}`}>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('about')
-            }}
-            className="mobile-nav-link"
-          >
-            About
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('skills')
-            }}
-            className="mobile-nav-link"
-          >
-            Skills
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('experience')
-            }}
-            className="mobile-nav-link"
-          >
-            Experience
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('projects')
-            }}
-            className="mobile-nav-link"
-          >
-            Projects
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('research')
-            }}
-            className="mobile-nav-link"
-          >
-            Research
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('education')
-            }}
-            className="mobile-nav-link"
-          >
-            Education
-          </a>
-          <a onClick={handleIdeasClick} className="mobile-nav-link">
-            Ideas
-          </a>
-          <a
-            onClick={(e) => {
-              e.stopPropagation()
-              handleNavClick('contact')
-            }}
-            className="mobile-nav-link"
-          >
-            Contact
-          </a>
+        <div
+          id="primary-mobile-navigation"
+          className={`mobile-nav${isMobileMenuOpen ? ' mobile-nav-open' : ''}`}
+          aria-hidden={!isMobileMenuOpen}
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(event) => handleNavClick(event, item.id)}
+              className="mobile-nav-link"
+              tabIndex={isMobileMenuOpen ? 0 : -1}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </div>
     </nav>

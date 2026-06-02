@@ -11,7 +11,7 @@ Visit the live website: [https://stephengineer.github.io/](https://stephengineer
 - **Modern Design**: Clean, professional layout with smooth animations and glassmorphism
 - **Mobile-First**: Fully responsive design optimized for all devices
 - **Fast Performance**: Built with Vite and optimized with code splitting and compression
-- **SEO Optimized**: Dynamic meta tags managed with `@unhead/vue`, Open Graph, and structured data
+- **SEO Optimized**: Dynamic meta tags managed with `react-helmet-async`, Open Graph, and structured data
 - **Skills Showcase**: Interactive skill categories with clean design
 - **Experience Timeline**: Professional experience with mobile-optimized layout
 - **Contact Form**: Integrated contact form with validation and user feedback
@@ -75,23 +75,22 @@ src/
 ├── assets/             # Static assets (CSS, images)
 │   ├── base.css        # Design tokens (colors, spacing)
 │   └── main.css        # Global styles
-├── components/         # Reusable Vue components
-│   ├── BaseCard.vue    # Standard card component
-│   ├── SectionHeader.vue # Standard section title
+├── components/         # Reusable React components
+│   ├── BaseCard.jsx    # Standard card component
+│   ├── SectionHeader.jsx # Standard section title
 │   └── ...
-├── composables/        # Shared logic (Vue Composables)
+├── hooks/              # Shared React hooks
 │   ├── useMobileMenu.js
 │   └── useScrollToSection.js
 ├── data/               # Static content data
 │   ├── experience.js
 │   ├── skills.js
 │   └── ...
-├── router/             # Vue Router config
+├── router/             # React Router config
 ├── views/              # Page components
-│   ├── Home.vue
-│   └── Podcasts.vue
-├── App.vue             # Root component
-└── main.js             # Entry point
+│   └── Home.jsx
+├── App.jsx             # Root component
+└── main.jsx            # Entry point
 ```
 
 ## 🎨 Design System
