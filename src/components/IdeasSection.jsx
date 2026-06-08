@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ideas } from '../data/ideas.js'
+import { trackEvent } from '../utils/analytics.js'
 import './IdeasSection.css'
 
 const INITIAL_VISIBLE_IDEAS = 4
@@ -83,6 +84,12 @@ export default function IdeasSection() {
   const [expandedCategories, setExpandedCategories] = useState({})
 
   const toggleCategory = (category) => {
+    const isExpanded = Boolean(expandedCategories[category])
+
+    trackEvent(isExpanded ? 'ideas_show_fewer_click' : 'ideas_show_more_click', {
+      idea_category: category,
+    })
+
     setExpandedCategories((prev) => ({
       ...prev,
       [category]: !prev[category],
@@ -113,6 +120,15 @@ export default function IdeasSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="idea-card"
+                    onClick={() =>
+                      trackEvent('idea_link_click', {
+                        idea_id: item.id,
+                        idea_category: category.category,
+                        idea_type: item.type,
+                        link_text: item.title,
+                        link_url: item.url,
+                      })
+                    }
                   >
                     <div className="idea-header">
                       <span className="idea-type">

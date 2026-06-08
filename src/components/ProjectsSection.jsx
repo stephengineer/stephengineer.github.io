@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { projects } from '../data/projects.js'
+import { trackEvent } from '../utils/analytics.js'
 import BaseCard from './BaseCard.jsx'
 import './ProjectsSection.css'
 
@@ -65,6 +66,14 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link"
+                      onClick={() =>
+                        trackEvent('project_link_click', {
+                          project_id: project.id,
+                          project_title: project.title,
+                          link_text: link.label,
+                          link_url: link.url,
+                        })
+                      }
                     >
                       <svg
                         width="14"
@@ -94,7 +103,13 @@ export default function ProjectsSection() {
         <button
           type="button"
           className="projects-toggle"
-          onClick={() => setShowAllProjects((current) => !current)}
+          onClick={() => {
+            trackEvent(showAllProjects ? 'projects_show_fewer_click' : 'projects_show_more_click', {
+              visible_projects: visibleProjects.length,
+              total_projects: projects.length,
+            })
+            setShowAllProjects((current) => !current)
+          }}
           aria-expanded={showAllProjects}
         >
           {showAllProjects ? 'Show fewer projects' : `Show ${hiddenProjectsCount} more projects`}

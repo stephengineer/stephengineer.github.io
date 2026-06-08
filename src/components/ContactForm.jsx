@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { siteConfig } from '../data/siteConfig.js'
+import { trackEvent } from '../utils/analytics.js'
 import './ContactForm.css'
 
 export default function ContactForm() {
@@ -61,11 +62,22 @@ export default function ContactForm() {
       if (response.ok && data.success) {
         resetForm()
         setSubmitStatus('success')
+        trackEvent('contact_submit', {
+          status: 'success',
+        })
       } else {
         setSubmitStatus('error')
+        trackEvent('contact_submit_error', {
+          status: 'error',
+          error_source: 'web3forms',
+        })
       }
     } catch {
       setSubmitStatus('error')
+      trackEvent('contact_submit_error', {
+        status: 'error',
+        error_source: 'network',
+      })
     } finally {
       setIsSubmitting(false)
       statusTimeoutRef.current = setTimeout(() => {
@@ -185,6 +197,12 @@ export default function ContactForm() {
               rel="noopener noreferrer"
               className="contact-item contact-item-link"
               aria-label="Buy Me a Coffee"
+              onClick={() =>
+                trackEvent('support_click', {
+                  link_text: 'Buy Me a Coffee',
+                  link_url: 'https://www.buymeacoffee.com/stephengineer',
+                })
+              }
             >
               <div className="contact-icon">
                 <svg
